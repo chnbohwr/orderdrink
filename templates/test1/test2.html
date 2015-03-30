@@ -1,0 +1,26 @@
+<ons-page ng-controller="test2Controller">
+    <ons-toolbar>
+        <div class="right">
+            <ons-toolbar-button ng-click="Back()">Cancel</ons-toolbar-button>
+        </div>
+        <div class="center">New Message</div>
+    </ons-toolbar>
+
+    <ons-list>
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="i in [1,2,3,4,5]">
+            <div class="list-item-left">
+                <img src="http://fakeimg.pl/100x100/" class="avator">
+            </div>
+            <div class="list-item-right">
+                <div class="list-item-content">
+                    <div class="name">Daniel{{i}}
+                        <span class="lucent">@Danny</span>
+                    </div>
+
+                    <span class="desc">Hi, how are you? Glad to hear you are interested in our project.</span>
+                </div>
+            </div>
+        </ons-list-item>
+    </ons-list>
+</ons-page>
