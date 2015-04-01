@@ -1,7 +1,7 @@
 'use strict';
 var module = angular.module('app', ['onsen']);
 
-module.controller('AppController', function ($scope) {
+module.controller('AppController', function ($scope,$rootScope) {
     ons.ready(mainReady);
 
     function mainReady() {
@@ -10,4 +10,5 @@ module.controller('AppController', function ($scope) {
         }
     }
     window.scope_main = $scope;
+    window.rootscope = $rootScope;
 });

@@ -166,3 +166,111 @@ input[type=password] {
     margin-top: 4px;
 }
 /*TEST2 PAGE END*/
+
+
+.profile-card {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 30px 0;
+  line-height: 1.4;
+  background-color: #33393c;
+  text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
+}
+
+.profile-image {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  background-color: black;
+  border 1px solid white;
+  box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.2) 0px 2px 0px 0px;
+}
+
+.profile-name {
+  margin: 20px 0 0 0;
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.profile-id {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.profile-desc {
+  font-size: 15px;
+  opacity: 0.6;
+  width: 90%;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.info-col {
+  height: 60px;
+  line-height: 1;
+  padding: 12px 0 12px 4px;
+}
+
+.info-num {
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.info-unit {
+  margin-top: 6px;
+  font-size: 14px;
+  opacity: 0.4;
+}
+
+
+.plan-list {
+  border-top: none;
+  background-image: none !important;
+}
+
+.plan {
+  line-height: 1;
+  padding: 0;
+}
+
+.plan-left {
+  text-align: right;
+  padding: 10px 10px 10px 0;
+}
+
+.plan-center {
+  background-color: #3399ff;
+  opacity: 0.5;
+}
+
+.plan-right {
+  padding: 10px 40px 10px 10px;
+}
+
+.plan-date {
+  font-size: 14px;
+  opacity: 0.8;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.plan-duration {
+  font-size: 11px;
+  opacity: 0.4;
+}
+
+.plan-name {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.plan-info {
+  opacity: 0.4;
+  font-size: 12px;
+  line-height: 1.4;
+}
