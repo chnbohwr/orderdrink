@@ -1,0 +1,28 @@
+<ons-page ng-controller="near">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">附近店家</div>
+    </ons-toolbar>
+
+    <div id="googlemap" class="near_map"></div>
+
+
+    <ons-list>
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat=" a in [1,2,3,4,5,6]" ng-click="gotoStore()">
+            <div class="list-item-left">
+                <img src="http://fakeimg.pl/50x50/" class="avator">
+            </div>
+            <div class="list-item-right">
+                <div class="list-item-content">
+                    <div class="name">清心小港店
+                        <span class="lucent">1km</span>
+                    </div>
+                    <div class="desc">高雄市小港區xx路xx號</div>
+                </div>
+            </div>
+        </ons-list-item>
+    </ons-list>
+
+</ons-page>

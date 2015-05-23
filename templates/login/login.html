@@ -1,31 +1,13 @@
-<ons-page ng-controller="loginController">
-    <ons-carousel fullscreen swipeable overscrollable auto-scroll>
-        <ons-carousel-item>
-            <div>slide next page</div>
-            <img src="http://fakeimg.pl/300x300/">
-            <div>說明圖片</div>
-        </ons-carousel-item>
-        <ons-carousel-item>
-            <div>slide next page</div>
-            <img src="http://fakeimg.pl/300x300/">
-            <div>說明圖片</div>
-        </ons-carousel-item>
-        <ons-carousel-item>
-            <div>slide next page</div>
-            <img src="http://fakeimg.pl/300x300/">
-            <div>說明圖片</div>
-        </ons-carousel-item>
-        <ons-carousel-item>
-            <div class="login-form">
-                <input type="email" class="text-input--underbar" placeholder="Email" value="">
-                <input type="password" class="text-input--underbar" placeholder="Password" value="">
-                <br>
-                <br>
-                <ons-button modifier="large" class="login-button" ng-click="Login()">Log In</ons-button>
-                <br>
-                <br>
-                <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
-            </div>
-        </ons-carousel-item>
-    </ons-carousel>
+<ons-page ng-controller="login">
+    
+      <div class="login-form">
+        <input type="email" class="text-input--underbar" placeholder="Email" value="">
+        <input type="password" class="text-input--underbar" placeholder="密碼" value="">
+        <br><br>
+        <ons-button modifier="large" class="login-button" ng-click="login()">登入</ons-button>
+        <br><br>
+        <ons-button modifier="quiet" class="forgot-password" ng-click="signup()">註冊帳號</ons-button>
+        <ons-button modifier="quiet" class="forgot-password">忘記密碼?</ons-button>
+      </div>
+    
 </ons-page>

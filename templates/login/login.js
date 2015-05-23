@@ -1,5 +1,11 @@
-module.controller('loginController', function ($scope) {
-    $scope.Login = function () {
-        $scope.MainNavi.pushPage('templates/tabs/tabs.html');
+drinkapp.controller('login',function($scope){
+    
+    $scope.signup = function(){
+        mainNavigator.pushPage('templates/login/signup.html');
     };
+    
+    $scope.login = function (){
+        mainNavigator.pushPage('templates/main_menu/menu.html');
+    };
+    
 });

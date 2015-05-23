@@ -1864,6 +1864,9 @@ h6 {
   line-height: 19px;
   font-weight: 400;
 }
+.notification:empty {
+  display: none;
+}
 /* topdoc
   name: Toolbar Button
   class: toolbar-button
