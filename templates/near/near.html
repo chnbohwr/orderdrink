@@ -1,9 +1,14 @@
 <ons-page ng-controller="near">
     <ons-toolbar>
+<!--
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
+-->
         <div class="center">附近店家</div>
+        <div class="right">
+          <ons-toolbar-button ng-click="gotoSetting()"><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+        </div>
     </ons-toolbar>
 
     <div id="googlemap" class="near_map"></div>

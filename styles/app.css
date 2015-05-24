@@ -198,7 +198,7 @@ input[type=password] {
     padding: 16px 10px 0 10px;
 }
 
-.profile-image-wrapper{
+.profile-image-wrapper {
     width: 60px;
 }
 
@@ -220,3 +220,110 @@ input[type=password] {
     opacity: 0.4;
 }
 /*設定頁面*/
+/*飲料的 dialog*/
+
+.drink_menu_dialog {
+    height: 350px;
+}
+
+.drink_menu_dialog .content {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.drink_menu_dialog .content .button-bar {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.list-item-action {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    font-size: 20px;
+    opacity: 0.3;
+}
+
+.list-item-action > ons-icon {}
+
+.list-item-deleteicon {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 44px;
+    opacity: 0.3;
+    text-align: center;
+    height: 44px;
+}
+
+.list-item-note {
+    position: absolute;
+    right: 56px;
+    top: 0px;
+    font-size: 14px;
+}
+
+.lucent {
+    opacity: 0.4;
+}
+
+.list__item.list__item--inset.note {
+    padding-left: 44px;
+    font-size: 14px;
+    opacity: .7;
+    margin: 0 8px;
+}
+/*飲料的 dialog*/
+/*notification*/
+
+.notify {
+    position: relative;
+    width: 90%;
+    font-weight: 300;
+    padding: 4px;
+    margin: 10px auto;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    height: 42px;
+}
+
+.notify span {
+    display: block;
+    margin-left: 50px;
+    font-size: 12px;
+    margin-bottom: 4px;
+    line-height: 13px;
+}
+
+.notify span:nth-child(1) {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.notify i {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 40px;
+    height: 50px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.info {
+    color: #004d7e;
+    border: 1px solid #318eff;
+    background: -moz-linear-gradient(top, #cae2ff, #97c6ff);
+    background: linear-gradient(to bottom, #cae2ff, #97c6ff);
+}
+
+.info i {
+    background: #84b9f9;
+    color: #003d65;
+    text-shadow: 0px 1px 1px #fdfeff;
+}
+/*notification*/

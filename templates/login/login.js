@@ -5,7 +5,7 @@ drinkapp.controller('login',function($scope){
     };
     
     $scope.login = function (){
-        mainNavigator.pushPage('templates/main_menu/menu.html');
+        mainNavigator.pushPage('templates/near/near.html');
     };
     
 });

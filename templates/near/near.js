@@ -30,4 +30,8 @@ drinkapp.controller('near', function ($scope) {
     mainNavigator.pushPage('templates/store/store.html');
     };
     
+    $scope.gotoSetting= function(){
+        mainNavigator.pushPage('templates/setting/setting.html');
+    };
+    
 });
