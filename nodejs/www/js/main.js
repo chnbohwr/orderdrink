@@ -6,6 +6,15 @@ myapp.controller('mainController', function mainController($scope, service_drink
         $scope.companies = data;
     }
 
+    $scope.$watch('selected', function (value) {
+        if (value) {
+            service_drink.getShops(value).then(function (shops) {
+                $scope.shops = shops;
+                console.log(shops);
+            }, function () {})
+        }
+    });
+
 });
 
 myapp.service('service_drink', function service_drink($http, $q) {
@@ -21,6 +30,36 @@ myapp.service('service_drink', function service_drink($http, $q) {
             console.log(data);
             defer.resolve(data);
         });
+
+        return defer.promise;
+    };
+
+    this.getShops = function (company_id) {
+        var defer = $q.defer();
+        $http.post('/api/shops/', {
+                company_id: company_id
+            })
+            .success(function (data) {
+                defer.resolve(data);
+            }).error(function (e) {
+                defer.reject(e);
+            });
+
+        return defer.promise;
+    };
+
+    this.companyGetMenu = function (company_id) {
+        var defer = $q.defer();
+        $http.get('/api/company/menu/', {
+                params: {
+                    company_id: company_id
+                }
+            })
+            .success(function (data) {
+                defer.resolve(data);
+            }).error(function (e) {
+                defer.reject(e);
+            });
 
         return defer.promise;
     };

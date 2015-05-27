@@ -10,7 +10,8 @@
 
 <body ng-controller="mainController">
 
-    <div>{{companies}}</div>
+    <select ng-options="company.$loki as company.name for company in companies" ng-model="selected"></select>
+
 
 </body>
 
