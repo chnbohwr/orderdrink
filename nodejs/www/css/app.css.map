@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "app.css",
+  "sources": [
+    "app.scss"
+  ],
+  "sourcesContent": [],
+  "mappings": ";AAAA;EACI,AAAY;;;AAGhB,AAAiB,AAAe,AAAiB;EAI7C,AAAO;EACP,AAAe;EACf,AAAa;;;AAGjB;EACI,AAAY;;;;AAIhB;EACI,AAAY;;;;AAIhB;EACI,AAAY;;;;AAIhB;EACI,AAAY",
+  "names": []
+}

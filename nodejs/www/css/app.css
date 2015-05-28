@@ -1,0 +1,31 @@
+/* line 1, C:/Users/ShiChing/Documents/orderdrink/nodejs/www/css/app.scss */
+.drink_item {
+  background: #ccc; }
+
+/* line 8, C:/Users/ShiChing/Documents/orderdrink/nodejs/www/css/app.scss */
+.button-success, .button-error, .button-warning, .button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); }
+
+/* line 14, C:/Users/ShiChing/Documents/orderdrink/nodejs/www/css/app.scss */
+.button-success {
+  background: #1cb841;
+  /* this is a green */ }
+
+/* line 19, C:/Users/ShiChing/Documents/orderdrink/nodejs/www/css/app.scss */
+.button-error {
+  background: #ca3c3c;
+  /* this is a maroon */ }
+
+/* line 24, C:/Users/ShiChing/Documents/orderdrink/nodejs/www/css/app.scss */
+.button-warning {
+  background: #df7514;
+  /* this is an orange */ }
+
+/* line 29, C:/Users/ShiChing/Documents/orderdrink/nodejs/www/css/app.scss */
+.button-secondary {
+  background: #42b8dd;
+  /* this is a light blue */ }
+
+/*# sourceMappingURL=app.css.map */
