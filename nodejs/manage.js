@@ -83,21 +83,21 @@ app.get('/api/company/menu/', function (req, res) {
 });
 
 app.post('/api/company/menu/', function (req, res) {
+    console.log('company_id:', req.body.company_id);
     var temp_menu = req.body.menu;
     var company_id = req.body.company_id;
 
-    if (temp_menu.$loki) {
-        delete temp_menu.$loki;
-        delete temp_menu.meta;
-    }
-
-    var db_menu = menu.insert(temp_menu);
     var db_company = company.get(company_id);
-    if (db_company.menu) {
-        menu.remove(db_comapny.menu_id);
-    }
-    //指定id過去
-    db_company.menu = db_menu.$loki;
 
+    if (db_company.menu) {
+        var dbmenu = menu.get(db_company.menu);
+        dbmenu.list = temp_menu.list;
+        menu.update(dbmenu);
+    } else {
+        menu.insert(temp_menu);
+        //指定id過去
+        db_company.menu = db_menu.$loki;
+    }
+    lokidb.save();
     res.sendStatus(200);
 });

@@ -1,6 +1,6 @@
 var myapp = angular.module('myapp', []);
-myapp.controller('mainController', function mainController($scope, service_drink) {
-    service_drink.getCompanies().then(successGetCompanies);
+myapp.controller('mainController', function mainController($scope, service_drink, $http) {
+    // service_drink.getCompanies().then(successGetCompanies);
 
     function successGetCompanies(data) {
         $scope.companies = data;
@@ -59,6 +59,15 @@ myapp.controller('mainController', function mainController($scope, service_drink
         $scope.message = "正在存檔";
         service_drink.saveMenu($scope.now_company_id, $scope.menu).then(function () {
             $scope.message = "存檔成功";
+        });
+    };
+
+    $scope.postLocation = function () {
+        $http.post('/api/location/', {
+            lat: 22.6272784,
+            lng: 120.3014353
+        }).success(function (data) {
+            $scope.message = data;
         });
     };
 

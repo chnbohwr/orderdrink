@@ -1,48 +1,84 @@
+//load express to build restful server
 var express = require('express');
-
+var bodyParser = require('body-parser');
 var app = express();
+var port = '12340';
+//read loki database 
+//database file : mydatabase.json
+var loki = require('lokijs')
+var lokidb = new loki('mydatabase.json');
+var shop, company, menu;
 
-app.all('/', function (req, res, next) {
-    console.log('我會先被執行');
-    next();
-});
+lokidb.loadDatabase({}, loadDBSuccess);
 
-app.get('/', function (req, res) {
-    console.log('接下來是我會被執行');
-    res.send('hello world');
-});
 
-var cb0 = function (req, res, next) {
-    console.log('會員資料處理');
-    next();
+
+function loadDBSuccess() {
+    console.log('initial lokijs Database success');
+
+    shop = lokidb.getCollection('shop');
+    company = lokidb.getCollection('company');
+    menu = lokidb.getCollection('menu');
+
+    if (shop === null) {
+        shop = lokidb.addCollection('shop');
+    }
+    if (company === null) {
+        company = lokidb.addCollection('company');
+    }
+    if (menu === null) {
+        menu = lokidb.addCollection('menu');
+    }
+
+    console.log('load shop items', shop.idIndex.length);
+    console.log('load company items', company.idIndex.length);
+    console.log('load menu items', menu.idIndex.length);
+
+    app.listen(port);
+    console.log('app start port:' + port);
 }
 
-var cb1 = function (req, res, next) {
-    console.log('寄了一百封信');
-    next();
+
+//express static www folder 
+app.use(express.static('www'));
+app.use(bodyParser.json()); // to support JSON-encoded bodies
+app.use(bodyParser.urlencoded({ // to support URL-encoded bodies
+    extended: true
+}));
+
+//make variable
+var filePath = './www/';
+
+
+//index.htmlpage
+function pageIndex(req, res) {
+    console.log('express index send');
+    res.sendfile(filePath + 'index2.html');
 }
+app.get('/', pageIndex);
 
-var cb2 = function (req, res) {
-    res.send('處理完成!!');
-}
 
-app.get('/user_handler', cb0, cb1, cb2);
+app.post('/api/location/', function (req, res) {
+    console.time('locationFindShop');
+    console.log(req.body);
+    var lat = req.body.lat || 0;
+    var lng = req.body.lng || 0;
+    var offset = req.body.offset || 0;
+    var return_list = shop.chain().find({
+        city: '高雄市'
+    }).sort(sortByLocation).offset(offset).limit(30).data();
 
-// a middleware with no mount path; gets executed for every request to the app
-app.use(function (req, res, next) {
-    console.log('Time:', Date.now());
-    next();
+    function sortByLocation(obj1, obj2) {
+        var dif_obj1 = Math.abs(obj1.lat - lat) + Math.abs(obj1.lng - lng);
+        var dif_obj2 = Math.abs(obj2.lat - lat) + Math.abs(obj2.lng - lng);
+        if (dif_obj1 > dif_obj2) {
+            return 1;
+        }
+        if (dif_obj1 < dif_obj2) {
+            return -1;
+        }
+        return 0;
+    }
+    console.timeEnd('locationFindShop');
+    res.json(return_list);
 });
-
-// a middleware mounted on /user/:id; will be executed for any type of HTTP request to /user/:id
-app.use('/user/:id', function (req, res, next) {
-    console.log('Request Type:', req.method);
-    next();
-});
-
-// a route and its handler function (middleware system) which handles GET requests to /user/:id
-app.get('/user/:id', function (req, res, next) {
-    res.send('USER');
-});
-
-app.listen(3000);
