@@ -38,7 +38,6 @@ function loadDBSuccess() {
     console.log('app start port:' + port);
 }
 
-
 //express static www folder 
 app.use(express.static('www'));
 app.use(bodyParser.json()); // to support JSON-encoded bodies
@@ -57,16 +56,14 @@ function pageIndex(req, res) {
 }
 app.get('/', pageIndex);
 
-
+//給 location 取得附近的店家資訊
 app.post('/api/location/', function (req, res) {
     console.time('locationFindShop');
     console.log(req.body);
     var lat = req.body.lat || 0;
     var lng = req.body.lng || 0;
     var offset = req.body.offset || 0;
-    var return_list = shop.chain().find({
-        city: '高雄市'
-    }).sort(sortByLocation).offset(offset).limit(30).data();
+    var return_list = shop.chain().find().sort(sortByLocation).offset(offset).limit(30).data();
 
     function sortByLocation(obj1, obj2) {
         var dif_obj1 = Math.abs(obj1.lat - lat) + Math.abs(obj1.lng - lng);
@@ -81,4 +78,13 @@ app.post('/api/location/', function (req, res) {
     }
     console.timeEnd('locationFindShop');
     res.json(return_list);
+});
+
+//給店家id取得菜單
+app.get('/api/:shop_id/', function (req, res) {
+    var shop_id = req.params.shop_id;
+    console.log(shop_id);
+    var shop_data = shop.get(shop_id);
+    console.log(shop_data);
+    res.json({});
 });
