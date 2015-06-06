@@ -1,13 +1,15 @@
 <ons-page ng-controller="login">
-    
-      <div class="login-form">
-        <input type="email" class="text-input--underbar" placeholder="Email" value="">
-        <input type="password" class="text-input--underbar" placeholder="密碼" value="">
-        <br><br>
+
+    <div class="login-form">
+        <input type="text" class="text-input--underbar" placeholder="Email" value="" ng-model="login_input.email">
+        <input type="password" class="text-input--underbar" placeholder="密碼" value="" ng-model="login_input.password">
+        <br>
+        <br>
         <ons-button modifier="large" class="login-button" ng-click="login()">登入</ons-button>
-        <br><br>
+        <br>
+        <br>
         <ons-button modifier="quiet" class="forgot-password" ng-click="signup()">註冊帳號</ons-button>
         <ons-button modifier="quiet" class="forgot-password">忘記密碼?</ons-button>
-      </div>
-    
+    </div>
+
 </ons-page>

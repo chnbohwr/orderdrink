@@ -5,24 +5,25 @@
     <meta charset="utf-8">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
-<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-eval' 'unsafe-inline';">
-  
+
     <title>My App</title>
 
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
     <link rel="stylesheet" href="styles/onsen-css-components-blue-basic-theme.css">
     <link rel="stylesheet" href="styles/app.css" />
-    
+
     <script src="lib/onsen/js/angular/angular.js"></script>
     <script src="lib/onsen/js/onsenui.js"></script>
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="cordova.js"></script>
 
     <script src="js/app.js"></script>
     <script src="js/appcontroller.js"></script>
     <script src="js/filter.js"></script>
-    <script src="js/service.js"></script>
+    <script src="js/service_drink.js"></script>
+    <script src="js/service_url.js"></script>
 
     <script src="templates/login/login.js"></script>
 
@@ -35,11 +36,12 @@
     <script src="templates/setting/editprofile.js"></script>
     <script src="templates/newsfeed/information.js"></script>
     <script src="templates/newsfeed/newsfeed.js"></script>
-    
+
 </head>
 
 <body ng-controller="AppController">
     <ons-navigator var="mainNavigator"></ons-navigator>
 </body>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
 </html>
