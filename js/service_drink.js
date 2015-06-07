@@ -13,17 +13,6 @@ drinkapp.service('drink_service', function ($q, $timeout, $http) {
 
         var defer = $q.defer();
 
-        $http.get('js/shopdetail.json').success(getShopDetailSuccess).error(error);
-
-        function getShopDetailSuccess(data) {
-            defer.resolve(data);
-        }
-
-        function error(e) {
-            console.log('get data error', e);
-            defer.reject();
-        }
-
         return defer.promise;
     };
 

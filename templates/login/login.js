@@ -24,8 +24,11 @@ drinkapp.controller('login', function ($scope, $http, service_url) {
             password: $scope.password
         }).success(success).error(error);
 
+        //登入成功就把 token 注入
         function success(data) {
-            localStorage.token = data.token;
+            $scope.injectToken(data.token);
+            //導向內頁
+            mainNavigator.pushPage('templates/near/near.html');
         }
 
         function error(e) {
