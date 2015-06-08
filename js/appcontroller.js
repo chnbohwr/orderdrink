@@ -5,12 +5,14 @@ drinkapp.controller('AppController', function ($scope, drink_service, $http) {
     ons.ready(onstart);
 
     function onstart() {
-        //1. check if token ?
+        //1. check if token 
         var token = localStorage.token;
         if (token) {
+            //INJECT TOKEN TO HTTP HEADERS 
             $scope.injectToken(token);
             mainNavigator.pushPage('templates/near/near.html');
         } else {
+            //go to login page
             mainNavigator.pushPage('templates/login/login.html');
         }
 
@@ -19,6 +21,7 @@ drinkapp.controller('AppController', function ($scope, drink_service, $http) {
     //注入token 到 HTTP headers 裡面，這邊要讓登入頁面可以呼叫
     $scope.injectToken = function (token) {
         $http.defaults.headers.common.token = token;
+        localStorage.token = token;
     };
 
     window.scope = $scope;

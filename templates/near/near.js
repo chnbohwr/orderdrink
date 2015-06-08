@@ -1,12 +1,15 @@
-drinkapp.controller('near', function ($scope, service_utility) {
+drinkapp.controller('near', function ($scope, service_utility, service_drink) {
     console.log('near controller start');
     var map, marker, infowindow;
-
+    var lat, lng;
 
     $scope.initialMap = function () {
         service_utility.getGPS().then(onSuccess, onError);
 
         function onSuccess(gpsdata) {
+            lat = gpsdata.lat;
+            lng = gpsdata.lng;
+
             var position = new google.maps.LatLng(gpsdata.lat, gpsdata.lng);
             var map_element = $('#googlemap');
             var mapOptions = {
@@ -34,6 +37,10 @@ drinkapp.controller('near', function ($scope, service_utility) {
         }
 
     };
+
+    function getShopList() {
+        service_drink.getShops()
+    }
 
 
 
