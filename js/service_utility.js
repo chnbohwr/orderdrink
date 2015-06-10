@@ -7,7 +7,6 @@ drinkapp.service('service_utility', function ($q) {
     this.getGPS = function () {
         var defer = $q.defer();
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
-
         // onSuccess Callback
         // This method accepts a Position object, which contains the
         // current GPS coordinates
@@ -19,7 +18,6 @@ drinkapp.service('service_utility', function ($q) {
             };
             defer.resolve(gps_object);
         };
-
         // onError Callback receives a PositionError object
         //
         function onError(error) {

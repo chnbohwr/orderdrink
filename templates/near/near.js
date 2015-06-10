@@ -34,8 +34,13 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
         }
 
         function onError(e) {
-            alert(' get gps data error , please see console');
+            alert('找不到gps資訊，現在先幫你設定到一個假的gps');
             console.log(e);
+            var data = {
+                lat:22.6239237,
+                lng:120.3187878
+            };
+            onSuccess(data);
         }
 
     };

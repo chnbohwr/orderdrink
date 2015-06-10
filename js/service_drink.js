@@ -26,8 +26,9 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
                 service_drink.shopList.push(datas[i]);
             }
             defer.resolve();
-        }).error(function (e) {
+        }).error(function (data,status) {
             defer.reject();
+            service_url.errorHandler(status);
         });
 
         return defer.promise;
