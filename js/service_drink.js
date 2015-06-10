@@ -27,8 +27,8 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
             }
             defer.resolve();
         }).error(function (data,status) {
-            defer.reject();
             service_url.errorHandler(status);
+            defer.reject();
         });
 
         return defer.promise;
