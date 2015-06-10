@@ -1,4 +1,4 @@
-drinkapp.controller('AppController', function ($scope, drink_service, $http) {
+drinkapp.controller('AppController', function ($scope, service_drink, $http) {
 
     console.log('scope start up');
 

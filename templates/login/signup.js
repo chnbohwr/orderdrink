@@ -13,7 +13,7 @@ drinkapp.controller('signup', function ($scope, $http, service_url) {
 
     function successReg(data) {
         localStorage.nickname = $scope.signup_input.nickname;
-        localStroage.email = $scope.signup_input.email;
+        localStorage.email = $scope.signup_input.email;
         $scope.injectToken(data.token);
         mainNavigator.pushPage('templates/near/near.html');
         //看是否要顯示教學或是開啟推送功能

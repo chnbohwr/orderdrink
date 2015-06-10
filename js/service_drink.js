@@ -25,6 +25,9 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
             for (var i in datas) {
                 service_drink.shopList.push(datas[i]);
             }
+            defer.resolve();
+        }).error(function (e) {
+            defer.reject();
         });
 
         return defer.promise;
@@ -39,5 +42,5 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
 
 
 
-    window.drink_service = this;
+    window.service_drink = this;
 });
