@@ -1,7 +1,11 @@
 drinkapp.controller('near', function ($scope, service_utility, service_drink) {
     console.log('near controller start');
     var map, marker, infowindow;
-    var lat, lng;
+    var lat, lng, position;
+    var directionsService = new google.maps.DirectionsService();
+    var directionsDisplay = new google.maps.DirectionsRenderer({
+        suppressMarkers:true
+    });
 
     $scope.initialMap = function () {
         service_utility.getGPS().then(onSuccess, onError);
@@ -10,7 +14,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
             lat = gpsdata.lat;
             lng = gpsdata.lng;
 
-            var position = new google.maps.LatLng(gpsdata.lat, gpsdata.lng);
+            position = new google.maps.LatLng(gpsdata.lat, gpsdata.lng);
             var map_element = $('#googlemap');
             var mapOptions = {
                 zoom: 16,
@@ -20,7 +24,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
             };
 
             map = new google.maps.Map(map_element[0], mapOptions);
-
+            directionsDisplay.setMap(map);
             marker = new google.maps.Marker({
                 position: position,
                 map: map
@@ -28,7 +32,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
 
             google.maps.event.addListener(map, 'idle', function (event) {
                 map_element.find('a').remove();
-                
+
             });
             getShopList(lat, lng);
         }
@@ -37,8 +41,8 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
             alert('找不到gps資訊，現在先幫你設定到一個假的gps');
             console.log(e);
             var data = {
-                lat:22.6239237,
-                lng:120.3187878
+                lat: 22.6239237,
+                lng: 120.3187878
             };
             onSuccess(data);
         }
@@ -70,19 +74,31 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
 
     $scope.clickShop = function (shop) {
         var shop_position = new google.maps.LatLng(shop.lat, shop.lng);
+
+        //
         if ($scope.shop_marker) {
             $scope.shop_marker.setMap(null);
-            $scope.shop_marker = new google.maps.Marker({
-                position: shop_position,
-                map: map
-            });
-        } else {
-            $scope.shop_marker = new google.maps.Marker({
-                position: shop_position,
-                map: map
-            });
         }
 
+        //remake marker
+        $scope.shop_marker = new google.maps.Marker({
+            position: shop_position,
+            map: map,
+            icon: 'img/drink-icon.png'
+        });
+
+        var request = {
+            origin: position,
+            destination: shop_position,
+            travelMode: google.maps.TravelMode.WALKING
+        };
+
+        directionsService.route(request, function (response, status) {
+            console.log(status);
+            if (status === google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            }
+        });
     };
 
     //only fire once when login 
