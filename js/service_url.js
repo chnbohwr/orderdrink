@@ -8,7 +8,7 @@ drinkapp.service('service_url', function () {
         console.log(status);
         if(parseInt(status) === 401){
             localStorage.clear();
-            alert('驗證過期了:現在幫你重新導向註冊頁面');
+            alert('測試的伺服器重新開機了，所以請您重新註冊');
             location.reload();
         }
     }
