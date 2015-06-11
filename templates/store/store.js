@@ -1,5 +1,9 @@
-drinkapp.controller('store', function ($scope,service_drink) {
-    $scope.sotreData = service_drink.now_shop;
+drinkapp.controller('store', function ($scope,service_drink,service_comment) {
+    $scope.storeData = service_drink.now_shop;
+    console.log($scope.storeData);
+    service_comment.initial($scope.storeData.$loki).then(function(){
+        $scope.comments = service_comment.comments;
+    });
     
     $scope.gotoMenu = function(){
         mainNavigator.pushPage('templates/drink_menu/drinkmenu.html');

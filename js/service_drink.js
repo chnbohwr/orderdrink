@@ -37,7 +37,7 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
     //取得店家詳細資料
     this.getShopDetail = function (shop_id) {
         var defer = $q.defer();
-        $http.get(service_url.shopdata(shop_id)).success(function (data) {
+        $http.get(service_url.getshopdata(shop_id)).success(function (data) {
             console.log('get shop data success',data);
             service_drink.now_shop = data;
             defer.resolve();
