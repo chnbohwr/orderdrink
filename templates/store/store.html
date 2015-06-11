@@ -6,9 +6,9 @@
 
     <ons-list modifier="inset"> 
     <ons-list-header>詳細資料</ons-list-header>
-        <ons-list-item>店名</ons-list-item>
-        <ons-list-item>地址</ons-list-item>
-        <ons-list-item>電話</ons-list-item>
+        <ons-list-item>店名 {{sotreData.name}}</ons-list-item>
+        <ons-list-item>地址 {{sotreData.address}}</ons-list-item>
+        <ons-list-item>電話 {{sotreData.phone}}</ons-list-item>
         <ons-list-item modifier="chevron" ng-click="gotoMenu()">看菜單</ons-list-item>
         
         <ons-list-item modifier="chevron" ng-click="addComment()">撰寫評論</ons-list-item>
@@ -32,7 +32,6 @@
                     <div class="timeline-message">
                         飲料很好喝，外送服務很快
                     </div>
-                    
                 </ons-col>
             </ons-row>
         </ons-list-item>

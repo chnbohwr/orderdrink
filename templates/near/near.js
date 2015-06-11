@@ -73,9 +73,9 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
     };
 
     $scope.clickShop = function (shop) {
+        $scope.nowShop = shop;
         var shop_position = new google.maps.LatLng(shop.lat, shop.lng);
-
-        //
+        //kill marker
         if ($scope.shop_marker) {
             $scope.shop_marker.setMap(null);
         }
@@ -99,6 +99,11 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
                 directionsDisplay.setDirections(response);
             }
         });
+    };
+    
+    $scope.gotoStore = function(){
+        service_drink.now_shop = $scope.nowShop;
+        mainNavigator.pushPage('templates/store/store.html');
     };
 
     //only fire once when login 

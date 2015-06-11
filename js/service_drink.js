@@ -26,7 +26,7 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
                 service_drink.shopList.push(datas[i]);
             }
             defer.resolve();
-        }).error(function (data,status) {
+        }).error(function (data, status) {
             service_url.errorHandler(status);
             defer.reject();
         });
@@ -34,10 +34,16 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
         return defer.promise;
     };
 
+    //取得店家詳細資料
     this.getShopDetail = function (shop_id) {
-
         var defer = $q.defer();
-
+        $http.get(service_url.shopdata(shop_id)).success(function (data) {
+            console.log('get shop data success',data);
+            service_drink.now_shop = data;
+            defer.resolve();
+        }).error(function () {
+            defer.reject();
+        });
         return defer.promise;
     };
 

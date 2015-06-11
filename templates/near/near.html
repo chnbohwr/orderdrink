@@ -13,7 +13,7 @@
 
     <div id="googlemap" class="near_map"></div>
 
-
+<button class="button button--cta" ng-if="nowShop" ng-click="gotoStore()">看店家詳細資料</button>
     <ons-list>
         <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="shop in shopList" ng-click="clickShop(shop)">
             <div class="list-item-left">
