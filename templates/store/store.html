@@ -1,21 +1,27 @@
 <ons-page ng-controller="store">
     <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
         <div class="center">飲料店</div>
     </ons-toolbar>
 
-    <ons-list modifier="inset"> 
-    <ons-list-header>詳細資料</ons-list-header>
+    <ons-list modifier="inset" style="  margin-top: 10px;">
+        <ons-list-header>詳細資料</ons-list-header>
         <ons-list-item>店名 {{storeData.name}}</ons-list-item>
         <ons-list-item>地址 {{storeData.address}}</ons-list-item>
         <ons-list-item>電話 {{storeData.phone}}</ons-list-item>
         <ons-list-item modifier="chevron" ng-click="gotoMenu()">看菜單</ons-list-item>
-        
+
         <ons-list-item modifier="chevron" ng-click="addComment()">撰寫評論</ons-list-item>
     </ons-list>
 
     <ons-list class="timeline" modifier="inset">
         <ons-list-header>熱門評論</ons-list-header>
+        <ons-list-item class="timeline-li" modifier="chevron" ng-if="!comments.length" ng-click="addComment()
+">
+            目前還沒有評論，要分享你喜歡的飲料或是消費經驗給大家嗎?
+        </ons-list-item>
         <ons-list-item class="timeline-li" modifier="tappable" ng-repeat="c in comments">
             <ons-row>
                 <ons-col width="50px">
@@ -23,13 +29,15 @@
                 </ons-col>
 
                 <ons-col>
-                    <div class="timeline-date">3分鐘前</div>
+                    <div class="timeline-date" am-time-ago="c.create_on"></div>
                     <div class="timline-from">
-                        <span class="timeline-name">某位評論者</span>
-                        <span class="timeline-id">{{c.star}}</span>
+                        <span class="timeline-name" od-username="c.user_id" type="name">某位評論者</span>
+                        <!--                        <span class="timeline-id">{{c.star}}</span>-->
+                        <p>{{c.star}}顆星</p>
                     </div>
 
                     <div class="timeline-message">
+
                         {{c.message}}
                     </div>
                 </ons-col>

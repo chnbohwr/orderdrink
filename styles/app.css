@@ -141,6 +141,12 @@ input[type=password] {
     margin: 10px 0 6px 0;
 }
 
+.timline-from p {
+    margin: 7px 0px 0px 0px;
+    font-size: 10px;
+    color: #e26444;
+}
+
 .timeline-name {
     font-size: 15px;
     font-weight: 500;

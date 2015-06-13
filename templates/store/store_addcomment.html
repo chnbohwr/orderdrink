@@ -11,7 +11,7 @@
               <img src="http://fakeimg.pl/50x50/" width="42" class="to-image">
             </ons-col>
             <ons-col>
-              <div class="to-name">李曉明</div>
+              <div class="to-name">{{nickname}}</div>
               <div class="to-email">{{shopname}}的評論</div>
             </ons-col>
           </ons-row>
@@ -22,6 +22,7 @@
 
         <ons-list-item >
           <input type="range" class="range" ng-model="star" min="0" max="5" step="1">
+            <span>{{star}} 顆星</span>
         </ons-list-item>
 
       </ons-list>
