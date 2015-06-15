@@ -1,16 +1,25 @@
 <ons-page ng-controller="editprofile">
     <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
         <div class="center">個人資料</div>
     </ons-toolbar>
 
-    <div class="login-form">
+    <ons-list modifier="inset" style="margin-top: 10px">
 
-        <input type="text" class="text-input--underbar" ng-model="name">
-        
-        <ons-button modifier="large" class="login-button">修改名稱</ons-button>
-        
-      </div>
+        <ons-list-item>
+            <input type="text" class="text-input text-input--transparent" placeholder="Name" style="width: 100%" ng-model="name">
+        </ons-list-item>
 
+
+    </ons-list>
+
+    <div style="padding: 10px 9px">
+        <ons-button modifier="large" style="margin: 0 auto;" ng-click="changeName()">
+            修改名稱
+        </ons-button>
+        <div class="message_alert">{{message}}</div>
+    </div>
 
 </ons-page>

@@ -1,11 +1,11 @@
-drinkapp.controller('AppController', function ($scope, service_drink, $http,$timeout) {
+drinkapp.controller('AppController', function ($scope, service_drink, $http, $timeout) {
 
     console.log('scope start up');
 
     ons.ready(onstart);
 
     function onstart() {
-        
+
         window.fbAsyncInit = function () {
             FB.init({
                 appId: '933225176708506',
@@ -24,7 +24,7 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http,$tim
             js.src = "//connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
-        
+
         FacebookLoginStatus();
 
     }
@@ -34,11 +34,11 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http,$tim
         $http.defaults.headers.common.token = token;
         localStorage.token = token;
     };
-    
+
     function FacebookLoginStatus() {
         console.log('FacebookLoginStatus');
-        if(!window.FB){
-            $timeout(FacebookLoginStatus,500);
+        if (!window.FB) {
+            $timeout(FacebookLoginStatus, 500);
         }
         //偵測看看 facebook 啟動了沒
         FB.getLoginStatus(function (response) {
@@ -46,8 +46,8 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http,$tim
             checklogin();
         });
     }
-    
-    function checklogin (){
+
+    function checklogin() {
         //1. check if token 
         var token = localStorage.token;
         if (token) {
@@ -59,6 +59,11 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http,$tim
             mainNavigator.pushPage('templates/login/login.html');
         }
     }
+
+    $scope.goback = function () {
+        mainNavigator.popPage();
+        
+    };
 
     window.scope = $scope;
     window.http = $http;

@@ -89,6 +89,9 @@ drinkapp.controller('drinkmenu', function ($scope) {
 
     initialSelection();
 
+    $scope.gotoReport = function(){
+    mainNavigator.pushPage('templates/report/report.html');
+    };
 
     window.scope_drinkmenu = $scope;
 
