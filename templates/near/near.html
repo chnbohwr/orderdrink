@@ -1,4 +1,4 @@
-<ons-page ng-controller="near">
+<ons-page ng-controller="near" class="near_page">
     <ons-toolbar>
         <!--
         <div class="left">
@@ -13,9 +13,12 @@
         </div>
     </ons-toolbar>
     <div id="googlemap" class="near_map"></div>
-    <button class="button button--cta" ng-if="nowShop" ng-click="gotoStore()">看店家詳細資料</button>
-    <ons-list>
-        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="shop in shopList" ng-click="clickShop(shop)">
+    <button class="button button--cta near_button" ng-if="nowShop" ng-click="gotoStore()">看店家詳細資料</button>
+    <ons-list class="near_list">
+        <ons-list-item class="near_item1"></ons-list-item>
+        <ons-list-item modifier="chevron" class="list-item-container" 
+                       ng-repeat="shop in shopList" ng-click="clickShop(shop)"
+                       ng-class="{'near_item_active':nowShop_id === shop.$loki}">
             <div class="list-item-left">
                 <img src="http://fakeimg.pl/50x50/" class="avator">
             </div>

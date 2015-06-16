@@ -1,10 +1,11 @@
-drinkapp.controller('near', function ($scope, service_utility, service_drink) {
+drinkapp.controller('near', function ($scope, service_utility, service_drink, $timeout) {
     console.log('near controller start');
     var map, marker, infowindow;
     var lat, lng, position;
+    //設定google路徑服務的api
     var directionsService = new google.maps.DirectionsService();
     var directionsDisplay = new google.maps.DirectionsRenderer({
-        suppressMarkers:true
+        suppressMarkers: true
     });
 
     $scope.initialMap = function () {
@@ -19,11 +20,13 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
             var mapOptions = {
                 zoom: 16,
                 center: position,
-                streetViewControl: false,
-                mapTypeControl: false,
+                disableDefaultUI: true
             };
-
+            //初始化google map
             map = new google.maps.Map(map_element[0], mapOptions);
+            //指定到scope上面去
+            $scope.map = map;
+            //設定路徑顯示的地圖
             directionsDisplay.setMap(map);
             marker = new google.maps.Marker({
                 position: position,
@@ -47,6 +50,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
             onSuccess(data);
         }
 
+        scrollEvent();
     };
 
     function getShopList(lat, lng) {
@@ -74,34 +78,51 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
 
     $scope.clickShop = function (shop) {
         $scope.nowShop = shop;
-        var shop_position = new google.maps.LatLng(shop.lat, shop.lng);
-        //kill marker
-        if ($scope.shop_marker) {
-            $scope.shop_marker.setMap(null);
+        $scope.nowShop_id = shop.$loki;
+        if (map_resize_state === true) {
+            console.log('should open map');
+            $('.near_map').height(300);
+            $('.near_button').css('top', 300);
+            map_resize_state = false;
+            $timeout(changeMAp, 500);
+        } else {
+            changeMAp();
         }
 
-        //remake marker
-        $scope.shop_marker = new google.maps.Marker({
-            position: shop_position,
-            map: map,
-            icon: 'img/drink-icon.png'
-        });
-
-        var request = {
-            origin: position,
-            destination: shop_position,
-            travelMode: google.maps.TravelMode.WALKING
-        };
-
-        directionsService.route(request, function (response, status) {
-            console.log(status);
-            if (status === google.maps.DirectionsStatus.OK) {
-                directionsDisplay.setDirections(response);
+        function changeMAp() {
+            google.maps.event.trigger(map, "resize");
+            var shop_position = new google.maps.LatLng(shop.lat, shop.lng);
+            //kill marker
+            if ($scope.shop_marker) {
+                $scope.shop_marker.setMap(null);
             }
-        });
+
+            //remake marker
+            $scope.shop_marker = new google.maps.Marker({
+                position: shop_position,
+                map: map,
+                icon: 'img/drink-icon.png'
+            });
+
+            var request = {
+                origin: position,
+                destination: shop_position,
+                travelMode: google.maps.TravelMode.WALKING
+            };
+
+            directionsService.route(request, function (response, status) {
+                console.log(status);
+                if (status === google.maps.DirectionsStatus.OK) {
+                    directionsDisplay.setDirections(response);
+                }
+            });
+        }
+
+
+
     };
-    
-    $scope.gotoStore = function(){
+
+    $scope.gotoStore = function () {
         service_drink.now_shop = $scope.nowShop;
         mainNavigator.pushPage('templates/store/store.html');
     };
@@ -111,6 +132,32 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink) {
         $scope.initialMap();
     });
 
+
+    var map_resize_state = false;
+    //jquery event scroll 
+    function scrollEvent() {
+        $('.near_page .page__content').on('scroll', function () {
+            if (this.scrollTop > 150) {
+                $('.near_map').height(100);
+                $('.near_button').css('top', 100);
+                if (map_resize_state === false) {
+                    map_resize_state = true;
+                    $timeout(function () {
+                        google.maps.event.trigger(map, "resize");
+                    }, 500);
+                }
+            } else {
+                $('.near_map').height(300);
+                $('.near_button').css('top', 300);
+                if (map_resize_state === true) {
+                    map_resize_state = false;
+                    $timeout(function () {
+                        google.maps.event.trigger(map, "resize");
+                    }, 500);
+                }
+            }
+        });
+    }
 
     window.scope_near = $scope;
 
