@@ -9,7 +9,7 @@
         <ons-button modifier="large" class="login-button" ng-click="login()">登入</ons-button>
         <br>
 
-        <ons-button modifier="large" class="login-button" ng-click="facebooklogin()">
+        <ons-button modifier="large" class="login-button" ng-click="facebooklogin()" ng-disabled="!fb_init">
             <img style="float: left;margin-top: 2px;" src="img/fb_icon.png">Facebook 快速登入
         </ons-button>
         <br>

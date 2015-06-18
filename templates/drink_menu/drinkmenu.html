@@ -15,25 +15,23 @@
         <i ng-click="gotoReport()" class="ion-paper-airplane"></i>
     </div>
 
-    <ons-list modifier="inset">
-
-        <ons-list-item class="drink-item" ng-repeat="drink in fake_drink" modifier="tappable">
+    <ons-list modifier="inset" ng-repeat="type in  menu.list">
+        <ons-list-header>{{type.name}}</ons-list-header>
+        <ons-list-item class="drink-item" ng-repeat="drink in type.items" modifier="tappable">
             {{drink.name}}
-            <span class="list-item-note lucent">中杯:{{drink.price[0]}} 大杯:{{drink.price[1]}}</span>
+            <span class="list-item-note lucent">中杯:{{drink.price_m}} 大杯:{{drink.price_l}}</span>
             <span class="list-item-action">
                 <ons-icon ng-click="add_drink(drink)" icon="ion-plus-circled" size="30px">
                 </ons-icon>
             </span>
-            <div class="list__item list__item--inset note" ng-repeat=" select in selection[drink.id]">
+            <div class="list__item list__item--inset note" ng-repeat=" select in selection[drink.name]">
                 <span class="list-item-deleteicon">
-                <ons-icon ng-click="deleteSelection(drink.id,select)" icon="ion-minus-circled" size="22px">
+                <ons-icon ng-click="deleteSelection(drink.name,select)" icon="ion-minus-circled" size="22px">
                 </ons-icon>
             </span>
                 {{select.number}}杯 {{select.cup | cup}} {{select.sugar | sugar}} {{select.ice | ice}}
-                
             </div>
         </ons-list-item>
-
     </ons-list>
 
 
@@ -56,7 +54,7 @@
                     <div>數量（杯）</div>
                     <div class="button-bar">
                         <div class="button-bar__item">
-                            <input type="radio" name="number" ng-model="number" value="1" checked>
+                            <input type="radio" name="number" ng-model="number" value="1">
                             <button class="button-bar__button">1</button>
                         </div>
                         <div class="button-bar__item">
@@ -79,11 +77,11 @@
 
                     <div>容量</div>
                     <div class="button-bar">
-                        <div class="button-bar__item">
-                            <input type="radio" name="cup" checked ng-model="cup" value="m">
+                        <div class="button-bar__item" ng-show="now_drink.price_m">
+                            <input type="radio" name="cup" ng-model="cup" value="m">
                             <button class="button-bar__button">中杯</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item" ng-show="now_drink.price_l">
                             <input type="radio" name="cup" ng-model="cup" value="l">
                             <button class="button-bar__button">大杯</button>
                         </div>
@@ -92,22 +90,22 @@
                     <div>甜度</div>
                     <div class="button-bar">
                         <div class="button-bar__item">
-                            <input type="radio" name="sugar" checked ng-model="sugar" value="0">
+                            <input type="radio" name="sugar" ng-model="sugar" value="0">
                             <button class="button-bar__button">正常</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="1">
                             <button class="button-bar__button">少糖</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="2">
                             <button class="button-bar__button">半糖</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="3">
                             <button class="button-bar__button">微糖</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="4">
                             <button class="button-bar__button">無糖</button>
                         </div>
@@ -116,7 +114,7 @@
                     <div>冰塊</div>
                     <div class="button-bar">
                         <div class="button-bar__item">
-                            <input type="radio" name="ice" checked ng-model="ice" value="0">
+                            <input type="radio" name="ice" ng-model="ice" value="0">
                             <button class="button-bar__button">正常</button>
                         </div>
                         <div class="button-bar__item">
@@ -131,7 +129,7 @@
                             <input type="radio" name="ice" ng-model="ice" value="3">
                             <button class="button-bar__button">常溫</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item" ng-hide="!now_drink.hot">
                             <input type="radio" name="ice" ng-model="ice" value="4">
                             <button class="button-bar__button">溫</button>
                         </div>

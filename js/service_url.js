@@ -16,6 +16,10 @@ drinkapp.service('service_url', function () {
         return this.server_url + '/api/shop/' + shop_id + '/comment/';
     }
 
+    this.getmenu = function (shop_id) {
+        return this.server_url + '/api/shop/' + shop_id + '/menu/';
+    }
+
     this.report = this.server_url + '/api/report/';
 
     this.profile = this.server_url + '/api/profile';

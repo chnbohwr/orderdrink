@@ -1,41 +1,22 @@
-drinkapp.controller('drinkmenu', function ($scope) {
-    console.log('drinkmenu controller start');
+drinkapp.controller('drinkmenu', function ($scope,service_drink) {
 
-    $scope.fake_drink = [
-        {
-            name: '紅茶',
-            id: '2',
-            price: [20, 25]
-        }, {
-            name: '綠茶',
-            id: '3',
-            price: [20, 25]
-        }, {
-            name: '烏龍茶',
-            id: '4',
-            price: [20, 25]
-        }, {
-            name: '青茶',
-            id: '5',
-            price: [20, 25]
-        }, {
-            name: '普洱茶',
-            id: '6',
-            price: [20, 25]
-        }
-    ];
+    console.log('drinkmenu controller start');
+    
+    $scope.menu = service_drink.now_shop_menu;
+    
+    console.log($scope.menu);
 
     $scope.selection = {
 
     };
 
     $scope.add_drink = function (drink) {
-        $scope.now_drink = drink.id;
+        $scope.now_drink = drink;
         drinkmenu_modal.show();
     };
 
     function initialSelection() {
-        $scope.cup = 'm';
+        $scope.cup = 'l';
         $scope.ice = '0';
         $scope.sugar = '0';
         $scope.number = '1';
@@ -44,14 +25,14 @@ drinkapp.controller('drinkmenu', function ($scope) {
     $scope.selectOver = function () {
 
         drinkmenu_modal.hide();
-
-        if (!$scope.selection[$scope.now_drink]) {
-            $scope.selection[$scope.now_drink] = [];
+        var name = $scope.now_drink.name;
+        if (!$scope.selection[name]) {
+            $scope.selection[name] = [];
         }
 
         var find_same_drink = false;
-        for (var i in $scope.selection[$scope.now_drink]) {
-            var exist_selection = $scope.selection[$scope.now_drink][i];
+        for (var i in $scope.selection[name]) {
+            var exist_selection = $scope.selection[name][i];
             if (exist_selection.sugar === $scope.sugar && exist_selection.cup === $scope.cup && exist_selection.ice === $scope.ice) {
                 exist_selection.number = (parseInt(exist_selection.number) + parseInt($scope.number)).toString();
                 find_same_drink = true;
@@ -66,19 +47,19 @@ drinkapp.controller('drinkmenu', function ($scope) {
                 number: $scope.number
             };
 
-            $scope.selection[$scope.now_drink].push(object_selection);
+            $scope.selection[name].push(object_selection);
         }
 
         initialSelection();
 
     }
 
-    $scope.deleteSelection = function (drink_id, select) {
+    $scope.deleteSelection = function (drink_name, select) {
         if (select.number === '1') {
-            for (var i in $scope.selection[drink_id]) {
-                var data_select = $scope.selection[drink_id][i];
+            for (var i in $scope.selection[drink_name]) {
+                var data_select = $scope.selection[drink_name][i];
                 if (data_select.cup === select.cup && data_select.sugar === select.sugar && data_select.ice === select.ice) {
-                    $scope.selection[drink_id].splice(i, 1);
+                    $scope.selection[drink_name].splice(i, 1);
                     return;
                 }
             }
@@ -90,7 +71,7 @@ drinkapp.controller('drinkmenu', function ($scope) {
     initialSelection();
 
     $scope.gotoReport = function(){
-    mainNavigator.pushPage('templates/report/report.html');
+        mainNavigator.pushPage('templates/report/report.html');
     };
 
     window.scope_drinkmenu = $scope;

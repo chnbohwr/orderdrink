@@ -8,7 +8,7 @@
 
     <ons-list modifier="inset" style="  margin-top: 10px;">
         <ons-list-header>詳細資料</ons-list-header>
-        <ons-list-item>店名 {{storeData.name}}</ons-list-item>
+        <ons-list-item>店名 {{storeData.company_name + '-' +storeData.name}}</ons-list-item>
         <ons-list-item>地址 {{storeData.address}}</ons-list-item>
         <ons-list-item>電話 {{storeData.phone}}</ons-list-item>
         <ons-list-item modifier="chevron" ng-click="gotoMenu()">看菜單</ons-list-item>

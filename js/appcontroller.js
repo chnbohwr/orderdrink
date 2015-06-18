@@ -2,9 +2,19 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
 
     console.log('scope start up');
 
-    ons.ready(onstart);
+    ons.ready(checklogin);
 
-    function onstart() {
+    function checklogin() {
+        //1. check if token 
+        var token = localStorage.token;
+        if (token) {
+            //INJECT TOKEN TO HTTP HEADERS 
+            $scope.injectToken(token);
+            mainNavigator.pushPage('templates/near/near.html');
+        } else {
+            //go to login page
+            mainNavigator.pushPage('templates/login/login.html');
+        }
 
         window.fbAsyncInit = function () {
             FB.init({
@@ -36,33 +46,24 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
     };
 
     function FacebookLoginStatus() {
-        console.log('FacebookLoginStatus');
         if (!window.FB) {
             $timeout(FacebookLoginStatus, 500);
+            return;
         }
         //偵測看看 facebook 啟動了沒
         FB.getLoginStatus(function (response) {
-            console.log(response);
-            checklogin();
-        });
-    }
 
-    function checklogin() {
-        //1. check if token 
-        var token = localStorage.token;
-        if (token) {
-            //INJECT TOKEN TO HTTP HEADERS 
-            $scope.injectToken(token);
-            mainNavigator.pushPage('templates/near/near.html');
-        } else {
-            //go to login page
-            mainNavigator.pushPage('templates/login/login.html');
-        }
+            $scope.$apply(function () {
+                $scope.fb_init = true;
+            });
+
+
+        });
     }
 
     $scope.goback = function () {
         mainNavigator.popPage();
-        
+
     };
 
     window.scope = $scope;
