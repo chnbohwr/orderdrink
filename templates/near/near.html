@@ -13,9 +13,12 @@
         </div>
     </ons-toolbar>
     <div id="googlemap" class="near_map"></div>
-    <button class="button button--large" ng-disabled="!nowShop" ng-click="gotoStore()">看店家詳細資料</button>
-    
-    
+    <div class="near_buttons">
+        <button class="button near_button" ng-disabled="!nowShop" ng-click="gotoStore()">瞧菜單</button>
+        <button class="button near_button" ng-disabled="!nowShop" ng-click="gotoStore()">看評論</button>
+        <button class="button near_button" ng-disabled="!nowShop" ng-click="gotoStore()">打電話</button>
+    </div>
+
     <ons-scroller ng-style="style">
         <ons-list class="near_list">
             <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="shop in shopList" ng-click="clickShop(shop)" ng-class="{'near_item_active':nowShop_id === shop.$loki}">

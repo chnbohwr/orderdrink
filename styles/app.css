@@ -59,10 +59,15 @@ input[type=password] {
 /*附近搜巡頁面*/
 
 .near_map {
-    width: 100%;
-    height: 270px;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    margin: 10px auto;
 }
 
+.near_buttons {
+    text-align: center;
+}
 /*
 .near_list {
     position: absolute;
@@ -82,7 +87,6 @@ input[type=password] {
 .near_item_active {
     background-color: #ddd;
 }
-
 /*
 .near_button {
     position: fixed;
