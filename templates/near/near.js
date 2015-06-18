@@ -118,7 +118,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         $scope.initialMap();
     });
 
-    var height = $(document).height() - (44+200+10+10+40);
+    var height = $(document).height() - (240 + 44);
     $scope.style = {
         'height': height + 'px',
         'width': '100%'
