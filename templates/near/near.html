@@ -13,24 +13,26 @@
         </div>
     </ons-toolbar>
     <div id="googlemap" class="near_map"></div>
-    <button class="button button--cta near_button" ng-if="nowShop" ng-click="gotoStore()">看店家詳細資料</button>
-    <ons-list class="near_list">
-        <ons-list-item class="near_item1"></ons-list-item>
-        <ons-list-item modifier="chevron" class="list-item-container" 
-                       ng-repeat="shop in shopList" ng-click="clickShop(shop)"
-                       ng-class="{'near_item_active':nowShop_id === shop.$loki}">
-            <div class="list-item-left">
-                <img src="http://fakeimg.pl/50x50/" class="avator">
-            </div>
-            <div class="list-item-right">
-                <div class="list-item-content">
-                    <div class="name">{{shop.company_name + shop.name}}
-                        <span class="lucent">{{distance(shop)}}km</span>
-                    </div>
-                    <div class="desc">{{shop.address}}</div>
+    <button class="button button--large" ng-disabled="!nowShop" ng-click="gotoStore()">看店家詳細資料</button>
+    
+    
+    <ons-scroller ng-style="style">
+        <ons-list class="near_list">
+            <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="shop in shopList" ng-click="clickShop(shop)" ng-class="{'near_item_active':nowShop_id === shop.$loki}">
+                <div class="list-item-left">
+                    <img src="http://fakeimg.pl/50x50/" class="avator">
                 </div>
-            </div>
-        </ons-list-item>
-    </ons-list>
+                <div class="list-item-right">
+                    <div class="list-item-content">
+                        <div class="name">{{shop.company_name + shop.name}}
+                            <span class="lucent">{{distance(shop)}}km</span>
+                        </div>
+                        <div class="desc">{{shop.address}}</div>
+                    </div>
+                </div>
+            </ons-list-item>
+        </ons-list>
+    </ons-scroller>
+
 
 </ons-page>

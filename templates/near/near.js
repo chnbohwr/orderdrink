@@ -50,7 +50,6 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
             onSuccess(data);
         }
 
-        scrollEvent();
     };
 
     function getShopList(lat, lng) {
@@ -79,46 +78,33 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     $scope.clickShop = function (shop) {
         $scope.nowShop = shop;
         $scope.nowShop_id = shop.$loki;
-        if (map_resize_state === true) {
-            console.log('should open map');
-            $('.near_map').height(300);
-            $('.near_button').css('top', 300);
-            map_resize_state = false;
-            $timeout(changeMAp, 500);
-        } else {
-            changeMAp();
+
+        google.maps.event.trigger(map, "resize");
+        var shop_position = new google.maps.LatLng(shop.lat, shop.lng);
+        //kill marker
+        if ($scope.shop_marker) {
+            $scope.shop_marker.setMap(null);
         }
 
-        function changeMAp() {
-            google.maps.event.trigger(map, "resize");
-            var shop_position = new google.maps.LatLng(shop.lat, shop.lng);
-            //kill marker
-            if ($scope.shop_marker) {
-                $scope.shop_marker.setMap(null);
+        //remake marker
+        $scope.shop_marker = new google.maps.Marker({
+            position: shop_position,
+            map: map,
+            icon: 'img/drink-icon.png'
+        });
+
+        var request = {
+            origin: position,
+            destination: shop_position,
+            travelMode: google.maps.TravelMode.WALKING
+        };
+
+        directionsService.route(request, function (response, status) {
+            console.log(status);
+            if (status === google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
             }
-
-            //remake marker
-            $scope.shop_marker = new google.maps.Marker({
-                position: shop_position,
-                map: map,
-                icon: 'img/drink-icon.png'
-            });
-
-            var request = {
-                origin: position,
-                destination: shop_position,
-                travelMode: google.maps.TravelMode.WALKING
-            };
-
-            directionsService.route(request, function (response, status) {
-                console.log(status);
-                if (status === google.maps.DirectionsStatus.OK) {
-                    directionsDisplay.setDirections(response);
-                }
-            });
-        }
-
-
+        });
 
     };
 
@@ -132,32 +118,12 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         $scope.initialMap();
     });
 
+    var height = $(document).height() - ((44 * 2) + 270);
+    $scope.style = {
+        'height': height + 'px',
+        'width': '100%'
+    };
 
-    var map_resize_state = false;
-    //jquery event scroll 
-    function scrollEvent() {
-        $('.near_page .page__content').on('scroll', function () {
-            if (this.scrollTop > 150) {
-                $('.near_map').height(100);
-                $('.near_button').css('top', 100);
-                if (map_resize_state === false) {
-                    map_resize_state = true;
-                    $timeout(function () {
-                        google.maps.event.trigger(map, "resize");
-                    }, 500);
-                }
-            } else {
-                $('.near_map').height(300);
-                $('.near_button').css('top', 300);
-                if (map_resize_state === true) {
-                    map_resize_state = false;
-                    $timeout(function () {
-                        google.maps.event.trigger(map, "resize");
-                    }, 500);
-                }
-            }
-        });
-    }
 
     window.scope_near = $scope;
 
