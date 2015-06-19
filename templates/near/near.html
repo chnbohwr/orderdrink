@@ -23,7 +23,7 @@
         <ons-list class="near_list">
             <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="shop in shopList" ng-click="clickShop(shop)" ng-class="{'near_item_active':nowShop_id === shop.$loki}">
                 <div class="list-item-left">
-                    <img src="http://fakeimg.pl/50x50/" class="avator">
+                    <img ng-src="{{shopAvatar(shop.company_id)}}" class="avator">
                 </div>
                 <div class="list-item-right">
                     <div class="list-item-content">

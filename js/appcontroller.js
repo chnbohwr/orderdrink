@@ -65,6 +65,15 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
         mainNavigator.popPage();
 
     };
+    
+    $scope.shopAvatar = function(comapny_id){
+        switch(comapny_id){
+            case 1: 
+                return 'img/50lan.jpg';
+            default:
+                return 'img/drink-icon-72.png'
+        }
+    }
 
     window.scope = $scope;
     window.http = $http;
