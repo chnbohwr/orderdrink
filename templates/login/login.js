@@ -33,7 +33,13 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
         }
 
         function error(e) {
-            console.log(e);
+            if(e.code===1){
+                $scope.message = '之前用臉書快速登入過的用戶請點下面快速登入就好';
+            }else if (e.code === 0){
+                $scope.message = '是不是有輸入帳號密碼錯誤阿? 要不要再檢查看看';
+            }else{
+                $scope.message = '反正就是登入錯誤，要不要先確認一下網路有沒有問題?';
+            }
         }
     }
 

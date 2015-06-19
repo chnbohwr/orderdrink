@@ -4,6 +4,9 @@
         <h1>Order Drink</h1>
         <input type="text" class="text-input--underbar" placeholder="Email" value="" ng-model="login_input.email">
         <input type="password" class="text-input--underbar" placeholder="密碼" value="" ng-model="login_input.password">
+        <div class="lucent">
+            <p class="note signup_note">{{message}}</p>
+        </div>
         <br>
         <br>
         <ons-button modifier="large" class="login-button" ng-click="login()">登入</ons-button>
