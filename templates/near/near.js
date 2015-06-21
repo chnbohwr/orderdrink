@@ -126,11 +126,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     $scope.lookMenu = function () {
         service_drink.now_shop = $scope.nowShop;
-        service_drink.getShopMenu(service_drink.now_shop.$loki).then(function () {
-            mainNavigator.pushPage('templates/drink_menu/drinkmenu.html');
-        }, function () {
-            alert('發生了一點錯誤');
-        });
+        mainNavigator.pushPage('templates/drink_menu/drinkmenu.html');
     }
 
     $scope.callShop = function () {

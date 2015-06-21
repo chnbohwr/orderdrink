@@ -1,9 +1,13 @@
-drinkapp.controller('drinkmenu', function ($scope,service_drink) {
+drinkapp.controller('drinkmenu', function ($scope, service_drink) {
 
     console.log('drinkmenu controller start');
-    
-    $scope.menu = service_drink.now_shop_menu;
-    
+
+    service_drink.getShopMenu().then(function () {
+        $scope.menu = service_drink.now_shop_menu;
+    }, function () {
+        $scope.message = '很抱歉目前我們還沒有該店家的菜單資訊，我們會盡快補上';
+    });
+
     console.log($scope.menu);
 
     $scope.selection = {
@@ -70,7 +74,7 @@ drinkapp.controller('drinkmenu', function ($scope,service_drink) {
 
     initialSelection();
 
-    $scope.gotoReport = function(){
+    $scope.gotoReport = function () {
         mainNavigator.pushPage('templates/report/report.html');
     };
 
