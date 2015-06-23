@@ -30,6 +30,7 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
 
         drinkmenu_modal.hide();
         var name = $scope.now_drink.name;
+               
         if (!$scope.selection[name]) {
             $scope.selection[name] = [];
         }
@@ -43,12 +44,22 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
                 break;
             }
         }
+        
+        var price;
+        
+        if ($scope.cup === 'l'){
+            price = $scope.now_drink.price_l;
+        }else{
+            price = $scope.now_drink.price_m;
+        }
+        
         if (!find_same_drink) {
             var object_selection = {
                 cup: $scope.cup,
                 sugar: $scope.sugar,
                 ice: $scope.ice,
-                number: $scope.number
+                number: $scope.number,
+                price:price
             };
 
             $scope.selection[name].push(object_selection);
@@ -70,6 +81,11 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
         } else {
             select.number = (parseInt(select.number) - 1).toString();
         }
+    }
+
+    $scope.caculate = function () {
+        service_drink.selection = $scope.selection;
+        mainNavigator.pushPage('templates/drink_menu/caculate.html');
     }
 
     initialSelection();

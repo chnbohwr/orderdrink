@@ -3,8 +3,29 @@
         <div class="left">
             <ons-back-button>Back</ons-back-button>
         </div>
-        <div class="center">估價</div>
+        <div class="center">統計資訊</div>
     </ons-toolbar>
-    
-    
+    <div class="notify info">
+        <span>飲品項目、價格以實際店家為準</span>
+        <span>如果你發現項目價格有所不同，可以點選左邊的紙飛機回報給我們知道。</span>
+        <i ng-click="gotoReport()" class="ion-paper-airplane"></i>
+    </div>
+    <ons-list modifier="inset" >
+        <ons-list-item class="drink-item" modifier="tappable" ng-repeat="(name,option) in selection">
+            {{name}}
+            <div ng-repeat="drink in option">
+                {{drink.number}}杯 - {{drink.cup | cup}} - {{drink.sugar | sugar}} - {{drink.ice | ice}} - {{drink.number*drink.price}}元
+            </div>
+        </ons-list-item>
+        <ons-list-item class="drink-item" modifier="tappable">
+            統計:{{total}}元
+        </ons-list-item>
+    </ons-list>
+    <div style="padding: 10px 9px">
+        <ons-button modifier="large" style="margin: 0 auto;" ng-click="callShop()">
+            打電話給-{{nowshop.company_name + nowshop.name}}
+        </ons-button>
+    </div>
+
+
 </ons-page>

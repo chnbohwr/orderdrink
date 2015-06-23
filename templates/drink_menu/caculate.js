@@ -1,33 +1,21 @@
-drinkapp.controller('caculate', function ($scope) {
-    console.log('drinkmenu controller start');
+drinkapp.controller('caculate', function ($scope, service_drink) {
 
-    $scope.fake_drink = [
-        {
-            name: '紅茶',
-            id: '2',
-            price: [20, 25]
-        }, {
-            name: '綠茶',
-            id: '3',
-            price: [20, 25]
-        }, {
-            name: '烏龍茶',
-            id: '4',
-            price: [20, 25]
-        }, {
-            name: '青茶',
-            id: '5',
-            price: [20, 25]
-        }, {
-            name: '普洱茶',
-            id: '6',
-            price: [20, 25]
+    $scope.selection = service_drink.selection;
+    
+    $scope.nowshop = service_drink.now_shop;
+
+    $scope.callShop = function () {
+        window.location.href = "tel://" + service_drink.now_shop.phone;
+    }
+    
+    $scope.total = 0;
+    
+    for(var i in $scope.selection){
+        var options = $scope.selection[i];
+        for(var j in options){
+            var money = options[j].price * options[j].number;
+            $scope.total += money;
         }
-    ];
-
-    $scope.selection = {
-
-    };
-
+    }
 
 });
