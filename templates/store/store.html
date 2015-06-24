@@ -11,8 +11,6 @@
         <ons-list-item>店名 {{storeData.company_name + '-' +storeData.name}}</ons-list-item>
         <ons-list-item>地址 {{storeData.address}}</ons-list-item>
         <ons-list-item>電話 {{storeData.phone}}</ons-list-item>
-        <ons-list-item modifier="chevron" ng-click="gotoMenu()">看菜單</ons-list-item>
-
         <ons-list-item modifier="chevron" ng-click="addComment()">撰寫評論</ons-list-item>
     </ons-list>
 
@@ -25,13 +23,13 @@
         <ons-list-item class="timeline-li" modifier="tappable" ng-repeat="c in comments">
             <ons-row>
                 <ons-col width="50px">
-                    <img src="http://fakeimg.pl/40x40/" class="timeline-image">
+                    <div od-user="c.user_id" type="avatar" class="timeline-image"></div>
                 </ons-col>
 
                 <ons-col>
                     <div class="timeline-date" am-time-ago="c.create_on"></div>
                     <div class="timline-from">
-                        <span class="timeline-name" od-username="c.user_id" type="name">某位評論者</span>
+                        <span class="timeline-name" od-user="c.user_id" type="name">某位評論者</span>
                         <!--                        <span class="timeline-id">{{c.star}}</span>-->
                         <p>{{c.star}}顆星</p>
                     </div>

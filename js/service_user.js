@@ -3,11 +3,11 @@ drinkapp.service('service_user', function ($http, service_url, $q) {
     this.user = {};
     var self = this;
     //get user from server 
-    this.getUserData = function (id) {
+    this.getUserData = function (id, obligatory) {
         var defer = $q.defer();
-        
+
         //if client has user data and update_time less than 20 min , resolve data and return
-        if (self.user[id]) {
+        if (self.user[id] && !obligatory) {
             var nowtime = new Date();
             if ((nowtime - self.user[id].update_time) > 1000 * 60 * 20) {
                 defer.resolve(self.user[id]);
@@ -26,4 +26,5 @@ drinkapp.service('service_user', function ($http, service_url, $q) {
         return defer.promise;
     }
 
+    window.service_user = this;
 });

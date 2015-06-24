@@ -1,4 +1,4 @@
-drinkapp.controller('AppController', function ($scope, service_drink, $http, $timeout) {
+drinkapp.controller('AppController', function ($scope, service_drink, $http, $timeout,service_url) {
 
     console.log('scope start up');
 
@@ -43,6 +43,9 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
     $scope.injectToken = function (token) {
         $http.defaults.headers.common.token = token;
         localStorage.token = token;
+        
+        $scope.user_id = localStorage.$loki;
+        $scope.serverurl = service_url.server_url;
     };
 
     function FacebookLoginStatus() {

@@ -56,15 +56,15 @@ input[type=password] {
     margin: 50px auto 0px auto;
 }
 
-.signup_note{
+.signup_note {
     color: #e2613c;
 }
 /*註冊頁面*/
 /*附近搜巡頁面*/
 
 .near_map {
-  width: 100%;
-  height: 240px;
+    width: 100%;
+    height: 240px;
 }
 
 .near_buttons {
@@ -167,6 +167,10 @@ input[type=password] {
     width: 40px;
     height: 40px;
     border-radius: 4px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none
 }
 
 .timeline-date {

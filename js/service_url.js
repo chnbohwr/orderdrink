@@ -23,6 +23,8 @@ drinkapp.service('service_url', function () {
     this.report = this.server_url + '/api/report/';
 
     this.profile = this.server_url + '/api/profile';
+    
+    this.uploadAvatar = this.server_url + '/api/uploadAvatar/';
 
     this.errorHandler = function (status) {
         console.log(status);

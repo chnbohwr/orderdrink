@@ -1,4 +1,4 @@
-drinkapp.controller('editprofile', function ($scope, $http, service_url,$rootScope) {
+drinkapp.controller('editprofile', function ($scope, $http, service_url, $rootScope,service_user) {
     console.log('setting controller start');
     $scope.name = localStorage.nickname;
 
@@ -14,5 +14,24 @@ drinkapp.controller('editprofile', function ($scope, $http, service_url,$rootSco
             $scope.message = '網路有問題,修改失敗';
         })
     };
-    
+
+    $scope.uploadFile = function (files) {
+        var fd = new FormData();
+        //Take the first selected file
+        fd.append("files", files[0]);
+
+        $http.post(service_url.uploadAvatar, fd, {
+            headers: {
+                'Content-Type': undefined
+            },
+            transformRequest: angular.identity
+        }).success(function (data) {
+            console.log('success');
+            service_user.getUserData($scope.user_id,true);
+        }).error(function () {
+            console.log('error');
+        });
+
+    };
+
 });
