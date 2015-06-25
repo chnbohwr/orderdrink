@@ -2,6 +2,7 @@ drinkapp.controller('store_addcomment', function ($scope, service_comment, servi
     console.log('store_addcomment controller start');
     $scope.shopname = service_drink.now_shop.company_name + '-' + service_drink.now_shop.name;
     $scope.nickname = localStorage.nickname;
+    $scope.avatar_thumb= localStorage.avatar_thumb;
     $scope.message = '';
     $scope.star = "0";
 

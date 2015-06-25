@@ -25,7 +25,7 @@ drinkapp.directive('odUser', function (service_user, service_url) {
             if ($scope.type === 'avatar') {
                 if (!data.avatar_thumb) {
                     element.css({
-                        'background-image': 'url(mg/drink-icon-72.png)'
+                        'background-image': 'url(img/drink-icon-72.png)'
                     });
                 } else {
                     element.css({
@@ -44,4 +44,13 @@ drinkapp.directive('odUser', function (service_user, service_url) {
     };
 
     return directive;
-})
+}).directive('backImg', function (service_url) {
+    return function (scope, element, attrs) {
+        attrs.$observe('backImg', function (value) {
+            element.css({
+                'background-image': 'url(' + service_url.server_url +'/'+ value + ')',
+                'background-size': 'cover'
+            });
+        });
+    };
+});

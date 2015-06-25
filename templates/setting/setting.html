@@ -1,10 +1,24 @@
 <ons-page ng-controller="setting">
     <ons-toolbar>
-        <div class="left"><ons-back-button>Back</ons-back-button></div>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
         <div class="center">個人資料</div>
     </ons-toolbar>
 
+    <div class="eprofile-card">
+        <div class="eprofile-image" back-img="{{avatar_thumb}}">
+            <label for="fileAvatar" class="eprofile-label">
+                <input class="eprofile-file" id="fileAvatar" type="file" name="file" accept="image/*;capture=camera" onchange="angular.element(this).scope().uploadFile(this.files)" />
+            </label>
+        </div>
 
+        <div id="nickname" class="eprofile-name" contenteditable="true" ng-blur="changeName($event)" onkeypress="preventEnter">{{nickname}}</div>
+        <div class="eprofile-id">{{email}}</div>
+<!--        <div class="eprofile-desc">Freelance designer, software engineer and cyclist</div>-->
+    </div>
+
+    <!--
     <ons-row class="profile-wrapper">
         <ons-col width="60px" class="profile-image-wrapper">
             <img src="https://unsplash.it/50/50/?random" class="profile-image">
@@ -18,5 +32,6 @@
     <ons-list modifier="inset">
         <ons-list-item ng-click="gotoEditProfile()">編輯個人資料</ons-list-item>
     </ons-list>
+-->
 
 </ons-page>
