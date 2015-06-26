@@ -6,16 +6,22 @@
         <div class="center">個人資料</div>
     </ons-toolbar>
 
-    <div class="eprofile-card">
+    <div class="eprofile-card" back-img="{{background}}">
+        <div class="eprofile-shadow"></div>
+        <label for="fileBackground" class="eprofile-label-background">
+            <ons-icon icon="ion-ios-color-wand"></ons-icon>
+            <input class="eprofile-file" id="fileBackground" type="file" name="file" accept="image/*;capture=camera" onchange="angular.element(this).scope().uploadBackground(this.files)" />
+        </label>
+
         <div class="eprofile-image" back-img="{{avatar_thumb}}">
-            <label for="fileAvatar" class="eprofile-label">
+            <label for="fileAvatar" class="eprofile-label-avatar">
                 <input class="eprofile-file" id="fileAvatar" type="file" name="file" accept="image/*;capture=camera" onchange="angular.element(this).scope().uploadFile(this.files)" />
             </label>
         </div>
-
         <div id="nickname" class="eprofile-name" contenteditable="true" ng-blur="changeName($event)" onkeypress="preventEnter">{{nickname}}</div>
         <div class="eprofile-id">{{email}}</div>
-<!--        <div class="eprofile-desc">Freelance designer, software engineer and cyclist</div>-->
+        <!--        <div class="eprofile-desc">Freelance designer, software engineer and cyclist</div>-->
+
     </div>
 
     <!--

@@ -25,6 +25,7 @@ drinkapp.service('service_url', function () {
     this.profile = this.server_url + '/api/profile';
     
     this.uploadAvatar = this.server_url + '/api/uploadAvatar/';
+    this.uploadBackground = this.server_url + '/api/uploadBackground/';
 
     this.errorHandler = function (status) {
         console.log(status);

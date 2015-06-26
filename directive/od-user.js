@@ -47,6 +47,9 @@ drinkapp.directive('odUser', function (service_user, service_url) {
 }).directive('backImg', function (service_url) {
     return function (scope, element, attrs) {
         attrs.$observe('backImg', function (value) {
+            if(!value){
+                return;
+            }
             element.css({
                 'background-image': 'url(' + service_url.server_url +'/'+ value + ')',
                 'background-size': 'cover'
