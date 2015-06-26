@@ -72,7 +72,25 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
     $scope.shopAvatar = function(comapny_id){
         switch(comapny_id){
             case 1: 
-                return 'img/50lan.jpg';
+                return 'img/shop01.jpg';
+            case 2:
+                return 'img/shop02.jpg';
+            case 3:
+                return 'img/shop03.jpg';
+            case 4:
+                return 'img/shop04.jpg';
+            case 5:
+                return 'img/shop05.jpg';
+            case 6:
+                return 'img/shop06.jpg';
+            case 7:
+                return 'img/shop07.jpg';
+            case 8:
+                return 'img/shop08.jpg';
+            case 9:
+                return 'img/shop09.jpg';
+            case 10:
+                return 'img/shop10.jpg';
             default:
                 return 'img/drink-icon-72.png'
         }

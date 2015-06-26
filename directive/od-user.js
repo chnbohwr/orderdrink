@@ -50,8 +50,15 @@ drinkapp.directive('odUser', function (service_user, service_url) {
             if(!value){
                 return;
             }
+            var backurl;
+            console.log(attrs);
+            if(attrs.local === "true"){
+                backurl = 'url(' + value + ')';
+            }else{
+                backurl = 'url(' + service_url.server_url +'/'+ value + ')';
+            }
             element.css({
-                'background-image': 'url(' + service_url.server_url +'/'+ value + ')',
+                'background-image': backurl,
                 'background-size': 'cover'
             });
         });
