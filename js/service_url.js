@@ -23,10 +23,11 @@ drinkapp.service('service_url', function () {
     this.report = this.server_url + '/api/report/';
 
     this.profile = this.server_url + '/api/profile';
-    
+    this.companies = this.server_url + '/api/comapnies/';
     this.uploadAvatar = this.server_url + '/api/uploadAvatar/';
     this.uploadBackground = this.server_url + '/api/uploadBackground/';
-
+    this.uploadFavorite = this.server_url + '/api/uploadFavorite/';
+    
     this.errorHandler = function (status) {
         console.log(status);
         if (parseInt(status) === 401) {

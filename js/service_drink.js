@@ -21,7 +21,10 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
                 offset: service_drink.shopList.length
             }
         }).success(function (datas) {
-            //考慮到controller指標到service的資料會發生指標不到的問題所以這邊要採用迴圈把店家放入 shopList 內
+            //移除掉所有的
+            while(service_drink.shopList.length){
+                service_drink.shopList.pop();
+            }
             for (var i in datas) {
                 service_drink.shopList.push(datas[i]);
             }

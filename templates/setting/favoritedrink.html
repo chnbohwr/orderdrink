@@ -1,0 +1,25 @@
+<ons-page ng-controller="favoriteDrink">
+    <ons-toolbar>
+        <div class="left">
+            <ons-back-button>Back</ons-back-button>
+        </div>
+        <div class="center">設定喜歡的飲料店</div>
+    </ons-toolbar>
+    <div class="noti_all">在這邊你可以設定你喜歡的店家，以後我們就只會找到這些店家</div>
+    <ons-list modifier="inset">
+        <ons-list-item ng-repeat="comp in companies" modifie="tappable">
+            <label class="checkbox" for="check{{comp.$loki}}" style="width:100%;">
+                <input id="check{{comp.$loki}}" type="checkbox" ng-checked="lookCheck(comp.$loki)" value="{{comp.$loki}}" ng-click="toggleCompany(comp.$loki)">
+                <div class="checkbox__checkmark"></div>
+                {{comp.name}}
+            </label>
+        </ons-list-item>
+    </ons-list>
+    <div class="noti_all_red" ng-bind="message"></div>
+    <div style="padding: 10px 9px">
+        <ons-button modifier="large" style="margin: 0 auto;" ng-click="sendFavorite()">
+            送出
+        </ons-button>
+    </div>
+
+</ons-page>

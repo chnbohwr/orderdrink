@@ -22,22 +22,16 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
         $http.post(service_url.login, {
             email: $scope.email,
             password: $scope.password
-        }).success(success).error(error);
+        }).success(loginSuccess).error(error);
 
-        //登入成功就把 token 注入
-        function success(data) {
-            // todo 要記得下載個人資料以及其他資料
-            $scope.injectToken(data.token);
-            //導向內頁
-            mainNavigator.pushPage('templates/near/near.html');
-        }
+
 
         function error(e) {
-            if(e.code===1){
+            if (e.code === 1) {
                 $scope.message = '之前用臉書快速登入過的用戶請點下面快速登入就好';
-            }else if (e.code === 0){
+            } else if (e.code === 0) {
                 $scope.message = '是不是有輸入帳號密碼錯誤阿? 要不要再檢查看看';
-            }else{
+            } else {
                 $scope.message = '反正就是登入錯誤，要不要先確認一下網路有沒有問題?';
             }
         }
@@ -60,31 +54,36 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
     function regByFacebook() {
         FB.api('/me', function (response) {
             $scope.store_response = response;
-            $http.post(service_url.facebooklogin, response).success(successReg).error(errorReg);
+            $http.post(service_url.facebooklogin, response).success(loginSuccess).error(errorReg);
         });
 
-        function successReg(data) {
-            console.log(data);
-            localStorage.nickname = data.nickname;
-            localStorage.email = data.email;
-            localStorage.$loki = data.$loki;
-            $scope.injectToken(data.token);
-            mainNavigator.pushPage('templates/near/near.html');
-        }
-        
-        function errorReg(){
+
+        function errorReg() {
             alert('facebook login error');
         }
     }
-    
-    $scope.term = function(){
-    mainNavigator.pushPage('templates/login/term.html');
-    }
-    
-    $scope.privacy = function(){
-    mainNavigator.pushPage('templates/login/privacy.html');
+
+    $scope.term = function () {
+        mainNavigator.pushPage('templates/login/term.html');
     }
 
+    $scope.privacy = function () {
+        mainNavigator.pushPage('templates/login/privacy.html');
+    }
+
+
+    function loginSuccess(data) {
+        console.log(data);
+        localStorage.nickname = data.nickname;
+        localStorage.email = data.email;
+        localStorage.$loki = data.$loki;
+        localStorage.avatar_thumb = data.avatar_thumb;
+        localStorage.avatar = data.avatar;
+        localStorage.background = data.background
+        localStorage.favoriteCompany = JSON.stringify(data.favoriteCompany);
+        $scope.injectToken(data.token);
+        mainNavigator.pushPage('templates/near/near.html');
+    }
 
     window.scope_login = $scope;
 });

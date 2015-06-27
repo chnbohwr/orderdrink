@@ -4,6 +4,8 @@ drinkapp.controller('setting', function ($scope, $http, service_url) {
     $scope.email = localStorage.email;
     $scope.avatar_thumb = localStorage.avatar_thumb;
     $scope.background = localStorage.background;
+    
+    
     $scope.changeName = function () {
         console.log(event);
         event.target.textContent = event.target.textContent.replace(/\n/g, ' ').substring(0, 12);
@@ -70,6 +72,10 @@ drinkapp.controller('setting', function ($scope, $http, service_url) {
             
             $('.eprofile-image').removeClass('loading');
         });
+    };
+    
+    $scope.goFavoriteDrink= function(){
+        mainNavigator.pushPage('templates/setting/favoritedrink.html');
     };
 
     window.scope_setting = $scope;

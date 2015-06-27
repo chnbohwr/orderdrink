@@ -51,7 +51,6 @@ drinkapp.directive('odUser', function (service_user, service_url) {
                 return;
             }
             var backurl;
-            console.log(attrs);
             if(attrs.local === "true"){
                 backurl = 'url(' + value + ')';
             }else{
