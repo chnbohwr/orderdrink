@@ -17,17 +17,10 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
         $http.get(service_url.nearshop, {
             params: {
                 lat: lat,
-                lng: lng,
-                offset: service_drink.shopList.length
+                lng: lng  
             }
         }).success(function (datas) {
-            //移除掉所有的
-            while(service_drink.shopList.length){
-                service_drink.shopList.pop();
-            }
-            for (var i in datas) {
-                service_drink.shopList.push(datas[i]);
-            }
+            service_drink.shopList = datas;
             defer.resolve();
         }).error(function (data, status) {
             service_url.errorHandler(status);
@@ -52,7 +45,7 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
 
     this.getShopMenu = function (shop_id) {
         var defer = $q.defer();
-        if(!shop_id){
+        if (!shop_id) {
             shop_id = service_drink.now_shop.$loki;
         }
         $http.get(service_url.getmenu(shop_id)).success(function (data) {

@@ -8,8 +8,8 @@
     <div class="noti_all">在這邊你可以設定你喜歡的店家，以後我們就只會找到這些店家</div>
     <ons-list modifier="inset">
         <ons-list-item ng-repeat="comp in companies" modifie="tappable">
-            <label class="checkbox" for="check{{comp.$loki}}" style="width:100%;">
-                <input id="check{{comp.$loki}}" type="checkbox" ng-checked="lookCheck(comp.$loki)" value="{{comp.$loki}}" ng-click="toggleCompany(comp.$loki)">
+            <label class="checkbox" style="width:100%;">
+                <input  type="checkbox" checklist-model="favoriteCompany" checklist-value="comp.$loki">
                 <div class="checkbox__checkmark"></div>
                 {{comp.name}}
             </label>

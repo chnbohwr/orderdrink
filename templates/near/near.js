@@ -44,7 +44,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
                 map_element.find('a').remove();
 
             });
-            getShopList(lat, lng);
+            getShopList();
         }
 
         function onError(e) {
@@ -59,7 +59,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     };
 
-    function getShopList(lat, lng) {
+    function getShopList() {
         service_drink.getShops(lat, lng).then(function () {
             $scope.shopList = service_drink.shopList;
         });
@@ -141,10 +141,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     }
     
     //收到重新整理店家的 BROADCAST
-    $scope.$on('refreshShop',function(){
-        console.log('收到重新取得飲料')
-        getShopList(lat,lng);
-    })
+    $scope.$on('refreshShop',getShopList);
 
 
     window.scope_near = $scope;
