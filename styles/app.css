@@ -5,6 +5,10 @@ textarea,
     user-select: text;
 }
 
+/*hack for onsen checkbox input*/
+.checkbox > input[type="checkbox"] {
+    visibility: hidden;
+}
 .noti_all {
     font-size: 14px;
     margin: 10px;

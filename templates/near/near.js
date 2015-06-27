@@ -3,19 +3,19 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     var map, marker, infowindow;
     var lat, lng, position;
     //設定google路徑服務的api
-    var directionsService , directionsDisplay ;
+    var directionsService, directionsDisplay;
 
     $scope.initialMap = function () {
         //if no google map 
-        if(!window.google_map_has_initial){
-            $timeout($scope.initialMap,200);
+        if (!window.google_map_has_initial) {
+            $timeout($scope.initialMap, 200);
             return;
         }
         directionsService = new google.maps.DirectionsService();
         directionsDisplay = new google.maps.DirectionsRenderer({
-        suppressMarkers: true
-    });
-        
+            suppressMarkers: true
+        });
+
         service_utility.getGPS().then(onSuccess, onError);
 
         function onSuccess(gpsdata) {
@@ -139,9 +139,9 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     $scope.callShop = function () {
         window.location.href = "tel://" + $scope.nowShop.phone;
     }
-    
+
     //收到重新整理店家的 BROADCAST
-    $scope.$on('refreshShop',getShopList);
+    $scope.$on('refreshShop', getShopList);
 
 
     window.scope_near = $scope;
