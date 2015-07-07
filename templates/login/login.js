@@ -80,7 +80,7 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
         localStorage.avatar_thumb = data.avatar_thumb;
         localStorage.avatar = data.avatar;
         localStorage.background = data.background
-        localStorage.favoriteCompany = JSON.stringify(data.favoriteCompany);
+        localStorage.favoriteCompany = data.favoriteCompany;
         $scope.injectToken(data.token);
         mainNavigator.pushPage('templates/near/near.html');
     }

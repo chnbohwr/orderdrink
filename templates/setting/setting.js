@@ -1,9 +1,9 @@
 drinkapp.controller('setting', function ($scope, $http, service_url) {
     console.log('setting controller start');
-    $scope.nickname = localStorage.nickname;
-    $scope.email = localStorage.email;
-    $scope.avatar_thumb = localStorage.avatar_thumb;
-    $scope.background = localStorage.background;
+    $scope.nickname = localStorage.nickname || undefined;;
+    $scope.email = localStorage.email || undefined;;
+    $scope.avatar_thumb = localStorage.avatar_thumb || undefined;
+    $scope.background = localStorage.background || undefined;;
     
     
     $scope.changeName = function () {

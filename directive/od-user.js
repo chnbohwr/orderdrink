@@ -45,16 +45,22 @@ drinkapp.directive('odUser', function (service_user, service_url) {
 
     return directive;
 }).directive('backImg', function (service_url) {
-    return function (scope, element, attrs) {
+
+    var directive = {};
+
+    //attribute
+    directive.restrict = "A";
+
+    directive.link = function (scope, element, attrs) {
         attrs.$observe('backImg', function (value) {
-            if(!value){
+            if (!value || value === 'undefined') {
                 return;
             }
             var backurl;
-            if(attrs.local === "true"){
+            if (attrs.local === "true") {
                 backurl = 'url(' + value + ')';
-            }else{
-                backurl = 'url(' + service_url.server_url +'/'+ value + ')';
+            } else {
+                backurl = 'url(' + service_url.server_url + '/' + value + ')';
             }
             element.css({
                 'background-image': backurl,
@@ -62,4 +68,6 @@ drinkapp.directive('odUser', function (service_user, service_url) {
             });
         });
     };
+
+    return directive;
 });
