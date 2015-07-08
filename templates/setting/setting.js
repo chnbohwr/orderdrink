@@ -1,4 +1,4 @@
-drinkapp.controller('setting', function ($scope, $http, service_url) {
+drinkapp.controller('setting', function ($scope, $http, service_url,service_user) {
     console.log('setting controller start');
     $scope.nickname = localStorage.nickname || undefined;;
     $scope.email = localStorage.email || undefined;;
@@ -44,6 +44,7 @@ drinkapp.controller('setting', function ($scope, $http, service_url) {
             localStorage.avatar = data.avatar;
             $scope.avatar_thumb = data.avatar_thumb;
             $('.eprofile-image').removeClass('loading');
+
         }).error(function () {
             console.log('error');
             $('.eprofile-image').removeClass('loading');

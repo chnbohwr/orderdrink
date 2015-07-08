@@ -76,7 +76,7 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
         console.log(data);
         localStorage.nickname = data.nickname;
         localStorage.email = data.email;
-        localStorage.$loki = data.$loki;
+        localStorage.id = data.id;
         localStorage.avatar_thumb = data.avatar_thumb;
         localStorage.avatar = data.avatar;
         localStorage.background = data.background
