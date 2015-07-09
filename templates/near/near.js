@@ -84,7 +84,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     $scope.clickShop = function (shop) {
         $scope.nowShop = shop;
-        $scope.nowShop_id = shop.$loki;
+        $scope.nowShop_id = shop.id;
 
         google.maps.event.trigger(map, "resize");
         var shop_position = new google.maps.LatLng(shop.lat, shop.lng);

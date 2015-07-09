@@ -46,7 +46,7 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
     this.getShopMenu = function (shop_id) {
         var defer = $q.defer();
         if (!shop_id) {
-            shop_id = service_drink.now_shop.$loki;
+            shop_id = service_drink.now_shop.id;
         }
         $http.get(service_url.getmenu(shop_id)).success(function (data) {
             console.log('get shop menu success', data);

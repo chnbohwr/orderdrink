@@ -44,7 +44,7 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
         $http.defaults.headers.common.token = token;
         localStorage.token = token;
         
-        $scope.user_id = localStorage.$loki;
+        $scope.user_id = localStorage.id;
         $scope.serverurl = service_url.server_url;
     };
 

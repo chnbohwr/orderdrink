@@ -10,7 +10,7 @@
     <ul class="list list--inset">
         <li class="list__item list__item--inset" ng-repeat="comp in companies">
             <label class="checkbox">
-                <input type="checkbox" checklist-model="favoriteCompany" checklist-value="comp.$loki">
+                <input type="checkbox" checklist-model="favoriteCompany" checklist-value="comp.id">
                 <div class="checkbox__checkmark"></div>
                 {{comp.name}}
             </label>
