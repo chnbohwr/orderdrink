@@ -34,7 +34,7 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
     this.getShopDetail = function (shop_id) {
         var defer = $q.defer();
         $http.get(service_url.getshopdata(shop_id)).success(function (data) {
-            console.log('get shop data success', data);
+           
             service_drink.now_shop = data;
             defer.resolve();
         }).error(function () {
@@ -49,7 +49,7 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
             shop_id = service_drink.now_shop.id;
         }
         $http.get(service_url.getmenu(shop_id)).success(function (data) {
-            console.log('get shop menu success', data);
+          
             service_drink.now_shop_menu = data;
             defer.resolve();
         }).error(function () {

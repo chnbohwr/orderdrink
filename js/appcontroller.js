@@ -1,6 +1,6 @@
 drinkapp.controller('AppController', function ($scope, service_drink, $http, $timeout,service_url) {
 
-    console.log('scope start up');
+    
 
     ons.ready(checklogin);
 

@@ -1,5 +1,5 @@
 drinkapp.controller('setting', function ($scope, $http, service_url,service_user) {
-    console.log('setting controller start');
+
     $scope.nickname = localStorage.nickname || undefined;;
     $scope.email = localStorage.email || undefined;;
     $scope.avatar_thumb = localStorage.avatar_thumb || undefined;
@@ -7,7 +7,7 @@ drinkapp.controller('setting', function ($scope, $http, service_url,service_user
     
     
     $scope.changeName = function () {
-        console.log(event);
+       
         event.target.textContent = event.target.textContent.replace(/\n/g, ' ').substring(0, 12);
 
         var name = event.target.textContent;
@@ -46,7 +46,7 @@ drinkapp.controller('setting', function ($scope, $http, service_url,service_user
             $('.eprofile-image').removeClass('loading');
 
         }).error(function () {
-            console.log('error');
+           
             $('.eprofile-image').removeClass('loading');
         });
     };
@@ -69,7 +69,6 @@ drinkapp.controller('setting', function ($scope, $http, service_url,service_user
             
             $('.eprofile-image').removeClass('loading');
         }).error(function () {
-            console.log('error');
             
             $('.eprofile-image').removeClass('loading');
         });

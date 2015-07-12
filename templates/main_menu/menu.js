@@ -1,5 +1,5 @@
 drinkapp.controller('mainmenu', function ($scope) {
-    console.log('mainmenu controller start');
+    
     $scope.gotoNear = function(){
         mainNavigator.pushPage('templates/near/near.html');
     };

@@ -39,7 +39,7 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
 
     $scope.facebooklogin = function () {
         FB.login(function (response) {
-            console.log(response);
+            
             if (response.status === 'connected') {
                 regByFacebook();
             }
@@ -73,7 +73,7 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
 
 
     function loginSuccess(data) {
-        console.log(data);
+       
         localStorage.nickname = data.nickname;
         localStorage.email = data.email;
         localStorage.id = data.id;

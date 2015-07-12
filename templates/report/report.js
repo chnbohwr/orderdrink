@@ -21,7 +21,7 @@ drinkapp.controller('report', function ($scope, $http, service_url) {
             // todo 
             $scope.reportSuccess = true;
         }).error(function (e) {
-            console.log(e);
+            
         });
 
     };

@@ -1,5 +1,5 @@
 drinkapp.controller('near', function ($scope, service_utility, service_drink, $timeout) {
-    console.log('near controller start');
+    
     var map, marker, infowindow;
     var lat, lng, position;
     //設定google路徑服務的api
@@ -49,7 +49,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
         function onError(e) {
             alert('找不到gps資訊，現在先幫你設定到一個假的gps');
-            console.log(e);
+          
             var data = {
                 lat: 22.6239237,
                 lng: 120.3187878
@@ -107,7 +107,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         };
 
         directionsService.route(request, function (response, status) {
-            console.log(status);
+           
             if (status === google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
             }

@@ -29,7 +29,7 @@ drinkapp.service('service_url', function () {
     this.uploadFavorite = this.server_url + '/api/uploadFavorite/';
     
     this.errorHandler = function (status) {
-        console.log(status);
+    
         if (parseInt(status) === 401) {
             localStorage.clear();
             alert('測試的伺服器重新開機了，所以請您重新註冊');

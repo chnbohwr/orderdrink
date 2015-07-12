@@ -39,7 +39,7 @@ drinkapp.directive('odUser', function (service_user, service_url) {
         }
 
         function getUserError(data) {
-            console.log(error)
+            
         }
     };
 
@@ -53,7 +53,7 @@ drinkapp.directive('odUser', function (service_user, service_url) {
 
     directive.link = function (scope, element, attrs) {
         attrs.$observe('backImg', function (value) {
-            if (!value || value === 'undefined') {
+            if (!value || value === 'undefined' || value === 'null') {
                 return;
             }
             var backurl;
