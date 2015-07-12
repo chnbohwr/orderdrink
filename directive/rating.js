@@ -1,39 +1,38 @@
-//Text Binding (Prefix: @)
-//One-way Binding (Prefix: &)
-//Two-way Binding (Prefix: =)
-
-
-drinkapp.directive('ratingStar', function () {
-    return {
-        //attribute
-        restrict: 'AE',
-        //覆蓋
-        replace: 'true',
-        scope: {
-            rating: '='
-        },
-        //功能
-        link: function ($scope, $ele, $attrs) {
-            $scope.stars = [];
-            var star = {};
-            var count = parseInt($attrs.count);
-            for (var i = count; i > 0; i--) {
-                var star = {};
-                star.value = i;
-                $scope.stars.push(star);
-            }
-        },
-        //顯示
-        template: '<div class="rating">' +
-            '<div class="wrapper">' +
-            '<input ng-repeat-start="star in stars track by $index" class="star-radio" id="rating-{{star.value}}" name="rating" type="radio" value="{{star.value}}" ng-model="rating" />' +
-            '<label for="rating-{{star.value}}" data-value="{{star.value}}" ng-repeat-end>' +
-            '<span class="rating-star">' +
-            ' <i class="fa fa-star-o"></i>' +
-            '<i class="fa fa-star"></i>' +
-            '</span>' +
-            '</label>' +
-            '</div>' +
-            '</div>'
-    };
+drinkapp.directive("starRating", function() {
+  return {
+    restrict : "EA",
+    template : "<ul class='rating' ng-class='{readonly: readonly}'>" +
+               "  <li ng-repeat='star in stars' ng-class='star' ng-click='toggle($index)'>" +
+               "    <i class='fa fa-star'></i>" + //&#9733
+               "  </li>" +
+               "</ul>",
+    scope : {
+      ratingValue : "=ngModel",
+      max : "=?", //optional: default is 5
+      onRatingSelected : "&?",
+      readonly: "=?"
+    },
+    link : function(scope, elem, attrs) {
+      if (scope.max == undefined) { scope.max = 5; }
+      function updateStars() {
+        scope.stars = [];
+        for (var i = 0; i < scope.max; i++) {
+          scope.stars.push({
+            filled : i < scope.ratingValue
+          });
+        }
+      };
+      scope.toggle = function(index) {
+        if (scope.readonly == undefined || scope.readonly == false){
+          scope.ratingValue = index + 1;
+          scope.onRatingSelected({
+            rating: index + 1
+          });
+        }
+      };
+      scope.$watch("ratingValue", function(oldVal, newVal) {
+        if (newVal) { updateStars(); }
+      });
+    }
+  };
 });

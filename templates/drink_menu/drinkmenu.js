@@ -13,6 +13,10 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
     $scope.selection = {
 
     };
+    
+    $scope.getSelectionSize = function(){
+        return Object.keys($scope.selection).length;
+    };
 
     $scope.add_drink = function (drink) {
         $scope.now_drink = drink;

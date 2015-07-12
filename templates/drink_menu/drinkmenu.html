@@ -5,10 +5,10 @@
         </div>
         <div class="center">菜單</div>
         <div class="right">
-          <ons-toolbar-button ng-click="caculate()" modifier="outline">統計</ons-toolbar-button>
+            <ons-toolbar-button ng-click="caculate()" ng-if="getSelectionSize() > 0">統計</ons-toolbar-button>
         </div>
     </ons-toolbar>
-    
+
     <div class="notify info">
         <span>飲品項目、價格以實際店家為準</span>
         <span>如果你發現項目價格有所不同，可以點選左邊的紙飛機回報給我們知道。</span>
@@ -28,12 +28,11 @@
                 <span class="list-item-deleteicon">
                 <ons-icon ng-click="deleteSelection(drink.name,select)" icon="ion-minus-circled" size="22px">
                 </ons-icon>
-            </span>
-                {{select.number}}杯 {{select.cup | cup}} {{select.sugar | sugar}} {{select.ice | ice}}
+            </span> {{select.number}}杯 {{select.cup | cup}} {{select.sugar | sugar}} {{select.ice | ice}}
             </div>
         </ons-list-item>
     </ons-list>
-    
+
     <div>{{message}}</div>
 
 

@@ -4,16 +4,19 @@
             <ons-back-button>Back</ons-back-button>
         </div>
         <div class="center">回報</div>
-        <div class="right">
-            <ons-toolbar-button ng-click="sendReport()" modifier="outline">送出</ons-toolbar-button>
-        </div>
     </ons-toolbar>
 
-    <ons-list modifier="inset" style="margin-top: 10px">
 
-        <ons-list-item>
-            <select ng-model="option" ng-options="key as value for (key , value) in options" style="width:100%; height:30px;">
-            </select>
+
+
+    <ons-list modifier="inset" style="margin-top: 10px" ng-if="!reportSuccess">
+
+        <ons-list-item ng-repeat="(key,text) in options">
+            <label class="radio-button">
+                <input type="radio" ng-model="option.option" ng-value="key">
+                <div class="radio-button__checkmark"></div>
+                {{text}}
+            </label>
         </ons-list-item>
 
         <ons-list-item>
@@ -22,5 +25,22 @@
 
     </ons-list>
 
+    <div style="padding: 10px 9px" ng-if="!reportSuccess">
+        <ons-button modifier="large" style="margin: 0 auto;"ng-click="sendReport()" >
+            送出
+        </ons-button>
+    </div>
+    
+    <div class="reportsuccess" ng-if="reportSuccess" >
+        <i class="ion-checkmark-circled" ></i>
+        <h4>回報成功</h4>
+        <p>我已經收到回報瞜:會盡快處理</p>
+        <ons-button modifier="large" ng-click="goback()">
+            回到上一頁
+        </ons-button>
+    </div>
+    
+    
+    
 
 </ons-page>
