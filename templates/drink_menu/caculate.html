@@ -12,12 +12,12 @@
     </div>
     <ons-list modifier="inset" >
         <ons-list-item class="drink-item" modifier="tappable" ng-repeat="(name,option) in selection">
-            {{name}}
-            <div ng-repeat="drink in option">
+            <div class="caculate_item">{{name}}</div>
+            <div ng-repeat="drink in option" class="caculate_info">
                 {{drink.number}}杯 - {{drink.cup | cup}} - {{drink.sugar | sugar}} - {{drink.ice | ice}} - {{drink.number*drink.price}}元
             </div>
         </ons-list-item>
-        <ons-list-item class="drink-item" modifier="tappable">
+        <ons-list-item class="drink-item" modifier="tappable" class="caculate_total">
             統計:{{total}}元
         </ons-list-item>
     </ons-list>

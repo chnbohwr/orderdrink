@@ -9,28 +9,42 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
     $scope.selection = {
 
     };
-    
-    $scope.getSelectionSize = function(){
-        return Object.keys($scope.selection).length;
-    };
 
     $scope.add_drink = function (drink) {
         $scope.now_drink = drink;
+        //檢查一下
+        initialSelection();
         drinkmenu_modal.show();
     };
 
     function initialSelection() {
+        //預設選項
         $scope.cup = 'l';
         $scope.ice = '0';
         $scope.sugar = '0';
         $scope.number = '1';
+
+        //這邊要檢查一下 如果只有中杯就先幫他預選中杯
+        if ($scope.now_drink.price_m && !$scope.now_drink.price_l) {
+            $scope.cup = 'm';
+        }
+
+        if ($scope.now_drink.price_l && !$scope.now_drink.price_m) {
+            $scope.cup = 'l';
+        }
+
+        //如果是熱飲就只能選熱的
+        if ($scope.now_drink.onlyhot) {
+            $scope.ice = '4';
+        }
+
     }
 
     $scope.selectOver = function () {
 
         drinkmenu_modal.hide();
         var name = $scope.now_drink.name;
-               
+
         if (!$scope.selection[name]) {
             $scope.selection[name] = [];
         }
@@ -44,51 +58,64 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
                 break;
             }
         }
-        
+
         var price;
-        
-        if ($scope.cup === 'l'){
+
+        if ($scope.cup === 'l') {
             price = $scope.now_drink.price_l;
-        }else{
+        } else {
             price = $scope.now_drink.price_m;
         }
-        
         if (!find_same_drink) {
             var object_selection = {
                 cup: $scope.cup,
                 sugar: $scope.sugar,
                 ice: $scope.ice,
                 number: $scope.number,
-                price:price
+                price: price
             };
 
             $scope.selection[name].push(object_selection);
         }
+        
+        //統計按鈕顯示與否
+        $scope.caculateButton = true;
+    };
 
-        initialSelection();
-
-    }
-
+    
     $scope.deleteSelection = function (drink_name, select) {
         if (select.number === '1') {
             for (var i in $scope.selection[drink_name]) {
                 var data_select = $scope.selection[drink_name][i];
                 if (data_select.cup === select.cup && data_select.sugar === select.sugar && data_select.ice === select.ice) {
                     $scope.selection[drink_name].splice(i, 1);
-                    return;
+                    break;
                 }
+            }
+            if($scope.selection[drink_name].length === 0){
+                delete $scope.selection[drink_name];
             }
         } else {
             select.number = (parseInt(select.number) - 1).toString();
         }
-    }
+        
+        if(!Object.keys($scope.selection).length){
+            $scope.caculateButton = false;
+        }
+    };
 
     $scope.caculate = function () {
         service_drink.selection = $scope.selection;
         mainNavigator.pushPage('templates/drink_menu/caculate.html');
     }
 
-    initialSelection();
+    $scope.checkSelection = function () {
+        if (Object.keys($scope.selection).length) {
+            return true;
+        } else {
+            return false;
+        }
+    };
 
     $scope.gotoReport = function () {
         mainNavigator.pushPage('templates/report/report.html');

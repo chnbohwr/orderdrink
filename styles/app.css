@@ -297,7 +297,7 @@ input[type=password] {
 /*飲料的 dialog*/
 /* line 297, D:/Documents/orderdrink_front/styles/app.scss */
 .drink_menu_dialog {
-  height: 350px; }
+  height: 370px; }
 
 /* line 301, D:/Documents/orderdrink_front/styles/app.scss */
 .drink_menu_dialog .content {
@@ -336,10 +336,6 @@ input[type=password] {
   font-size: 14px; }
 
 /* line 339, D:/Documents/orderdrink_front/styles/app.scss */
-.lucent {
-  opacity: 0.4; }
-
-/* line 343, D:/Documents/orderdrink_front/styles/app.scss */
 .list__item.list__item--inset.note {
   padding-left: 44px;
   font-size: 14px;
@@ -348,7 +344,7 @@ input[type=password] {
 
 /*飲料的 dialog*/
 /*notification*/
-/* line 352, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 348, D:/Documents/orderdrink_front/styles/app.scss */
 .notify {
   position: relative;
   width: 90%;
@@ -360,7 +356,7 @@ input[type=password] {
   border-radius: 4px;
   height: 42px; }
 
-/* line 364, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 360, D:/Documents/orderdrink_front/styles/app.scss */
 .notify span {
   display: block;
   margin-left: 50px;
@@ -368,12 +364,12 @@ input[type=password] {
   margin-bottom: 4px;
   line-height: 13px; }
 
-/* line 372, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 368, D:/Documents/orderdrink_front/styles/app.scss */
 .notify span:nth-child(1) {
   font-weight: 700;
   font-size: 14px; }
 
-/* line 377, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 373, D:/Documents/orderdrink_front/styles/app.scss */
 .notify i {
   position: absolute;
   left: 0px;
@@ -385,14 +381,14 @@ input[type=password] {
   line-height: 50px;
   vertical-align: middle; }
 
-/* line 389, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 385, D:/Documents/orderdrink_front/styles/app.scss */
 .info {
   color: #004d7e;
   border: 1px solid #318eff;
   background: -moz-linear-gradient(top, #cae2ff, #97c6ff);
   background: linear-gradient(to bottom, #cae2ff, #97c6ff); }
 
-/* line 396, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 392, D:/Documents/orderdrink_front/styles/app.scss */
 .info i {
   background: #84b9f9;
   color: #003d65;
@@ -400,7 +396,7 @@ input[type=password] {
 
 /*notification*/
 /*edit profile*/
-/* line 404, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 400, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-card {
   width: 100%;
   text-align: center;
@@ -411,7 +407,7 @@ input[type=password] {
   text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
   position: relative; }
 
-/* line 415, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 411, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-image {
   height: 100px;
   width: 100px;
@@ -424,11 +420,11 @@ input[type=password] {
   margin: 0 auto;
   transition: .2s all; }
 
-/* line 428, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 424, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-image.loading {
   margin: 40px auto; }
 
-/* line 432, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 428, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-image.loading:after {
   content: '';
   background: trasparent;
@@ -455,13 +451,13 @@ input[type=password] {
   100% {
     -webkit-transform: rotateZ(360deg); } }
 
-/* line 465, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 461, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-label-avatar {
   display: block;
   width: 100%;
   height: 100%; }
 
-/* line 471, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 467, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-label-background {
   position: absolute;
   top: 0px;
@@ -470,11 +466,11 @@ input[type=password] {
   width: 50px;
   height: 50px; }
 
-/* line 480, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 476, D:/Documents/orderdrink_front/styles/app.scss */
 .background-icon {
   margin-top: 10px; }
 
-/* line 484, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 480, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-file {
   position: absolute;
   left: 0;
@@ -486,7 +482,7 @@ input[type=password] {
   height: 100%;
   visibility: hidden; }
 
-/* line 496, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 492, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-shadow {
   background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
   /* FF3.6+ */
@@ -507,7 +503,7 @@ input[type=password] {
   left: 0;
   bottom: 0; }
 
-/* line 525, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 521, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-name {
   margin: 20px 0 10px 0;
   font-weight: 600;
@@ -516,7 +512,7 @@ input[type=password] {
   position: relative;
   z-index: 5; }
 
-/* line 534, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 530, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-id {
   margin: 0 0 5px 0;
   font-size: 14px;
@@ -524,7 +520,7 @@ input[type=password] {
   position: relative;
   z-index: 6; }
 
-/* line 542, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 538, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-desc {
   font-size: 15px;
   opacity: 0.6;
@@ -532,31 +528,31 @@ input[type=password] {
   text-align: center;
   margin: 0 auto; }
 
-/* line 550, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 546, D:/Documents/orderdrink_front/styles/app.scss */
 .info-col {
   height: 60px;
   line-height: 1;
   padding: 12px 0 12px 4px; }
 
-/* line 556, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 552, D:/Documents/orderdrink_front/styles/app.scss */
 .info-num {
   font-size: 16px;
   font-weight: 500;
   opacity: 0.8; }
 
-/* line 562, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 558, D:/Documents/orderdrink_front/styles/app.scss */
 .info-unit {
   margin-top: 6px;
   font-size: 14px;
   opacity: 0.4; }
 
 /*edit profile*/
-/* line 570, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 566, D:/Documents/orderdrink_front/styles/app.scss */
 .rating {
   margin: 0;
   padding: 0;
   display: inline-block; }
-  /* line 574, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 570, D:/Documents/orderdrink_front/styles/app.scss */
   .rating li {
     padding: 1px;
     color: #ddd;
@@ -565,28 +561,40 @@ input[type=password] {
     list-style-type: none;
     display: inline-block;
     cursor: pointer; }
-    /* line 582, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 578, D:/Documents/orderdrink_front/styles/app.scss */
     .rating li.filled {
       color: #fd0; }
-  /* line 586, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 582, D:/Documents/orderdrink_front/styles/app.scss */
   .rating.readonly li.filled {
     color: #666; }
 
-/* line 591, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 587, D:/Documents/orderdrink_front/styles/app.scss */
 .reportsuccess {
   text-align: center;
   padding-top: 30px;
   width: 90%;
   margin-left: 5%;
   color: #78C0A8; }
-  /* line 597, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 593, D:/Documents/orderdrink_front/styles/app.scss */
   .reportsuccess i {
     font-size: 60px; }
-  /* line 600, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 596, D:/Documents/orderdrink_front/styles/app.scss */
   .reportsuccess h4 {
     margin: 5px; }
-  /* line 603, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 599, D:/Documents/orderdrink_front/styles/app.scss */
   .reportsuccess p {
     font-size: 14px; }
+
+/* line 605, D:/Documents/orderdrink_front/styles/app.scss */
+.caculate_item {
+  font-size: 14px;
+  font-weight: 600; }
+
+/* line 610, D:/Documents/orderdrink_front/styles/app.scss */
+.caculate_info {
+  font-size: 12px;
+  color: #777;
+  height: 30px;
+  line-height: 30px; }
 
 /*# sourceMappingURL=app.css.map */

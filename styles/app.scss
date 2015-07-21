@@ -295,7 +295,7 @@ input[type=password] {
 /*飲料的 dialog*/
 
 .drink_menu_dialog {
-    height: 350px;
+    height: 370px;
 }
 
 .drink_menu_dialog .content {
@@ -334,10 +334,6 @@ input[type=password] {
     right: 56px;
     top: 0px;
     font-size: 14px;
-}
-
-.lucent {
-    opacity: 0.4;
 }
 
 .list__item.list__item--inset.note {
@@ -603,4 +599,17 @@ input[type=password] {
     p {
         font-size: 14px;
     }
+}
+
+//統計業面
+.caculate_item {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.caculate_info {
+    font-size: 12px;
+    color: #777;
+    height: 30px;
+    line-height: 30px;
 }
