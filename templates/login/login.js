@@ -9,7 +9,7 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
 
     $scope.login = function () {
         if (!$scope.login_input.email || !$scope.login_input.password) {
-            alert('error, no email or password');
+            $scope.message = "請輸入正確的信箱以及密碼"
         } else {
             login();
         }
@@ -19,20 +19,19 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
      * @param {Type}
      */
     function login() {
+        
         $http.post(service_url.login, {
-            email: $scope.email,
-            password: $scope.password
+            email: $scope.login_input.email,
+            password: $scope.login_input.password
         }).success(loginSuccess).error(error);
 
-
-
-        function error(e) {
-            if (e.code === 1) {
-                $scope.message = '之前用臉書快速登入過的用戶請點下面快速登入就好';
-            } else if (e.code === 0) {
-                $scope.message = '是不是有輸入帳號密碼錯誤阿? 要不要再檢查看看';
+        function error(data,status) {
+            if (status === 402) {
+                $scope.message = '登入錯誤';
+            } else if (status === 401) {
+                $scope.message = '登入錯誤';
             } else {
-                $scope.message = '反正就是登入錯誤，要不要先確認一下網路有沒有問題?';
+                $scope.message = '登入錯誤';
             }
         }
     }
