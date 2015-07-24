@@ -1,29 +1,27 @@
 <!--test-->
 <ons-page ng-controller="login">
 
-    <div class="login-form">
-        <h1>Order Drink</h1>
-<!--
-        <input type="text" class="text-input--underbar" placeholder="Email" value="" ng-model="login_input.email">
-        <input type="password" class="text-input--underbar" placeholder="密碼" value="" ng-model="login_input.password">
-        <div class="lucent">
-            <p class="note signup_note">{{message}}</p>
-        </div>
-        <br>
-        <br>
-        <ons-button modifier="large" class="login-button" ng-click="login()">登入</ons-button>
-        <br>
--->
 
-        <ons-button modifier="large" class="login-button" ng-click="facebooklogin()" ng-disabled="!fb_init">
-            <img style="float: left;margin-top: 2px;" src="img/fb_icon.png">Facebook 快速登入
-        </ons-button>
-<!--
-        <br>
-        <br>
-        <ons-button modifier="quiet" class="forgot-password" ng-click="signup()">註冊帳號</ons-button>
-        <ons-button modifier="quiet" class="forgot-password" ng-click="term()">服務條款 Terms of Service</ons-button>
-        <ons-button modifier="quiet" class="forgot-password" ng-click="privacy()">隱私權 Privacy Policy</ons-button>
--->
+    <div class="login-card">
+        <h1>Order Drink</h1>
+        <p>快速找你周遭的飲料店，超方便的統計功能讓你馬上統計身旁朋友想喝的飲料，趕快登入打電話去叫外送吧!</p>
+        
+        <form>
+            <input type="email" name="user" placeholder="Email" ng-model="login_input.email">
+            <input type="password" name="pass" placeholder="密碼" ng-model="login_input.password">
+            <button class="button button--large"  ng-click="login()" >登入</button>
+        </form>
+
+        <div class="login-help">
+            <div class="info-message" ng-bind="message"></div>
+            <button ng-click="signup()">註冊</button>
+        </div>
+        
+        <div class="facebook" >
+        <button ng-click="facebooklogin()" ng-disabled="!fb_init"></button>
+            <p>試試看facebook快速登入吧，免註冊，一鍵登入!</p>
+        </div>
+        
     </div>
+
 </ons-page>

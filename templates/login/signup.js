@@ -49,10 +49,10 @@ drinkapp.controller('signup', function ($scope, $http, service_url) {
         //看是否要顯示教學或是開啟推送功能
     }
 
-    function errorReg(data) {
-        if(data.code === 2){
+    function errorReg(data,status) {
+        if(status === 403){
             $scope.message = "你之前有註冊過了喔"
-        }else if (data.code === 1){
+        }else if (status === 402){
             $scope.message = "你之前有用臉書快速註冊過了，所以以後用臉書快速登入就好了"
         }else{
             $scope.message = "總之你註冊失敗了，可是我也不知道原因，先確定網路有沒有正常吧"

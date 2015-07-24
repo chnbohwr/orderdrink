@@ -5,7 +5,7 @@
         </div>
         <div class="center">菜單</div>
         <div class="right">
-            <ons-toolbar-button ng-click="caculate()" ng-if="getSelectionSize() > 0">統計</ons-toolbar-button>
+            <ons-toolbar-button ng-click="caculate()" ng-if="caculateButton">統計</ons-toolbar-button>
         </div>
     </ons-toolbar>
 
@@ -19,7 +19,8 @@
         <ons-list-header>{{type.name}}</ons-list-header>
         <ons-list-item class="drink-item" ng-repeat="drink in type.items" modifier="tappable">
             {{drink.name}}
-            <span class="list-item-note lucent">中杯:{{drink.price_m}} 大杯:{{drink.price_l}}</span>
+            <span class="list-item-note lucent" ><span ng-if="drink.price_m">中杯:{{drink.price_m}}</span> <span ng-if="drink.price_l">大杯:{{drink.price_l}}</span></span>
+            
             <span class="list-item-action">
                 <ons-icon ng-click="add_drink(drink)" icon="ion-plus-circled" size="30px">
                 </ons-icon>
@@ -34,7 +35,6 @@
     </ons-list>
 
     <div>{{message}}</div>
-
 
     <ons-modal var="drinkmenu_modal">
         <div class="dialog drink_menu_dialog">
@@ -94,19 +94,19 @@
                             <input type="radio" name="sugar" ng-model="sugar" value="0">
                             <button class="button-bar__button">正常</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
+                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="1">
                             <button class="button-bar__button">少糖</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
+                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="2">
                             <button class="button-bar__button">半糖</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
+                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="3">
                             <button class="button-bar__button">微糖</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.static_sugar">
+                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
                             <input type="radio" name="sugar" ng-model="sugar" value="4">
                             <button class="button-bar__button">無糖</button>
                         </div>
@@ -114,19 +114,19 @@
 
                     <div>冰塊</div>
                     <div class="button-bar">
-                        <div class="button-bar__item">
+                        <div class="button-bar__item" ng-hide="now_drink.onlyhot">
                             <input type="radio" name="ice" ng-model="ice" value="0">
                             <button class="button-bar__button">正常</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item"  ng-hide="now_drink.onlyhot">
                             <input type="radio" name="ice" ng-model="ice" value="1">
                             <button class="button-bar__button">少冰</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item"  ng-hide="now_drink.onlyhot">
                             <input type="radio" name="ice" ng-model="ice" value="2">
                             <button class="button-bar__button">去冰</button>
                         </div>
-                        <div class="button-bar__item">
+                        <div class="button-bar__item"  ng-hide="now_drink.onlyhot">
                             <input type="radio" name="ice" ng-model="ice" value="3">
                             <button class="button-bar__button">常溫</button>
                         </div>
