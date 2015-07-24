@@ -655,7 +655,7 @@ textarea,
       position: absolute;
       top: 5px;
       left: 5px;
-      z-index: 2; }
+      z-index: 1; }
     /* line 641, /Users/young/orderdrink/www/styles/app.scss */
     .near_page .card .card-image #googlemap {
       height: 100%;
@@ -675,7 +675,7 @@ textarea,
     border-radius: 0 0 2px 2px;
     position: relative; }
     /* line 659, /Users/young/orderdrink/www/styles/app.scss */
-    .near_page .card .card-avatar .avatar {
+    .near_page .card .card-avatar > .avatar {
       position: absolute;
       border-radius: 50%;
       height: 64px;
@@ -687,14 +687,14 @@ textarea,
       background-repeat: no-repeat;
       background-position: center; }
     /* line 669, /Users/young/orderdrink/www/styles/app.scss */
-    .near_page .card .card-avatar .card-title {
+    .near_page .card .card-avatar > .card-title {
       font-size: 24px;
       line-height: 30px;
       margin: 0px;
       letter-spacing: 1px;
       font-weight: 900; }
     /* line 676, /Users/young/orderdrink/www/styles/app.scss */
-    .near_page .card .card-avatar p {
+    .near_page .card .card-avatar > p {
       margin: 0;
       line-height: 18px;
       font-size: 18px; }

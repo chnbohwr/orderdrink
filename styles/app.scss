@@ -636,7 +636,7 @@ textarea,
                 position: absolute;
                 top: 5px;
                 left: 5px;
-                z-index: 2;
+                z-index: 1;
             }
             #googlemap {
                 height: 100%;
@@ -656,7 +656,7 @@ textarea,
             padding: 20px 48px 20px 84px;
             border-radius: 0 0 2px 2px;
             position: relative;
-            .avatar {
+            >.avatar {
                 position: absolute;
                 border-radius: 50%;
                 height: 64px;
@@ -666,14 +666,14 @@ textarea,
                 top: calc(50% - 32px);
                 @include backgroundCover();
             }
-            .card-title {
+            >.card-title {
                 font-size: 24px;
                 line-height: 30px;
                 margin: 0px;
                 letter-spacing: 1px;
                 font-weight: 900;
             }
-            p {
+            >p {
                 margin: 0;
                 line-height: 18px;
                 font-size: 18px;
