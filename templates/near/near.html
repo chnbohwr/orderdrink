@@ -26,7 +26,7 @@
         <div class="card-footer">
             <div class="card-avatar waves-effect waves-block">
                 <div class="avatar" rn-lazy-background="shopAvatar(nowShop.company_id)"></div>
-                <span class="card-title activator grey-text text-darken-4" ng-bind="(nowShop.company_name + nowShop.name) || '選擇附近的飲料店'"></span>
+                <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.name || '選擇附近的飲料店'"></span>
                 <p ng-bind="nowShop.address"></p>
                 <i class="ion-ios-arrow-up"></i>
             </div>
@@ -35,7 +35,7 @@
             <div class="card-header">
                 <div class="card-avatar waves-effect waves-block">
                     <div class="avatar" rn-lazy-background="shopAvatar(nowShop.company_id)"></div>
-                    <span class="card-title activator grey-text text-darken-4" ng-bind="(nowShop.company_name + nowShop.name) || '選擇附近的飲料店'"></span>
+                    <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.name|| '選擇附近的飲料店'"></span>
                     <p ng-bind="nowShop.address"></p>
                     <i class="ion-ios-close-empty"></i>
                 </div>

@@ -65,14 +65,6 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         });
     }
 
-    $scope.gotoStore = function () {
-        mainNavigator.pushPage('templates/store/store.html');
-    };
-
-    $scope.gotoSetting = function () {
-        mainNavigator.pushPage('templates/setting/setting.html');
-    };
-
     $scope.distance = function (shop) {
         var lat1 = shop.lat;
         var lng1 = shop.lng;
@@ -117,7 +109,25 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     $scope.gotoStore = function () {
         service_drink.now_shop = $scope.nowShop;
-        mainNavigator.pushPage('templates/store/store.html');
+        $timeout(function(){
+            mainNavigator.pushPage('templates/store/store.html');
+        },310);
+       
+    };
+    
+    $scope.lookMenu = function () {
+        service_drink.now_shop = $scope.nowShop;
+        $timeout(function(){
+            mainNavigator.pushPage('templates/drink_menu/drinkmenu.html');
+        },310);
+    }
+
+    $scope.callShop = function () {
+        window.location.href = "tel://" + $scope.nowShop.phone;
+    }
+    
+    $scope.gotoSetting = function () {
+        mainNavigator.pushPage('templates/setting/setting.html');
     };
 
     //only fire once when login 
@@ -131,14 +141,6 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         'width': '100%'
     };
 
-    $scope.lookMenu = function () {
-        service_drink.now_shop = $scope.nowShop;
-        mainNavigator.pushPage('templates/drink_menu/drinkmenu.html');
-    }
-
-    $scope.callShop = function () {
-        window.location.href = "tel://" + $scope.nowShop.phone;
-    }
 
     //收到重新整理店家的 BROADCAST
     $scope.$on('refreshShop', getShopList);

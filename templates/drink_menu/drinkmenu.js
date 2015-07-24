@@ -1,4 +1,4 @@
-drinkapp.controller('drinkmenu', function ($scope, service_drink) {
+drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
 
     service_drink.getShopMenu().then(function () {
         $scope.menu = service_drink.now_shop_menu;
@@ -77,12 +77,12 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
 
             $scope.selection[name].push(object_selection);
         }
-        
+
         //統計按鈕顯示與否
         $scope.caculateButton = true;
     };
 
-    
+
     $scope.deleteSelection = function (drink_name, select) {
         if (select.number === '1') {
             for (var i in $scope.selection[drink_name]) {
@@ -92,14 +92,14 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
                     break;
                 }
             }
-            if($scope.selection[drink_name].length === 0){
+            if ($scope.selection[drink_name].length === 0) {
                 delete $scope.selection[drink_name];
             }
         } else {
             select.number = (parseInt(select.number) - 1).toString();
         }
-        
-        if(!Object.keys($scope.selection).length){
+
+        if (!Object.keys($scope.selection).length) {
             $scope.caculateButton = false;
         }
     };
@@ -118,7 +118,9 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink) {
     };
 
     $scope.gotoReport = function () {
-        mainNavigator.pushPage('templates/report/report.html');
+        $timeout(function () {
+            mainNavigator.pushPage('templates/report/report.html');
+        }, 300);
     };
 
     window.scope_drinkmenu = $scope;
