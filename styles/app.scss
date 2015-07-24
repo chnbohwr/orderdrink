@@ -1,25 +1,30 @@
+@mixin backgroundCover() {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 input,
 textarea,
 [contenteditable] {
     -webkit-user-select: text;
     user-select: text;
 }
+
 /*hack for onsen checkbox input*/
 
 .checkbox > input[type="checkbox"] {
     visibility: hidden;
 }
-
 .noti_all {
     font-size: 14px;
     margin: 10px;
 }
-
 .noti_all_red {
     font-size: 14px;
     margin: 10px;
     color: #e2613c;
 }
+
 /*登入頁面*/
 
 .login-form {
@@ -27,7 +32,6 @@ textarea,
     width: 80%;
     margin: 60px auto 0;
 }
-
 input[type=email],
 input[type=text],
 input[type=password] {
@@ -38,62 +42,60 @@ input[type=password] {
     padding-top: 24px;
     padding-bottom: 24px;
 }
-
 .login-button {
     width: 100%;
     margin: 0 auto;
 }
-
 .forgot-password {
     display: block;
     margin: 8px auto 0 auto;
     font-size: 14px;
 }
+
 /*登入頁面*/
+
+
 /*註冊頁面*/
 
 .form-row {
     margin: 4px;
 }
-
 .width-full {
     width: 100%;
 }
-
 .lucent {
     opacity: 0.4;
 }
-
 .note {
     margin: 12px 8px;
     font-size: 13px;
 }
-
 .vspc {
     margin-top: 20px;
 }
-
 .formarea {
     width: 90%;
     margin: 50px auto 0px auto;
 }
-
 .signup_note {
     color: #e2613c;
 }
+
 /*註冊頁面*/
+
+
 /*附近搜巡頁面*/
 
 .near_map {
     width: 100%;
     height: 240px;
 }
-
 .near_buttons {
     position: absolute;
     top: 5px;
     left: 5px;
 }
+
 /*
 .near_list {
     position: absolute;
@@ -113,6 +115,7 @@ input[type=password] {
 .near_item_active {
     background-color: #ddd;
 }
+
 /*
 .near_button {
     position: fixed;
@@ -128,23 +131,19 @@ input[type=password] {
     font-size: 14px;
     padding: 15px 0px 15px 15px;
 }
-
 .list-item-left {
     width: 60px;
     margin-right: -60px;
     float: left;
 }
-
 .list-item-right {
     width: 100%;
     float: right;
 }
-
 .list-item-content {
     margin-left: 50px;
     margin-right: 30px;
 }
-
 .avator {
     width: 40px;
     height: 40px;
@@ -152,40 +151,37 @@ input[type=password] {
     box-shadow: 0px 0px 7px -2px rgba(0, 0, 0, 0.75);
     background-color: rgba(0, 0, 0, .3);
 }
-
 .name {
     font-weight: 500;
     line-height: 16px;
     font-size: 15px;
     margin-bottom: 6px;
 }
-
 .desc {
     line-height: 16px;
 }
+
 /*附近搜巡頁面*/
+
+
 /*飲料店的頁面*/
 
 .store-button-bar.store-button-bar {
     width: 90%;
     margin: 10px 0 10px 5%;
 }
-
 .store-carousel {
     width: 100%;
     height: 500px;
 }
-
 .timeline {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
 .timeline-li {
     line-height: 1;
     padding: 10px;
 }
-
 .timeline-image {
     width: 40px;
     height: 40px;
@@ -195,40 +191,37 @@ input[type=password] {
     background-repeat: no-repeat;
     border: none
 }
-
 .timeline-date {
     float: right;
     font-size: 12px;
     opacity: 0.35;
 }
-
 .timeline-from {
     margin: 10px 0 6px 0;
 }
-
 .timline-from p {
     margin: 7px 0px 0px 0px;
     font-size: 10px;
     color: #e26444;
 }
-
 .timeline-name {
     font-size: 15px;
     font-weight: 500;
 }
-
 .timeline-id {
     font-size: 14px;
     opacity: 0.4;
 }
-
 .timeline-message {
     margin-top: 4px;
     font-size: 14px;
     opacity: 0.8;
     line-height: 1.15;
 }
+
 /*飲料店的頁面*/
+
+
 /*飲料店評論*/
 
 .to-wrapper {
@@ -236,7 +229,6 @@ input[type=password] {
     height: 62px;
     padding: 10px;
 }
-
 .to-image {
     width: 42px;
     height: 42px;
@@ -244,36 +236,33 @@ input[type=password] {
     -webkit-border-radius: 4px;
     background-color: #ccc;
 }
-
 .to-name {
     font-weight: 500;
     font-size: 17px;
     margin-bottom: 4px;
 }
-
 .to-email {
     font-size: 14px;
     opacity: 0.4;
 }
-
 .text-input {
     margin-top: 4px;
 }
-
 .textarea {
     margin-top: 4px;
 }
+
 /*飲料店評論*/
+
+
 /*設定頁面*/
 
 .profile-wrapper {
     padding: 16px 10px 0 10px;
 }
-
 .profile-image-wrapper {
     width: 60px;
 }
-
 .profile-image {
     width: 50px;
     height: 50px;
@@ -281,34 +270,32 @@ input[type=password] {
     -webkit-border-radius: 4px;
     border: inset 1px rgba(0, 0, 0, 0.3);
 }
-
 .profile-name {
     font-size: 18px;
     padding: 4px 0 2px 0;
 }
-
 .profile-des {
     font-size: 15px;
     opacity: 0.4;
 }
+
 /*設定頁面*/
+
+
 /*飲料的 dialog*/
 
 .drink_menu_dialog {
     height: 350px;
 }
-
 .drink_menu_dialog .content {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
 }
-
 .drink_menu_dialog .content .button-bar {
     width: 100%;
     margin-bottom: 15px;
 }
-
 .list-item-action {
     position: absolute;
     right: 10px;
@@ -316,9 +303,7 @@ input[type=password] {
     font-size: 20px;
     opacity: 0.3;
 }
-
 .list-item-action > ons-icon {}
-
 .list-item-deleteicon {
     position: absolute;
     left: 0px;
@@ -328,25 +313,25 @@ input[type=password] {
     text-align: center;
     height: 44px;
 }
-
 .list-item-note {
     position: absolute;
     right: 56px;
     top: 0px;
     font-size: 14px;
 }
-
 .lucent {
     opacity: 0.4;
 }
-
 .list__item.list__item--inset.note {
     padding-left: 44px;
     font-size: 14px;
     opacity: .7;
     margin: 0 8px;
 }
+
 /*飲料的 dialog*/
+
+
 /*notification*/
 
 .notify {
@@ -360,7 +345,6 @@ input[type=password] {
     border-radius: 4px;
     height: 42px;
 }
-
 .notify span {
     display: block;
     margin-left: 50px;
@@ -368,12 +352,10 @@ input[type=password] {
     margin-bottom: 4px;
     line-height: 13px;
 }
-
 .notify span:nth-child(1) {
     font-weight: 700;
     font-size: 14px;
 }
-
 .notify i {
     position: absolute;
     left: 0px;
@@ -385,20 +367,21 @@ input[type=password] {
     line-height: 50px;
     vertical-align: middle;
 }
-
 .info {
     color: #004d7e;
     border: 1px solid #318eff;
     background: -moz-linear-gradient(top, #cae2ff, #97c6ff);
     background: linear-gradient(to bottom, #cae2ff, #97c6ff);
 }
-
 .info i {
     background: #84b9f9;
     color: #003d65;
     text-shadow: 0px 1px 1px #fdfeff;
 }
+
 /*notification*/
+
+
 /*edit profile*/
 
 .eprofile-card {
@@ -411,7 +394,6 @@ input[type=password] {
     text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
     position: relative;
 }
-
 .eprofile-image {
     height: 100px;
     width: 100px;
@@ -424,11 +406,9 @@ input[type=password] {
     margin: 0 auto;
     transition: .2s all;
 }
-
 .eprofile-image.loading {
     margin: 40px auto;
 }
-
 .eprofile-image.loading:after {
     content: '';
     background: trasparent;
@@ -443,7 +423,6 @@ input[type=password] {
     animation: rotate 2s infinite linear;
     -webkit-animation: rotate 2s infinite linear;
 }
-
 @keyframes rotate {
     0% {
         transform: rotateZ(0deg);
@@ -452,7 +431,6 @@ input[type=password] {
         transform: rotateZ(360deg);
     }
 }
-
 @-webkit-keyframes rotate {
     0% {
         -webkit-transform: rotateZ(0deg);
@@ -461,13 +439,11 @@ input[type=password] {
         -webkit-transform: rotateZ(360deg);
     }
 }
-
 .eprofile-label-avatar {
     display: block;
     width: 100%;
     height: 100%;
 }
-
 .eprofile-label-background {
     position: absolute;
     top: 0px;
@@ -476,11 +452,9 @@ input[type=password] {
     width: 50px;
     height: 50px;
 }
-
 .background-icon {
     margin-top: 10px;
 }
-
 .eprofile-file {
     position: absolute;
     left: 0;
@@ -492,36 +466,27 @@ input[type=password] {
     height: 100%;
     visibility: hidden;
 }
-
 .eprofile-shadow {
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* FF3.6+ */
-    
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
     /* Chrome,Safari4+ */
-    
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* Chrome10+,Safari5.1+ */
-    
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* Opera 11.10+ */
-    
     background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* IE10+ */
-    
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* W3C */
-    
     //    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
     /* IE6-9 */
-    
     position: absolute;
     width: 100%;
     height: 100px;
     left: 0;
     bottom: 0;
 }
-
 .eprofile-name {
     margin: 20px 0 10px 0;
     font-weight: 600;
@@ -530,7 +495,6 @@ input[type=password] {
     position: relative;
     z-index: 5;
 }
-
 .eprofile-id {
     margin: 0 0 5px 0;
     font-size: 14px;
@@ -538,7 +502,6 @@ input[type=password] {
     position: relative;
     z-index: 6;
 }
-
 .eprofile-desc {
     font-size: 15px;
     opacity: 0.6;
@@ -546,24 +509,22 @@ input[type=password] {
     text-align: center;
     margin: 0 auto;
 }
-
 .info-col {
     height: 60px;
     line-height: 1;
     padding: 12px 0 12px 4px;
 }
-
 .info-num {
     font-size: 16px;
     font-weight: 500;
     opacity: 0.8;
 }
-
 .info-unit {
     margin-top: 6px;
     font-size: 14px;
     opacity: 0.4;
 }
+
 /*edit profile*/
 
 //推薦的星星
@@ -587,7 +548,6 @@ input[type=password] {
         color: #666;
     }
 }
-
 .reportsuccess {
     text-align: center;
     padding-top: 30px;
@@ -602,5 +562,116 @@ input[type=password] {
     }
     p {
         font-size: 14px;
+    }
+}
+.near_page {
+    .card {
+        height: 100%;
+        position: relative;
+        display: block;
+        .card-image {
+            height: calc(100% - 136px);
+            #googlemap {
+                height: 100%;
+                width: 100%;
+            }
+            .near-fab {
+                position: absolute;
+                width: 56px;
+                top: 10px;
+                left: 10px;
+                .btn-floating {
+                    @include backgroundCover();
+                }
+                ul {
+                    top: 80px;
+                    left: 0px;
+                    width: 100%;
+                    text-align: center;
+                }
+                li {
+                    .btn-floating {
+                        margin: 0 auto;
+                        @include backgroundCover();
+                    }
+                }
+            }
+        }
+    }
+    .card-action {
+        padding: 0px;
+        box-shadow: 1px 2px 3px #aaa;
+        margin: 0px;
+        .col {
+            padding: 0px;
+        }
+        .btn {
+            width: 100%;
+            background-color: transparent;
+            color: #595757;
+            box-shadow: none;
+        }
+    }
+    .card-avatar {
+        padding: 20px 20px 20px 84px;
+        border-radius: 0 0 2px 2px;
+        position: relative;
+        .avatar {
+            position: absolute;
+            border-radius: 50%;
+            height: 64px;
+            width: 64px;
+            left: 12px;
+            background-color: #595757;
+            top: calc(50% - 32px);
+        }
+        .card-title {
+            font-size: 24px;
+            line-height: 30px;
+            margin: 0px;
+            letter-spacing: 1px;
+            font-weight: 900;
+        }
+        p {
+            margin: 0
+        }
+    }
+    .card-reveal {
+        padding: 0px;
+        .list-item-container {
+            line-height: 1;
+            font-size: 14px;
+            padding: 15px 0px 15px 15px;
+            .list-item-left {
+                width: 60px;
+                margin-right: -60px;
+                float: left;
+                .avatar {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+            .list-item-right {
+                width: 100%;
+                float: right;
+                .list-item-content {
+                    margin-left: 50px;
+                    margin-right: 30px;
+                    .name {
+                        font-weight: 500;
+                        line-height: 16px;
+                        font-size: 15px;
+                        margin-bottom: 6px;
+                    }
+                    .desc {
+                        line-height: 16px;
+                    }
+                    .lucent {
+                        opacity: 0.4;
+                    }
+                }
+            }
+        }
     }
 }
