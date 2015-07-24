@@ -62,7 +62,6 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     function getShopList() {
         service_drink.getShops(lat, lng).then(function () {
             $scope.shopList = service_drink.shopList;
-            $scope.nowShop = $scope.shopList[0];
         });
     }
 
