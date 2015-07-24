@@ -32,11 +32,13 @@
             </div>
         </div>
         <div class="card-reveal">
-            <div class="card-avatar waves-effect waves-block">
-                <div class="avatar" rn-lazy-background="shopAvatar(shop.company_id)"></div>
-                <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.company_name + nowShop.name"></span>
-                <p ng-bind="nowShop.address"></p>
-                <i class="ion-ios-close-empty"></i>
+            <div class="card-header">
+                <div class="card-avatar waves-effect waves-block">
+                    <div class="avatar" rn-lazy-background="shopAvatar(shop.company_id)"></div>
+                    <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.company_name + nowShop.name"></span>
+                    <p ng-bind="nowShop.address"></p>
+                    <i class="ion-ios-close-empty"></i>
+                </div>
             </div>
             <ons-scroller>
                 <ons-list>
