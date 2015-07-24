@@ -654,6 +654,7 @@ textarea,
                 left: 12px;
                 background-color: #595757;
                 top: calc(50% - 32px);
+                @include backgroundCover();
             }
             .card-title {
                 font-size: 24px;
@@ -680,6 +681,7 @@ textarea,
                         width: 40px;
                         height: 40px;
                         border-radius: 50%;
+                        @include backgroundCover();
                     }
                 }
                 .list-item-right {
