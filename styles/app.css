@@ -658,7 +658,7 @@ textarea,
       z-index: 1; }
       /* line 637, D:/Documents/orderdrink_front/styles/app.scss */
       .near_page .card .card-image .near_buttons button {
-        max-width: 30%; }
+        padding: 0 10px; }
     /* line 641, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-image #googlemap {
       height: 100%;
