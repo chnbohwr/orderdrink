@@ -664,15 +664,17 @@ textarea,
   .near_page .card .card-footer {
     position: absolute;
     bottom: 0px;
+    left: 0;
+    width: 100%;
     background-color: #fff;
     opacity: 0.8; }
-  /* line 652, /Users/young/orderdrink/www/styles/app.scss */
+  /* line 654, /Users/young/orderdrink/www/styles/app.scss */
   .near_page .card .card-avatar {
     min-height: 96px;
     padding: 20px 20px 20px 84px;
     border-radius: 0 0 2px 2px;
     position: relative; }
-    /* line 657, /Users/young/orderdrink/www/styles/app.scss */
+    /* line 659, /Users/young/orderdrink/www/styles/app.scss */
     .near_page .card .card-avatar .avatar {
       position: absolute;
       border-radius: 50%;
@@ -684,32 +686,32 @@ textarea,
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center; }
-    /* line 667, /Users/young/orderdrink/www/styles/app.scss */
+    /* line 669, /Users/young/orderdrink/www/styles/app.scss */
     .near_page .card .card-avatar .card-title {
       font-size: 22px;
       line-height: 30px;
       margin: 0px;
       letter-spacing: 1px;
       font-weight: 900; }
-    /* line 674, /Users/young/orderdrink/www/styles/app.scss */
+    /* line 676, /Users/young/orderdrink/www/styles/app.scss */
     .near_page .card .card-avatar p {
       margin: 0;
       line-height: 18px;
       font-size: 16px; }
-  /* line 680, /Users/young/orderdrink/www/styles/app.scss */
+  /* line 682, /Users/young/orderdrink/www/styles/app.scss */
   .near_page .card .card-reveal {
     padding: 0px; }
-    /* line 682, /Users/young/orderdrink/www/styles/app.scss */
+    /* line 684, /Users/young/orderdrink/www/styles/app.scss */
     .near_page .card .card-reveal .list-item-container {
       line-height: 1;
       font-size: 14px;
       padding: 15px 0px 15px 15px; }
-      /* line 686, /Users/young/orderdrink/www/styles/app.scss */
+      /* line 688, /Users/young/orderdrink/www/styles/app.scss */
       .near_page .card .card-reveal .list-item-container .list-item-left {
         width: 60px;
         margin-right: -60px;
         float: left; }
-        /* line 690, /Users/young/orderdrink/www/styles/app.scss */
+        /* line 692, /Users/young/orderdrink/www/styles/app.scss */
         .near_page .card .card-reveal .list-item-container .list-item-left .avatar {
           width: 40px;
           height: 40px;
@@ -717,33 +719,33 @@ textarea,
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center; }
-      /* line 697, /Users/young/orderdrink/www/styles/app.scss */
+      /* line 699, /Users/young/orderdrink/www/styles/app.scss */
       .near_page .card .card-reveal .list-item-container .list-item-right {
         width: 100%;
         float: right; }
-        /* line 700, /Users/young/orderdrink/www/styles/app.scss */
+        /* line 702, /Users/young/orderdrink/www/styles/app.scss */
         .near_page .card .card-reveal .list-item-container .list-item-right .list-item-content {
           margin-left: 50px;
           margin-right: 30px; }
-          /* line 703, /Users/young/orderdrink/www/styles/app.scss */
+          /* line 705, /Users/young/orderdrink/www/styles/app.scss */
           .near_page .card .card-reveal .list-item-container .list-item-right .list-item-content .name {
             font-weight: 500;
             line-height: 16px;
             font-size: 15px;
             margin-bottom: 6px; }
-          /* line 709, /Users/young/orderdrink/www/styles/app.scss */
+          /* line 711, /Users/young/orderdrink/www/styles/app.scss */
           .near_page .card .card-reveal .list-item-container .list-item-right .list-item-content .desc {
             line-height: 16px; }
-          /* line 712, /Users/young/orderdrink/www/styles/app.scss */
+          /* line 714, /Users/young/orderdrink/www/styles/app.scss */
           .near_page .card .card-reveal .list-item-container .list-item-right .list-item-content .lucent {
             opacity: 0.4; }
 
-/* line 721, /Users/young/orderdrink/www/styles/app.scss */
+/* line 723, /Users/young/orderdrink/www/styles/app.scss */
 .caculate_item {
   font-size: 14px;
   font-weight: 600; }
 
-/* line 725, /Users/young/orderdrink/www/styles/app.scss */
+/* line 727, /Users/young/orderdrink/www/styles/app.scss */
 .caculate_info {
   font-size: 12px;
   color: #777;
