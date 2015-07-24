@@ -175,11 +175,6 @@ textarea,
     width: 100%;
     height: 240px;
 }
-.near_buttons {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-}
 .near_item_active {
     background-color: #ddd;
 }
@@ -635,31 +630,15 @@ textarea,
         position: relative;
         display: block;
         .card-image {
-            height: calc(100% - 136px);
+            height: calc(100% - 96px);
+            .near_buttons {
+                position: absolute;
+                top: 5px;
+                left: 5px;
+            }
             #googlemap {
                 height: 100%;
                 width: 100%;
-            }
-            .near-fab {
-                position: absolute;
-                width: 56px;
-                top: 10px;
-                left: 10px;
-                .btn-floating {
-                    @include backgroundCover();
-                }
-                ul {
-                    top: 80px;
-                    left: 0px;
-                    width: 100%;
-                    text-align: center;
-                }
-                li {
-                    .btn-floating {
-                        margin: 0 auto;
-                        @include backgroundCover();
-                    }
-                }
             }
         }
         .card-avatar {
