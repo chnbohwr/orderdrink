@@ -36,8 +36,8 @@
             <i class="material-icons ion-chevron-up right"></i></span>
                 <p ng-bind="nowShop.address"></p>
             </div>
-            <ons-scroller ng-style="style">
-                <ons-list class="near_list">
+            <ons-scroller>
+                <ons-list>
                     <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="shop in shopList" ng-click="clickShop(shop)" ng-class="{'near_item_active':nowShop_id === shop.id}">
                         <div class="list-item-left">
                             <div back-img="{{shopAvatar(shop.company_id)}}" local="true" class="avator"></div>
