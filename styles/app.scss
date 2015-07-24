@@ -705,9 +705,10 @@ textarea,
                 background-color: #fff;
                 top: 0px;
                 position: absolute;
+                box-shadow: 1px 2px 3px #aaa;
             }
             .ons-scroller {
-                margin-top: 96px;
+                padding-top: 120px;
                 .list-item-container {
                     line-height: 1;
                     font-size: 14px;
