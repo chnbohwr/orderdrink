@@ -32,28 +32,27 @@
             </div>
         </div>
         <div class="card-reveal">
-            <div class="card-header">
-                <div class="card-avatar waves-effect waves-block">
-                    <div class="avatar" rn-lazy-background="shopAvatar(nowShop.company_id)"></div>
-                    <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.name|| '選擇附近的飲料店'"></span>
-                    <p ng-bind="nowShop.address"></p>
-                    <i class="ion-ios-close-empty"></i>
-                </div>
-            </div>
+
             <ons-scroller>
                 <ons-list>
+                    <div class="card-header">
+                        <div class="card-avatar waves-effect waves-block">
+                            <div class="avatar" rn-lazy-background="shopAvatar(nowShop.company_id)"></div>
+                            <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.name|| '選擇附近的飲料店'"></span>
+                            <p ng-bind="nowShop.address"></p>
+                            <i class="ion-ios-close-empty"></i>
+                        </div>
+                    </div>
                     <ons-list-item modifier="chevron" class="list-item-container waves-effect waves-block" ng-repeat="shop in shopList" ng-click="clickShop(shop)" ng-class="{'near_item_active':nowShop_id === shop.id}">
-                        <div class="list-item-left">
-                            <div back-img="{{shopAvatar(shop.company_id)}}" local="true" class="avator"></div>
+
+                        <div class="avatar" back-img="{{shopAvatar(shop.company_id)}}" local="true"></div>
+
+                        <div class="name">{{shop.company_name + shop.name}}
+                            <span class="location">{{distance(shop)}}</span>
                         </div>
-                        <div class="list-item-right">
-                            <div class="list-item-content">
-                                <div class="name">{{shop.company_name + shop.name}}
-                                    <span class="lucent">{{distance(shop)}}km</span>
-                                </div>
-                                <div class="desc">{{shop.address}}</div>
-                            </div>
-                        </div>
+                        <div class="desc">{{shop.address}}</div>
+
+
                     </ons-list-item>
                 </ons-list>
             </ons-scroller>

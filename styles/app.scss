@@ -1,31 +1,39 @@
+$gray10:#F5F5F5;
+$gray20:#EEEEEE;
+$gray30:#E0E0E0;
+$gray40:#BDBDBD;
+$gray50:#9E9E9E;
+$gray60:#757575;
+$gray70:#616161;
+$gray80:#424242;
+$gray90:#212121;
 @mixin backgroundCover() {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
-
 input,
 textarea,
 [contenteditable] {
     -webkit-user-select: text;
     user-select: text;
 }
+
 /*hack for onsen checkbox input*/
 
 .checkbox > input[type="checkbox"] {
     visibility: hidden;
 }
-
 .noti_all {
     font-size: 14px;
     margin: 10px;
 }
-
 .noti_all_red {
     font-size: 14px;
     margin: 10px;
     color: #e2613c;
 }
+
 /*登入頁面*/
 
 .login-card {
@@ -60,7 +68,6 @@ textarea,
             border: 1px solid #d9d9d9;
             border-top: 1px solid #c0c0c0;
             /* border-radius: 2px; */
-            
             padding: 0 8px;
             box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -135,49 +142,49 @@ textarea,
         }
     }
 }
+
 /*登入頁面*/
+
+
 /*註冊頁面*/
 
 .form-row {
     margin: 4px;
 }
-
 .width-full {
     width: 100%;
 }
-
 .lucent {
     opacity: 0.4;
 }
-
 .note {
     margin: 12px 8px;
     font-size: 13px;
 }
-
 .vspc {
     margin-top: 20px;
 }
-
 .formarea {
     width: 90%;
     margin: 50px auto 0px auto;
 }
-
 .signup_note {
     color: #e2613c;
 }
+
 /*註冊頁面*/
+
+
 /*附近搜巡頁面*/
 
 .near_map {
     width: 100%;
     height: 240px;
 }
-
 .near_item_active {
     background-color: #ddd;
 }
+
 /*
 .near_button {
     position: fixed;
@@ -193,23 +200,19 @@ textarea,
     font-size: 14px;
     padding: 15px 0px 15px 15px;
 }
-
 .list-item-left {
     width: 60px;
     margin-right: -60px;
     float: left;
 }
-
 .list-item-right {
     width: 100%;
     float: right;
 }
-
 .list-item-content {
     margin-left: 50px;
     margin-right: 30px;
 }
-
 .avator {
     width: 40px;
     height: 40px;
@@ -217,40 +220,37 @@ textarea,
     box-shadow: 0px 0px 7px -2px rgba(0, 0, 0, 0.75);
     background-color: rgba(0, 0, 0, .3);
 }
-
 .name {
     font-weight: 500;
     line-height: 16px;
     font-size: 15px;
     margin-bottom: 6px;
 }
-
 .desc {
     line-height: 16px;
 }
+
 /*附近搜巡頁面*/
+
+
 /*飲料店的頁面*/
 
 .store-button-bar.store-button-bar {
     width: 90%;
     margin: 10px 0 10px 5%;
 }
-
 .store-carousel {
     width: 100%;
     height: 500px;
 }
-
 .timeline {
     margin-top: 10px;
     margin-bottom: 10px;
 }
-
 .timeline-li {
     line-height: 1;
     padding: 10px;
 }
-
 .timeline-image {
     width: 40px;
     height: 40px;
@@ -260,40 +260,37 @@ textarea,
     background-repeat: no-repeat;
     border: none
 }
-
 .timeline-date {
     float: right;
     font-size: 12px;
     opacity: 0.35;
 }
-
 .timeline-from {
     margin: 10px 0 6px 0;
 }
-
 .timline-from p {
     margin: 7px 0px 0px 0px;
     font-size: 10px;
     color: #e26444;
 }
-
 .timeline-name {
     font-size: 15px;
     font-weight: 500;
 }
-
 .timeline-id {
     font-size: 14px;
     opacity: 0.4;
 }
-
 .timeline-message {
     margin-top: 4px;
     font-size: 14px;
     opacity: 0.8;
     line-height: 1.15;
 }
+
 /*飲料店的頁面*/
+
+
 /*飲料店評論*/
 
 .to-wrapper {
@@ -301,7 +298,6 @@ textarea,
     height: 62px;
     padding: 10px;
 }
-
 .to-image {
     width: 42px;
     height: 42px;
@@ -309,36 +305,33 @@ textarea,
     -webkit-border-radius: 4px;
     background-color: #ccc;
 }
-
 .to-name {
     font-weight: 500;
     font-size: 17px;
     margin-bottom: 4px;
 }
-
 .to-email {
     font-size: 14px;
     opacity: 0.4;
 }
-
 .text-input {
     margin-top: 4px;
 }
-
 .textarea {
     margin-top: 4px;
 }
+
 /*飲料店評論*/
+
+
 /*設定頁面*/
 
 .profile-wrapper {
     padding: 16px 10px 0 10px;
 }
-
 .profile-image-wrapper {
     width: 60px;
 }
-
 .profile-image {
     width: 50px;
     height: 50px;
@@ -346,34 +339,32 @@ textarea,
     -webkit-border-radius: 4px;
     border: inset 1px rgba(0, 0, 0, 0.3);
 }
-
 .profile-name {
     font-size: 18px;
     padding: 4px 0 2px 0;
 }
-
 .profile-des {
     font-size: 15px;
     opacity: 0.4;
 }
+
 /*設定頁面*/
+
+
 /*飲料的 dialog*/
 
 .drink_menu_dialog {
     height: 370px;
 }
-
 .drink_menu_dialog .content {
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
 }
-
 .drink_menu_dialog .content .button-bar {
     width: 100%;
     margin-bottom: 15px;
 }
-
 .list-item-action {
     position: absolute;
     right: 10px;
@@ -381,9 +372,7 @@ textarea,
     font-size: 20px;
     opacity: 0.3;
 }
-
 .list-item-action > ons-icon {}
-
 .list-item-deleteicon {
     position: absolute;
     left: 0px;
@@ -393,21 +382,22 @@ textarea,
     text-align: center;
     height: 44px;
 }
-
 .list-item-note {
     position: absolute;
     right: 56px;
     top: 0px;
     font-size: 14px;
 }
-
 .list__item.list__item--inset.note {
     padding-left: 44px;
     font-size: 14px;
     opacity: .7;
     margin: 0 8px;
 }
+
 /*飲料的 dialog*/
+
+
 /*notification*/
 
 .notify-info {
@@ -436,7 +426,6 @@ textarea,
         position: absolute;
         left: 0px;
         /* top: 0px; */
-        
         bottom: -3px;
         width: 40px;
         height: 40px;
@@ -444,7 +433,6 @@ textarea,
         line-height: 44px;
         text-align: center;
         /* line-height: 50px; */
-        
         vertical-align: middle;
         background: #84b9f9;
         color: white;
@@ -452,7 +440,10 @@ textarea,
         /* text-shadow: 0px 1px 1px #fdfeff; */
     }
 }
+
 /*notification*/
+
+
 /*edit profile*/
 
 .eprofile-card {
@@ -465,7 +456,6 @@ textarea,
     text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
     position: relative;
 }
-
 .eprofile-image {
     height: 100px;
     width: 100px;
@@ -478,11 +468,9 @@ textarea,
     margin: 0 auto;
     transition: .2s all;
 }
-
 .eprofile-image.loading {
     margin: 40px auto;
 }
-
 .eprofile-image.loading:after {
     content: '';
     background: trasparent;
@@ -497,7 +485,6 @@ textarea,
     animation: rotate 2s infinite linear;
     -webkit-animation: rotate 2s infinite linear;
 }
-
 @keyframes rotate {
     0% {
         transform: rotateZ(0deg);
@@ -506,7 +493,6 @@ textarea,
         transform: rotateZ(360deg);
     }
 }
-
 @-webkit-keyframes rotate {
     0% {
         -webkit-transform: rotateZ(0deg);
@@ -515,13 +501,11 @@ textarea,
         -webkit-transform: rotateZ(360deg);
     }
 }
-
 .eprofile-label-avatar {
     display: block;
     width: 100%;
     height: 100%;
 }
-
 .eprofile-label-background {
     position: absolute;
     top: 0px;
@@ -530,11 +514,9 @@ textarea,
     width: 50px;
     height: 50px;
 }
-
 .background-icon {
     margin-top: 10px;
 }
-
 .eprofile-file {
     position: absolute;
     left: 0;
@@ -546,36 +528,27 @@ textarea,
     height: 100%;
     visibility: hidden;
 }
-
 .eprofile-shadow {
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* FF3.6+ */
-    
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
     /* Chrome,Safari4+ */
-    
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* Chrome10+,Safari5.1+ */
-    
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* Opera 11.10+ */
-    
     background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* IE10+ */
-    
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* W3C */
-    
     //    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
     /* IE6-9 */
-    
     position: absolute;
     width: 100%;
     height: 100px;
     left: 0;
     bottom: 0;
 }
-
 .eprofile-name {
     margin: 20px 0 10px 0;
     font-weight: 600;
@@ -584,7 +557,6 @@ textarea,
     position: relative;
     z-index: 5;
 }
-
 .eprofile-id {
     margin: 0 0 5px 0;
     font-size: 14px;
@@ -592,7 +564,6 @@ textarea,
     position: relative;
     z-index: 6;
 }
-
 .eprofile-desc {
     font-size: 15px;
     opacity: 0.6;
@@ -600,24 +571,22 @@ textarea,
     text-align: center;
     margin: 0 auto;
 }
-
 .info-col {
     height: 60px;
     line-height: 1;
     padding: 12px 0 12px 4px;
 }
-
 .info-num {
     font-size: 16px;
     font-weight: 500;
     opacity: 0.8;
 }
-
 .info-unit {
     margin-top: 6px;
     font-size: 14px;
     opacity: 0.4;
 }
+
 /*edit profile*/
 
 //推薦的星星
@@ -641,7 +610,6 @@ textarea,
         color: #666;
     }
 }
-
 .reportsuccess {
     text-align: center;
     padding-top: 30px;
@@ -658,7 +626,6 @@ textarea,
         font-size: 14px;
     }
 }
-
 .near_page {
     .card {
         height: 100%;
@@ -690,11 +657,7 @@ textarea,
             opacity: 0.8;
         }
         .card-avatar {
-            min-height: 96px;
-            padding: 20px 48px 20px 84px;
-            border-radius: 0 0 2px 2px;
-            position: relative;
-            height: 120px;
+            padding: 28px 48px 28px 84px;
             .avatar {
                 position: absolute;
                 border-radius: 50%;
@@ -713,8 +676,7 @@ textarea,
                 font-weight: 900;
             }
             p {
-                margin: 0;
-                line-height: 18px;
+                margin: 6px 0 0 0;
                 font-size: 18px;
             }
             i {
@@ -738,49 +700,51 @@ textarea,
         }
         .card-reveal {
             padding: 0px;
+            height: 100%;
+            overflow: hidden;
             .card-header {
-                left: 0px;
-                width: 100%;
+                position: relative;
+                display: block;
+                height: 100%;
                 background-color: #fff;
-                top: 0px;
-                position: absolute;
-                box-shadow: 1px 2px 3px #eee;
+                height: 120px;
+                -webkit-item-aligin: center;
+                .card-avatar {
+                    width: 100%;
+                    position: fixed;
+                    display: block;
+                    background-color: #fff;
+                    z-index: 2;
+                }
             }
             .ons-scroller {
-                padding-top: 120px;
+                height: 100%;
+                padding: 0px;
                 .list-item-container {
-                    line-height: 1;
-                    font-size: 14px;
-                    padding: 15px 0px 15px 15px;
-                    .list-item-left {
-                        width: 60px;
-                        margin-right: -60px;
-                        float: left;
-                        .avatar {
-                            width: 40px;
-                            height: 40px;
-                            border-radius: 50%;
-                            @include backgroundCover();
-                        }
+                    padding: 18px 0px 18px 64px;
+                    .avatar {
+                        position: absolute;
+                        left: 12px;
+                        top: calc(50% - 24px);
+                        width: 48px;
+                        height: 48px;
+                        border-radius: 50%;
+                        @include backgroundCover();
                     }
-                    .list-item-right {
-                        width: 100%;
-                        float: right;
-                        .list-item-content {
-                            margin-left: 50px;
-                            margin-right: 30px;
-                            .name {
-                                font-weight: 500;
-                                line-height: 16px;
-                                font-size: 15px;
-                                margin-bottom: 6px;
-                            }
-                            .desc {
-                                line-height: 16px;
-                            }
-                            .lucent {
-                                opacity: 0.4;
-                            }
+                    .name {
+                        font-weight: 900;
+                        line-height: 16px;
+                        font-size: 18px;
+                    }
+                    .desc {
+                        margin: 6px 0 0 0;
+                        line-height: 16px;
+                        font-size: 14px;
+                    }
+                    .location {
+                        color: $gray60;
+                        &:after {
+                            content: 'km'
                         }
                     }
                 }
@@ -788,12 +752,10 @@ textarea,
         }
     }
 }
-
 .caculate_item {
     font-size: 14px;
     font-weight: 600;
 }
-
 .caculate_info {
     font-size: 12px;
     color: #777;
