@@ -4,6 +4,10 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     var lat, lng, position;
     //設定google路徑服務的api
     var directionsService, directionsDisplay;
+    $scope.card_open = false;
+    $scope.toggleCard = function () {
+        $scope.card_open = !$scope.card_open;
+    };
 
     $scope.initialMap = function () {
         //if no google map 
@@ -109,23 +113,23 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     $scope.gotoStore = function () {
         service_drink.now_shop = $scope.nowShop;
-        $timeout(function(){
+        $timeout(function () {
             mainNavigator.pushPage('templates/store/store.html');
-        },310);
-       
+        }, 310);
+
     };
-    
+
     $scope.lookMenu = function () {
         service_drink.now_shop = $scope.nowShop;
-        $timeout(function(){
+        $timeout(function () {
             mainNavigator.pushPage('templates/drink_menu/drinkmenu.html');
-        },310);
+        }, 310);
     }
 
     $scope.callShop = function () {
         window.location.href = "tel://" + $scope.nowShop.phone;
     }
-    
+
     $scope.gotoSetting = function () {
         mainNavigator.pushPage('templates/setting/setting.html');
     };

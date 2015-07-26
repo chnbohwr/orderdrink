@@ -23,27 +23,26 @@
             </div>
             <div id="googlemap" class="near_map"></div>
         </div>
-        <div class="card-footer">
+        <div class="card-footer" ng-click="toggleCard()">
             <div class="card-avatar waves-effect waves-block">
                 <div class="avatar" rn-lazy-background="shopAvatar(nowShop.company_id)"></div>
-                <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.name || '選擇附近的飲料店'"></span>
+                <span class="title" ng-bind="nowShop.name || '選擇附近的飲料店'"></span>
                 <p ng-bind="nowShop.address"></p>
                 <i class="ion-ios-arrow-up"></i>
             </div>
         </div>
-        <div class="card-reveal">
-
+        <div class="card-reveal" ng-class="{'active':card_open}">
             <ons-scroller>
                 <ons-list>
-                    <div class="card-header">
+                    <div class="card-header" ng-click="toggleCard()">
                         <div class="card-avatar waves-effect waves-block">
                             <div class="avatar" rn-lazy-background="shopAvatar(nowShop.company_id)"></div>
-                            <span class="card-title activator grey-text text-darken-4" ng-bind="nowShop.name|| '選擇附近的飲料店'"></span>
+                            <span class="title" ng-bind="nowShop.name|| '選擇附近的飲料店'"></span>
                             <p ng-bind="nowShop.address"></p>
                             <i class="ion-ios-close-empty"></i>
                         </div>
                     </div>
-                    <ons-list-item modifier="chevron" class="list-item-container waves-effect waves-block" ng-repeat="shop in shopList" ng-click="clickShop(shop)" ng-class="{'near_item_active':nowShop_id === shop.id}">
+                    <ons-list-item modifier="chevron" class="list-item-container waves-effect waves-block" ng-repeat="shop in shopList" ng-click="clickShop(shop); toggleCard()" ng-class="{'near_item_active':nowShop_id === shop.id}">
 
                         <div class="avatar" back-img="{{shopAvatar(shop.company_id)}}" local="true"></div>
 

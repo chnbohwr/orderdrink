@@ -7,6 +7,45 @@ $gray60:#757575;
 $gray70:#616161;
 $gray80:#424242;
 $gray90:#212121;
+$cubic:cubic-bezier(0.4, 0, 0.2, 1);
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -ms-transform: $transition;
+    transition: $transition;
+}
+@mixin transform($transform...) {
+    -moz-transform: $transform;
+    -o-transform: $transform;
+    -webkit-transform: $transform;
+    -ms-transform: $transform;
+    transform: $transform;
+}
+@mixin animation($animation...) {
+    -moz-animation: $animation;
+    -o-animation: $animation;
+    -webkit-animation: $animation;
+    -ms-animation: $animation;
+    animation: $animation;
+}
+@mixin filter($filter...) {
+    -moz-filter: $filter;
+    -o-filter: $filter;
+    -webkit-filter: $filter;
+    -ms-filter: $filter;
+    filter: $filter;
+}
+@mixin backgroundCover() {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@mixin backgroundContain() {
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 @mixin backgroundCover() {
     background-size: cover;
     background-repeat: no-repeat;
@@ -653,11 +692,10 @@ textarea,
             bottom: 0px;
             left: 0;
             width: 100%;
-            background-color: #fff;
-            opacity: 0.8;
+            background-color: rgba(255, 255, 255, 0.8);
         }
         .card-avatar {
-            padding: 28px 48px 28px 84px;
+            padding: 18px 48px 18px 84px;
             .avatar {
                 position: absolute;
                 border-radius: 50%;
@@ -668,7 +706,7 @@ textarea,
                 top: calc(50% - 32px);
                 @include backgroundCover();
             }
-            .card-title {
+            .title {
                 font-size: 24px;
                 line-height: 30px;
                 margin: 0px;
@@ -702,16 +740,24 @@ textarea,
             padding: 0px;
             height: 100%;
             overflow: hidden;
+            display: block;
+            @include transition(all .3s $cubic);
+            visibility: hidden;
+            z-index: -1;
+            &.active {
+                z-index: 1;
+                visibility: visible;
+                @include transition(all .3s $cubic);
+                @include transform(translateY(-100%));
+            }
             .card-header {
-                position: relative;
-                display: block;
-                height: 100%;
-                background-color: #fff;
-                height: 120px;
-                -webkit-item-aligin: center;
+                width: 100%;
+                height: 100px;
                 .card-avatar {
+                    padding: 28px 48px 28px 84px;
                     width: 100%;
                     position: fixed;
+                    top: 0px;
                     display: block;
                     background-color: #fff;
                     z-index: 2;
@@ -721,7 +767,7 @@ textarea,
                 height: 100%;
                 padding: 0px;
                 .list-item-container {
-                    padding: 18px 0px 18px 64px;
+                    padding: 18px 0px 18px 74px;
                     .avatar {
                         position: absolute;
                         left: 12px;
@@ -743,6 +789,8 @@ textarea,
                     }
                     .location {
                         color: $gray60;
+                        font-size: 12px;
+                        margin-left: 6px;
                         &:after {
                             content: 'km'
                         }
