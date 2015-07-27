@@ -757,7 +757,7 @@ textarea,
                 .card-avatar {
                     padding: 28px 48px 28px 84px;
                     width: 100%;
-                    position: fixed;
+//旭:iphone不會把element好好的fixed在上面會壞掉，所以拿掉fixed   position: fixed;
                     top: 0px;
                     display: block;
                     background-color: #fff;
