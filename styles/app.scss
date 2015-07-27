@@ -716,6 +716,7 @@ textarea,
             p {
                 margin: 6px 0 0 0;
                 font-size: 18px;
+                line-height: 18px;
             }
             i {
                 display: -webkit-box;
@@ -742,17 +743,17 @@ textarea,
             overflow: hidden;
             display: block;
             @include transition(all .3s $cubic);
-            visibility: hidden;
+            //            visibility: hidden;
             z-index: -1;
             &.active {
                 z-index: 1;
-                visibility: visible;
+                //                visibility: visible;
                 @include transition(all .3s $cubic);
                 @include transform(translateY(-100%));
             }
             .card-header {
                 width: 100%;
-                height: 100px;
+                height: 120px;
                 .card-avatar {
                     padding: 28px 48px 28px 84px;
                     width: 100%;
