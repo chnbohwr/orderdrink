@@ -21,25 +21,18 @@
             目前還沒有評論，要分享你喜歡的飲料或是消費經驗給大家嗎?
         </ons-list-item>
         <ons-list-item class="timeline-li" modifier="tappable" ng-repeat="c in comments">
-            <ons-row>
-                <ons-col width="50px">
-                    <div od-user="c.user_id" type="avatar" class="timeline-image"></div>
-                </ons-col>
+            <div class="comment_card">
+                <div class="comment_card_layout_left">
+                    <div od-user="c.user_id" type="avatar" class="comment_avatar"></div>
+                    <div od-user="c.user_id" type="name" class="comment_name"></div>
+                </div>
+                <div class="comment_card_layout_right">
+                    <star-rating ng-model="c.star" readonly="true"></star-rating>
+                    <div class="comment_time" am-time-ago="c.createdAt"></div>
+                    <div ng-bind="c.message" class="comment_message"></div>
+                </div>
 
-                <ons-col>
-                    <div class="timeline-date" am-time-ago="c.createdAt"></div>
-                    <div class="timline-from">
-                        <span class="timeline-name" od-user="c.user_id" type="name">某位評論者</span>
-                        <!--                        <span class="timeline-id">{{c.star}}</span>-->
-                        <p>{{c.star}}顆星</p>
-                    </div>
-
-                    <div class="timeline-message">
-
-                        {{c.message}}
-                    </div>
-                </ons-col>
-            </ons-row>
+            </div>
         </ons-list-item>
     </ons-list>
 

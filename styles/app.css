@@ -1,5 +1,5 @@
 @charset "UTF-8";
-/* line 56, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 60, D:/Documents/orderdrink_front/styles/app.scss */
 input,
 textarea,
 [contenteditable] {
@@ -7,44 +7,44 @@ textarea,
   user-select: text; }
 
 /*hack for onsen checkbox input*/
-/* line 63, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 66, D:/Documents/orderdrink_front/styles/app.scss */
 .checkbox > input[type="checkbox"] {
   visibility: hidden; }
 
-/* line 66, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 70, D:/Documents/orderdrink_front/styles/app.scss */
 .noti_all {
   font-size: 14px;
   margin: 10px; }
 
-/* line 70, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 75, D:/Documents/orderdrink_front/styles/app.scss */
 .noti_all_red {
   font-size: 14px;
   margin: 10px;
   color: #e2613c; }
 
 /*登入頁面*/
-/* line 78, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 82, D:/Documents/orderdrink_front/styles/app.scss */
 .login-card {
   padding: 10px;
   width: 280px;
   margin: 0 auto 10px;
   overflow: hidden; }
-  /* line 83, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 87, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card h1 {
     font-weight: 100;
     text-align: center;
     font-size: 2em; }
-  /* line 88, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 92, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card p {
     font-size: 14px;
     color: #555; }
-  /* line 93, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 97, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card input[type=submit] {
     width: 100%;
     display: block;
     margin-bottom: 10px;
     position: relative; }
-  /* line 100, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 104, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card input[type=email],
   .login-card input[type=password] {
     height: 44px;
@@ -59,7 +59,7 @@ textarea,
     padding: 0 8px;
     box-sizing: border-box;
     -moz-box-sizing: border-box; }
-  /* line 115, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 120, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card input[type=email]:hover,
   .login-card input[type=password]:hover {
     border: 1px solid #b9b9b9;
@@ -67,20 +67,20 @@ textarea,
     -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1); }
-  /* line 123, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 128, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card .login {
     text-align: center;
     font-size: 16px;
     line-height: 40px;
     height: 40px;
     padding: 0 8px; }
-  /* line 130, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 135, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card .login-help {
     width: 100%;
     text-align: right;
     font-size: 14px;
     margin-top: 10px; }
-    /* line 135, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 140, D:/Documents/orderdrink_front/styles/app.scss */
     .login-card .login-help button {
       text-decoration: none;
       color: #666;
@@ -93,18 +93,18 @@ textarea,
       background-color: transparent;
       height: 30px;
       width: 80px; }
-    /* line 148, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 153, D:/Documents/orderdrink_front/styles/app.scss */
     .login-card .login-help .info-message {
       float: left;
       height: 30px;
       line-height: 30px;
       color: #e2613b; }
-  /* line 155, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 160, D:/Documents/orderdrink_front/styles/app.scss */
   .login-card .facebook {
     width: 100%;
     height: 40px;
     margin-top: 20px; }
-    /* line 159, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 164, D:/Documents/orderdrink_front/styles/app.scss */
     .login-card .facebook button {
       float: left;
       width: 40px;
@@ -117,10 +117,10 @@ textarea,
       border: none;
       border-radius: 20px;
       background-size: 23px; }
-      /* line 171, D:/Documents/orderdrink_front/styles/app.scss */
+      /* line 176, D:/Documents/orderdrink_front/styles/app.scss */
       .login-card .facebook button:active {
         opacity: .5; }
-    /* line 175, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 180, D:/Documents/orderdrink_front/styles/app.scss */
     .login-card .facebook p {
       height: 40px;
       margin: 0;
@@ -130,44 +130,44 @@ textarea,
 
 /*登入頁面*/
 /*註冊頁面*/
-/* line 190, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 192, D:/Documents/orderdrink_front/styles/app.scss */
 .form-row {
   margin: 4px; }
 
-/* line 193, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 196, D:/Documents/orderdrink_front/styles/app.scss */
 .width-full {
   width: 100%; }
 
-/* line 196, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 200, D:/Documents/orderdrink_front/styles/app.scss */
 .lucent {
   opacity: 0.4; }
 
-/* line 199, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 204, D:/Documents/orderdrink_front/styles/app.scss */
 .note {
   margin: 12px 8px;
   font-size: 13px; }
 
-/* line 203, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 209, D:/Documents/orderdrink_front/styles/app.scss */
 .vspc {
   margin-top: 20px; }
 
-/* line 206, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 213, D:/Documents/orderdrink_front/styles/app.scss */
 .formarea {
   width: 90%;
   margin: 50px auto 0px auto; }
 
-/* line 210, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 218, D:/Documents/orderdrink_front/styles/app.scss */
 .signup_note {
   color: #e2613c; }
 
 /*註冊頁面*/
 /*附近搜巡頁面*/
-/* line 219, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 224, D:/Documents/orderdrink_front/styles/app.scss */
 .near_map {
   width: 100%;
   height: 240px; }
 
-/* line 223, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 229, D:/Documents/orderdrink_front/styles/app.scss */
 .near_item_active {
   background-color: #ddd; }
 
@@ -180,29 +180,29 @@ textarea,
     transition: .5s all;
 }
 */
-/* line 237, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 242, D:/Documents/orderdrink_front/styles/app.scss */
 .list-item-container.list-item-container {
   line-height: 1;
   font-size: 14px;
   padding: 15px 0px 15px 15px; }
 
-/* line 242, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 248, D:/Documents/orderdrink_front/styles/app.scss */
 .list-item-left {
   width: 60px;
   margin-right: -60px;
   float: left; }
 
-/* line 247, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 254, D:/Documents/orderdrink_front/styles/app.scss */
 .list-item-right {
   width: 100%;
   float: right; }
 
-/* line 251, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 259, D:/Documents/orderdrink_front/styles/app.scss */
 .list-item-content {
   margin-left: 50px;
   margin-right: 30px; }
 
-/* line 255, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 264, D:/Documents/orderdrink_front/styles/app.scss */
 .avator {
   width: 40px;
   height: 40px;
@@ -210,91 +210,101 @@ textarea,
   box-shadow: 0px 0px 7px -2px rgba(0, 0, 0, 0.75);
   background-color: rgba(0, 0, 0, 0.3); }
 
-/* line 262, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 272, D:/Documents/orderdrink_front/styles/app.scss */
 .name {
   font-weight: 500;
   line-height: 16px;
   font-size: 15px;
   margin-bottom: 6px; }
 
-/* line 268, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 279, D:/Documents/orderdrink_front/styles/app.scss */
 .desc {
   line-height: 16px; }
 
 /*附近搜巡頁面*/
 /*飲料店的頁面*/
-/* line 277, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 285, D:/Documents/orderdrink_front/styles/app.scss */
 .store-button-bar.store-button-bar {
   width: 90%;
   margin: 10px 0 10px 5%; }
 
-/* line 281, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 290, D:/Documents/orderdrink_front/styles/app.scss */
 .store-carousel {
   width: 100%;
   height: 500px; }
 
-/* line 285, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline {
-  margin-top: 10px;
-  margin-bottom: 10px; }
-
-/* line 289, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline-li {
-  line-height: 1;
-  padding: 10px; }
-
-/* line 293, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline-image {
-  width: 40px;
-  height: 40px;
-  border-radius: 4px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: none; }
-
-/* line 302, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline-date {
-  float: right;
-  font-size: 12px;
-  opacity: 0.35; }
-
-/* line 307, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline-from {
-  margin: 10px 0 6px 0; }
-
-/* line 310, D:/Documents/orderdrink_front/styles/app.scss */
-.timline-from p {
-  margin: 7px 0px 0px 0px;
-  font-size: 10px;
-  color: #e26444; }
-
-/* line 315, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline-name {
-  font-size: 15px;
-  font-weight: 500; }
-
-/* line 319, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline-id {
-  font-size: 14px;
-  opacity: 0.4; }
-
-/* line 323, D:/Documents/orderdrink_front/styles/app.scss */
-.timeline-message {
-  margin-top: 4px;
-  font-size: 14px;
-  opacity: 0.8;
-  line-height: 1.15; }
-
 /*飲料店的頁面*/
+/*飲料店的頁面下方評論*/
+/* line 297, D:/Documents/orderdrink_front/styles/app.scss */
+.comment_card {
+  padding: 5px 0;
+  margin: 10px 0;
+  min-height: 80px; }
+  /* line 301, D:/Documents/orderdrink_front/styles/app.scss */
+  .comment_card .comment_card_layout_left {
+    width: 70px;
+    float: left;
+    height: 70px;
+    overflow: hidden; }
+    /* line 306, D:/Documents/orderdrink_front/styles/app.scss */
+    .comment_card .comment_card_layout_left .comment_avatar {
+      width: 50px;
+      height: 50px;
+      background-position: center;
+      background-size: cover;
+      border-radius: 40px;
+      /* text-align: center; */
+      margin: 0 auto; }
+    /* line 316, D:/Documents/orderdrink_front/styles/app.scss */
+    .comment_card .comment_card_layout_left .comment_name {
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      font-size: 14px; }
+  /* line 323, D:/Documents/orderdrink_front/styles/app.scss */
+  .comment_card .comment_card_layout_right {
+    position: relative; }
+    /* line 325, D:/Documents/orderdrink_front/styles/app.scss */
+    .comment_card .comment_card_layout_right .comment_message {
+      line-height: 18px;
+      font-size: 14px;
+      color: #777;
+      word-wrap: break-word;
+      white-space: pre-wrap;
+      text-overflow: ellipsis;
+      padding-left: 70px;
+      box-sizing: border-box;
+      padding-top: 25px; }
+    /* line 336, D:/Documents/orderdrink_front/styles/app.scss */
+    .comment_card .comment_card_layout_right star-rating {
+      position: absolute;
+      top: 0;
+      left: 70px;
+      line-height: 0; }
+      /* line 341, D:/Documents/orderdrink_front/styles/app.scss */
+      .comment_card .comment_card_layout_right star-rating ul {
+        height: 20px;
+        line-height: 20px;
+        font-size: 10px; }
+    /* line 347, D:/Documents/orderdrink_front/styles/app.scss */
+    .comment_card .comment_card_layout_right .comment_time {
+      position: absolute;
+      top: 0px;
+      right: 0;
+      font-size: 10px;
+      color: #aaa;
+      line-height: 20px;
+      height: 20px; }
+
+/*飲料店的頁面下方評論*/
 /*飲料店評論*/
-/* line 335, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 361, D:/Documents/orderdrink_front/styles/app.scss */
 .to-wrapper {
   line-height: 1;
   height: 62px;
   padding: 10px; }
 
-/* line 340, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 367, D:/Documents/orderdrink_front/styles/app.scss */
 .to-image {
   width: 42px;
   height: 42px;
@@ -302,36 +312,36 @@ textarea,
   -webkit-border-radius: 4px;
   background-color: #ccc; }
 
-/* line 347, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 375, D:/Documents/orderdrink_front/styles/app.scss */
 .to-name {
   font-weight: 500;
   font-size: 17px;
   margin-bottom: 4px; }
 
-/* line 352, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 381, D:/Documents/orderdrink_front/styles/app.scss */
 .to-email {
   font-size: 14px;
   opacity: 0.4; }
 
-/* line 356, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 386, D:/Documents/orderdrink_front/styles/app.scss */
 .text-input {
   margin-top: 4px; }
 
-/* line 359, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 390, D:/Documents/orderdrink_front/styles/app.scss */
 .textarea {
   margin-top: 4px; }
 
 /*飲料店評論*/
 /*設定頁面*/
-/* line 368, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 396, D:/Documents/orderdrink_front/styles/app.scss */
 .profile-wrapper {
   padding: 16px 10px 0 10px; }
 
-/* line 371, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 400, D:/Documents/orderdrink_front/styles/app.scss */
 .profile-image-wrapper {
   width: 60px; }
 
-/* line 374, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 404, D:/Documents/orderdrink_front/styles/app.scss */
 .profile-image {
   width: 50px;
   height: 50px;
@@ -339,34 +349,34 @@ textarea,
   -webkit-border-radius: 4px;
   border: inset 1px rgba(0, 0, 0, 0.3); }
 
-/* line 381, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 412, D:/Documents/orderdrink_front/styles/app.scss */
 .profile-name {
   font-size: 18px;
   padding: 4px 0 2px 0; }
 
-/* line 385, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 417, D:/Documents/orderdrink_front/styles/app.scss */
 .profile-des {
   font-size: 15px;
   opacity: 0.4; }
 
 /*設定頁面*/
 /*飲料的 dialog*/
-/* line 395, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 424, D:/Documents/orderdrink_front/styles/app.scss */
 .drink_menu_dialog {
   height: 370px; }
 
-/* line 398, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 428, D:/Documents/orderdrink_front/styles/app.scss */
 .drink_menu_dialog .content {
   width: 100%;
   padding: 10px;
   box-sizing: border-box; }
 
-/* line 403, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 434, D:/Documents/orderdrink_front/styles/app.scss */
 .drink_menu_dialog .content .button-bar {
   width: 100%;
   margin-bottom: 15px; }
 
-/* line 407, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 439, D:/Documents/orderdrink_front/styles/app.scss */
 .list-item-action {
   position: absolute;
   right: 10px;
@@ -374,7 +384,7 @@ textarea,
   font-size: 20px;
   opacity: 0.3; }
 
-/* line 415, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 449, D:/Documents/orderdrink_front/styles/app.scss */
 .list-item-deleteicon {
   position: absolute;
   left: 0px;
@@ -384,14 +394,14 @@ textarea,
   text-align: center;
   height: 44px; }
 
-/* line 424, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 459, D:/Documents/orderdrink_front/styles/app.scss */
 .list-item-note {
   position: absolute;
   right: 56px;
   top: 0px;
   font-size: 14px; }
 
-/* line 430, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 466, D:/Documents/orderdrink_front/styles/app.scss */
 .list__item.list__item--inset.note {
   padding-left: 44px;
   font-size: 14px;
@@ -400,7 +410,7 @@ textarea,
 
 /*飲料的 dialog*/
 /*notification*/
-/* line 442, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 475, D:/Documents/orderdrink_front/styles/app.scss */
 .notify-info {
   position: relative;
   width: 90%;
@@ -411,7 +421,7 @@ textarea,
   -webkit-border-radius: 4px;
   border-radius: 4px;
   height: 42px; }
-  /* line 452, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 485, D:/Documents/orderdrink_front/styles/app.scss */
   .notify-info span {
     display: block;
     margin-left: 50px;
@@ -419,11 +429,11 @@ textarea,
     margin-bottom: 4px;
     line-height: 13px;
     color: #aaa; }
-    /* line 459, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 492, D:/Documents/orderdrink_front/styles/app.scss */
     .notify-info span:nth-child(1) {
       font-size: 14px;
       color: #333; }
-  /* line 464, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 497, D:/Documents/orderdrink_front/styles/app.scss */
   .notify-info i {
     position: absolute;
     left: 0px;
@@ -443,7 +453,7 @@ textarea,
 
 /*notification*/
 /*edit profile*/
-/* line 488, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 520, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-card {
   width: 100%;
   text-align: center;
@@ -454,7 +464,7 @@ textarea,
   text-shadow: rgba(0, 0, 0, 0.4) 0px 1px 0px;
   position: relative; }
 
-/* line 498, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 531, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-image {
   height: 100px;
   width: 100px;
@@ -467,11 +477,11 @@ textarea,
   margin: 0 auto;
   transition: .2s all; }
 
-/* line 510, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 544, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-image.loading {
   margin: 40px auto; }
 
-/* line 513, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 548, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-image.loading:after {
   content: '';
   background: trasparent;
@@ -498,13 +508,13 @@ textarea,
   100% {
     -webkit-transform: rotateZ(360deg); } }
 
-/* line 543, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 581, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-label-avatar {
   display: block;
   width: 100%;
   height: 100%; }
 
-/* line 548, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 587, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-label-background {
   position: absolute;
   top: 0px;
@@ -513,11 +523,11 @@ textarea,
   width: 50px;
   height: 50px; }
 
-/* line 556, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 596, D:/Documents/orderdrink_front/styles/app.scss */
 .background-icon {
   margin-top: 10px; }
 
-/* line 559, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 600, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-file {
   position: absolute;
   left: 0;
@@ -529,7 +539,7 @@ textarea,
   height: 100%;
   visibility: hidden; }
 
-/* line 570, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 612, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-shadow {
   background: -moz-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.65) 100%);
   /* FF3.6+ */
@@ -550,7 +560,7 @@ textarea,
   left: 0;
   bottom: 0; }
 
-/* line 591, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 641, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-name {
   margin: 20px 0 10px 0;
   font-weight: 600;
@@ -559,7 +569,7 @@ textarea,
   position: relative;
   z-index: 5; }
 
-/* line 599, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 650, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-id {
   margin: 0 0 5px 0;
   font-size: 14px;
@@ -567,7 +577,7 @@ textarea,
   position: relative;
   z-index: 6; }
 
-/* line 606, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 658, D:/Documents/orderdrink_front/styles/app.scss */
 .eprofile-desc {
   font-size: 15px;
   opacity: 0.6;
@@ -575,31 +585,31 @@ textarea,
   text-align: center;
   margin: 0 auto; }
 
-/* line 613, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 666, D:/Documents/orderdrink_front/styles/app.scss */
 .info-col {
   height: 60px;
   line-height: 1;
   padding: 12px 0 12px 4px; }
 
-/* line 618, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 672, D:/Documents/orderdrink_front/styles/app.scss */
 .info-num {
   font-size: 16px;
   font-weight: 500;
   opacity: 0.8; }
 
-/* line 623, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 678, D:/Documents/orderdrink_front/styles/app.scss */
 .info-unit {
   margin-top: 6px;
   font-size: 14px;
   opacity: 0.4; }
 
 /*edit profile*/
-/* line 632, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 686, D:/Documents/orderdrink_front/styles/app.scss */
 .rating {
   margin: 0;
   padding: 0;
   display: inline-block; }
-  /* line 636, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 690, D:/Documents/orderdrink_front/styles/app.scss */
   .rating li {
     padding: 1px;
     color: #ddd;
@@ -608,63 +618,63 @@ textarea,
     list-style-type: none;
     display: inline-block;
     cursor: pointer; }
-    /* line 644, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 698, D:/Documents/orderdrink_front/styles/app.scss */
     .rating li.filled {
       color: #fd0; }
-  /* line 648, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 702, D:/Documents/orderdrink_front/styles/app.scss */
   .rating.readonly li.filled {
     color: #666; }
 
-/* line 652, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 707, D:/Documents/orderdrink_front/styles/app.scss */
 .reportsuccess {
   text-align: center;
   padding-top: 30px;
   width: 90%;
   margin-left: 5%;
   color: #78C0A8; }
-  /* line 658, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 713, D:/Documents/orderdrink_front/styles/app.scss */
   .reportsuccess i {
     font-size: 60px; }
-  /* line 661, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 716, D:/Documents/orderdrink_front/styles/app.scss */
   .reportsuccess h4 {
     margin: 5px; }
-  /* line 664, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 719, D:/Documents/orderdrink_front/styles/app.scss */
   .reportsuccess p {
     font-size: 14px; }
 
-/* line 669, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 725, D:/Documents/orderdrink_front/styles/app.scss */
 .near_page .card {
   height: 100%;
   position: relative;
   display: block;
   margin: 0; }
-  /* line 674, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 730, D:/Documents/orderdrink_front/styles/app.scss */
   .near_page .card .card-image {
     height: 100%; }
-    /* line 676, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 732, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-image .near_buttons {
       position: absolute;
       top: 5px;
       left: 5px;
       z-index: 1; }
-      /* line 681, D:/Documents/orderdrink_front/styles/app.scss */
+      /* line 737, D:/Documents/orderdrink_front/styles/app.scss */
       .near_page .card .card-image .near_buttons button {
         padding: 0 10px; }
-    /* line 685, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 741, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-image #googlemap {
       height: 100%;
       width: 100%; }
-  /* line 690, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 746, D:/Documents/orderdrink_front/styles/app.scss */
   .near_page .card .card-footer {
     position: absolute;
     bottom: 0px;
     left: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.8); }
-  /* line 697, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 753, D:/Documents/orderdrink_front/styles/app.scss */
   .near_page .card .card-avatar {
     padding: 18px 48px 18px 84px; }
-    /* line 699, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 755, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-avatar .avatar {
       position: absolute;
       border-radius: 50%;
@@ -673,22 +683,22 @@ textarea,
       left: 12px;
       background-color: #595757;
       top: calc(50% - 32px);
+      background-position: center;
       background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center; }
-    /* line 709, D:/Documents/orderdrink_front/styles/app.scss */
+      background-repeat: no-repeat; }
+    /* line 765, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-avatar .title {
       font-size: 24px;
       line-height: 30px;
       margin: 0px;
       letter-spacing: 1px;
       font-weight: 900; }
-    /* line 716, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 772, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-avatar p {
       margin: 6px 0 0 0;
       font-size: 18px;
       line-height: 18px; }
-    /* line 721, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 777, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-avatar i {
       display: -webkit-box;
       display: -webkit-flex;
@@ -706,7 +716,7 @@ textarea,
       right: 16px;
       height: 100%;
       font-size: 36px; }
-  /* line 740, D:/Documents/orderdrink_front/styles/app.scss */
+  /* line 796, D:/Documents/orderdrink_front/styles/app.scss */
   .near_page .card .card-reveal {
     padding: 0px;
     height: 100%;
@@ -718,7 +728,7 @@ textarea,
     -ms-transform: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: -1; }
-    /* line 748, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 804, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-reveal.active {
       z-index: 1;
       -webkit-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -731,11 +741,11 @@ textarea,
       -webkit-transform: translateY(-100%);
       -ms-transform: translateY(-100%);
       transform: translateY(-100%); }
-    /* line 754, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 810, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-reveal .card-header {
       width: 100%;
       height: 120px; }
-      /* line 757, D:/Documents/orderdrink_front/styles/app.scss */
+      /* line 813, D:/Documents/orderdrink_front/styles/app.scss */
       .near_page .card .card-reveal .card-header .card-avatar {
         padding: 28px 48px 28px 84px;
         width: 100%;
@@ -743,14 +753,14 @@ textarea,
         display: block;
         background-color: #fff;
         z-index: 2; }
-    /* line 767, D:/Documents/orderdrink_front/styles/app.scss */
+    /* line 823, D:/Documents/orderdrink_front/styles/app.scss */
     .near_page .card .card-reveal .ons-scroller {
       height: 100%;
       padding: 0px; }
-      /* line 770, D:/Documents/orderdrink_front/styles/app.scss */
+      /* line 826, D:/Documents/orderdrink_front/styles/app.scss */
       .near_page .card .card-reveal .ons-scroller .list-item-container {
         padding: 18px 0px 18px 74px; }
-        /* line 772, D:/Documents/orderdrink_front/styles/app.scss */
+        /* line 828, D:/Documents/orderdrink_front/styles/app.scss */
         .near_page .card .card-reveal .ons-scroller .list-item-container .avatar {
           position: absolute;
           left: 12px;
@@ -758,34 +768,34 @@ textarea,
           width: 48px;
           height: 48px;
           border-radius: 50%;
+          background-position: center;
           background-size: cover;
-          background-repeat: no-repeat;
-          background-position: center; }
-        /* line 781, D:/Documents/orderdrink_front/styles/app.scss */
+          background-repeat: no-repeat; }
+        /* line 837, D:/Documents/orderdrink_front/styles/app.scss */
         .near_page .card .card-reveal .ons-scroller .list-item-container .name {
           font-weight: 900;
           line-height: 16px;
           font-size: 18px; }
-        /* line 786, D:/Documents/orderdrink_front/styles/app.scss */
+        /* line 842, D:/Documents/orderdrink_front/styles/app.scss */
         .near_page .card .card-reveal .ons-scroller .list-item-container .desc {
           margin: 6px 0 0 0;
           line-height: 16px;
           font-size: 14px; }
-        /* line 791, D:/Documents/orderdrink_front/styles/app.scss */
+        /* line 847, D:/Documents/orderdrink_front/styles/app.scss */
         .near_page .card .card-reveal .ons-scroller .list-item-container .location {
           color: #757575;
           font-size: 12px;
           margin-left: 6px; }
-          /* line 795, D:/Documents/orderdrink_front/styles/app.scss */
+          /* line 851, D:/Documents/orderdrink_front/styles/app.scss */
           .near_page .card .card-reveal .ons-scroller .list-item-container .location:after {
             content: 'km'; }
 
-/* line 804, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 861, D:/Documents/orderdrink_front/styles/app.scss */
 .caculate_item {
   font-size: 14px;
   font-weight: 600; }
 
-/* line 808, D:/Documents/orderdrink_front/styles/app.scss */
+/* line 866, D:/Documents/orderdrink_front/styles/app.scss */
 .caculate_info {
   font-size: 12px;
   color: #777;
