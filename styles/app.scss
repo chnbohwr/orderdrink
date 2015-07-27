@@ -309,15 +309,14 @@ textarea,
             background-position: center;
             background-size: cover;
             border-radius: 40px;
-            /* text-align: center; */
-            
             margin: 0 auto;
         }
         .comment_name {
             height: 20px;
             line-height: 20px;
             text-align: center;
-            font-size: 14px;
+            font-size: 8px;
+            color: #777;
         }
     }
     .comment_card_layout_right {
@@ -329,14 +328,14 @@ textarea,
             word-wrap: break-word;
             white-space: pre-wrap;
             text-overflow: ellipsis;
-            padding-left: 70px;
+            padding-left: 80px;
             box-sizing: border-box;
             padding-top: 25px;
         }
         star-rating {
             position: absolute;
             top: 0;
-            left: 70px;
+            left: 80px;
             line-height: 0;
             ul {
                 height: 20px;

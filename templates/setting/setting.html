@@ -18,7 +18,7 @@
                 <input class="eprofile-file" id="fileAvatar" type="file" name="file" accept="image/*;capture=camera" onchange="angular.element(this).scope().uploadFile(this.files)" />
             </label>
         </div>
-        <div id="nickname" class="eprofile-name" contenteditable="true" ng-blur="changeName($event)" onkeypress="preventEnter">{{nickname}}</div>
+        <div id="nickname" class="eprofile-name" onclick="this.focus();" contenteditable="true" ng-blur="changeName($event)" onkeypress="preventEnter">{{nickname}}</div>
         <div class="eprofile-id">{{email}}</div>
         <!--        <div class="eprofile-desc">Freelance designer, software engineer and cyclist</div>-->
 

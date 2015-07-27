@@ -28,9 +28,11 @@ drinkapp.directive("starRating", function () {
             scope.toggle = function (index) {
                 if (scope.readonly == undefined || scope.readonly == false) {
                     scope.ratingValue = index + 1;
-                    scope.onRatingSelected({
-                        rating: index + 1
-                    });
+                    if (scope.onRatingSelected) {
+                        scope.onRatingSelected({
+                            rating: index + 1
+                        });
+                    }
                 }
             };
             scope.$watch("ratingValue", function (oldVal, newVal) {
