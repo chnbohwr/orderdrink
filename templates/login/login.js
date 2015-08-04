@@ -19,13 +19,13 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
      * @param {Type}
      */
     function login() {
-        
+
         $http.post(service_url.login, {
             email: $scope.login_input.email,
             password: $scope.login_input.password
         }).success(loginSuccess).error(error);
 
-        function error(data,status) {
+        function error(data, status) {
             if (status === 402) {
                 $scope.message = '登入錯誤';
             } else if (status === 401) {
@@ -37,13 +37,13 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
     }
 
     $scope.facebooklogin = function () {
-        FB.login(function (response) {
-            
+        facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], function (response) {
             if (response.status === 'connected') {
-                regByFacebook();
+
+                $timeout(regByFacebook, 0);
             }
-        }, {
-            scope: 'public_profile,email,user_friends'
+        }, function () {
+
         });
     };
 
@@ -51,28 +51,20 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
 
 
     function regByFacebook() {
-        FB.api('/me', function (response) {
+
+        facebookConnectPlugin.api('/me', [], function (response) {
+
             $scope.store_response = response;
             $http.post(service_url.facebooklogin, response).success(loginSuccess).error(errorReg);
-        });
-
+        }, errorReg);
 
         function errorReg() {
-            alert('facebook login error');
+            console.log('facebook get user profile error');
         }
     }
 
-    $scope.term = function () {
-        mainNavigator.pushPage('templates/login/term.html');
-    }
-
-    $scope.privacy = function () {
-        mainNavigator.pushPage('templates/login/privacy.html');
-    }
-
-
     function loginSuccess(data) {
-       
+
         localStorage.nickname = data.nickname;
         localStorage.email = data.email;
         localStorage.id = data.id;

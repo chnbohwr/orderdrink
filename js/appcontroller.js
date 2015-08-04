@@ -1,7 +1,5 @@
 drinkapp.controller('AppController', function ($scope, service_drink, $http, $timeout,service_url) {
 
-    
-
     ons.ready(checklogin);
 
     function checklogin() {
@@ -16,27 +14,6 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
             mainNavigator.pushPage('templates/login/login.html');
         }
 
-        window.fbAsyncInit = function () {
-            FB.init({
-                appId: '933225176708506',
-                xfbml: false,
-                version: 'v2.3'
-            });
-        };
-
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
-        FacebookLoginStatus();
-
     }
 
     //注入token 到 HTTP headers 裡面，這邊要讓登入頁面可以呼叫
@@ -47,22 +24,7 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
         $scope.user_id = localStorage.id;
         $scope.serverurl = service_url.server_url;
     };
-
-    function FacebookLoginStatus() {
-        if (!window.FB) {
-            $timeout(FacebookLoginStatus, 500);
-            return;
-        }
-        //偵測看看 facebook 啟動了沒
-        FB.getLoginStatus(function (response) {
-
-            $scope.$apply(function () {
-                $scope.fb_init = true;
-            });
-
-
-        });
-    }
+    
 
     $scope.goback = function () {
         mainNavigator.popPage();

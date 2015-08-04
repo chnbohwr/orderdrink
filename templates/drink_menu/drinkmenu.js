@@ -23,9 +23,9 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
     function initialSelection() {
         //預設選項
         $scope.cup = 'l';
-        $scope.ice = '0';
-        $scope.sugar = '0';
-        $scope.number = '1';
+        $scope.ice = 0;
+        $scope.sugar = 0;
+        $scope.number = 1;
 
         //這邊要檢查一下 如果只有中杯就先幫他預選中杯
         if ($scope.now_drink.price_m && !$scope.now_drink.price_l) {
@@ -38,10 +38,26 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
 
         //如果是熱飲就只能選熱的
         if ($scope.now_drink.onlyhot) {
-            $scope.ice = '4';
+            $scope.ice = 4;
         }
 
     }
+
+    $scope.changeNumber = function (number) {
+        $scope.number = number;
+    };
+
+    $scope.changeCup = function (cup) {
+        $scope.cup = cup;
+    };
+
+    $scope.changeIce = function (ice) {
+        $scope.ice = ice;
+    };
+
+    $scope.changeSugar = function (sugar) {
+        $scope.sugar = sugar;
+    };
 
     $scope.selectOver = function () {
 
@@ -56,7 +72,7 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
         for (var i in $scope.selection[name]) {
             var exist_selection = $scope.selection[name][i];
             if (exist_selection.sugar === $scope.sugar && exist_selection.cup === $scope.cup && exist_selection.ice === $scope.ice) {
-                exist_selection.number = (parseInt(exist_selection.number) + parseInt($scope.number)).toString();
+                exist_selection.number = (parseInt(exist_selection.number) + parseInt($scope.number));
                 find_same_drink = true;
                 break;
             }
@@ -87,7 +103,7 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
 
 
     $scope.deleteSelection = function (drink_name, select) {
-        if (select.number === '1') {
+        if (select.number === 1) {
             for (var i in $scope.selection[drink_name]) {
                 var data_select = $scope.selection[drink_name][i];
                 if (data_select.cup === select.cup && data_select.sugar === select.sugar && data_select.ice === select.ice) {
@@ -99,7 +115,7 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
                 delete $scope.selection[drink_name];
             }
         } else {
-            select.number = (parseInt(select.number) - 1).toString();
+            select.number = (parseInt(select.number) - 1);
         }
 
         if (!Object.keys($scope.selection).length) {
@@ -110,7 +126,7 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
     $scope.caculate = function () {
         service_drink.selection = $scope.selection;
         mainNavigator.pushPage('templates/drink_menu/caculate.html');
-    }
+    };
 
     $scope.checkSelection = function () {
         if (Object.keys($scope.selection).length) {

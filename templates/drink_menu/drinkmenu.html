@@ -19,8 +19,8 @@
         <ons-list-header>{{type.name}}</ons-list-header>
         <ons-list-item class="drink-item" ng-repeat="drink in type.items" modifier="tappable">
             {{drink.name}}
-            <span class="list-item-note lucent" ><span ng-if="drink.price_m">中杯:{{drink.price_m}}</span> <span ng-if="drink.price_l">大杯:{{drink.price_l}}</span></span>
-            
+            <span class="list-item-note lucent"><span ng-if="drink.price_m">中杯:{{drink.price_m}}</span> <span ng-if="drink.price_l">大杯:{{drink.price_l}}</span></span>
+
             <span class="list-item-action">
                 <ons-icon ng-click="add_drink(drink)" icon="ion-plus-circled" size="30px">
                 </ons-icon>
@@ -54,85 +54,68 @@
                 <div class="content">
                     <div>數量（杯）</div>
                     <div class="button-bar">
-                        <div class="button-bar__item">
-                            <input type="radio" name="number" ng-model="number" value="1">
-                            <button class="button-bar__button">1</button>
+                        <div class="button-bar__item" ng-class="{'active':number===1}">
+                            <button class="button-bar__button" ng-click="changeNumber(1)">1</button>
                         </div>
-                        <div class="button-bar__item">
-                            <input type="radio" name="number" ng-model="number" value="2">
-                            <button class="button-bar__button">2</button>
+                        <div class="button-bar__item" ng-class="{'active':number===2}">
+                            <button class="button-bar__button" ng-click="changeNumber(2)">2</button>
                         </div>
-                        <div class="button-bar__item">
-                            <input type="radio" name="number" ng-model="number" value="3">
-                            <button class="button-bar__button">3</button>
+                        <div class="button-bar__item" ng-class="{'active':number===3}">
+                            <button class="button-bar__button" ng-click="changeNumber(3)">3</button>
                         </div>
-                        <div class="button-bar__item">
-                            <input type="radio" name="number" ng-model="number" value="4">
-                            <button class="button-bar__button">4</button>
+                        <div class="button-bar__item" ng-class="{'active':number===4}">
+                            <button class="button-bar__button" ng-click="changeNumber(4)">4</button>
                         </div>
-                        <div class="button-bar__item">
-                            <input type="radio" name="number" ng-model="number" value="5">
-                            <button class="button-bar__button">5</button>
+                        <div class="button-bar__item" ng-class="{'active':number===5}">
+                            <button class="button-bar__button" ng-click="changeNumber(5)">5</button>
                         </div>
                     </div>
 
                     <div>容量</div>
                     <div class="button-bar">
-                        <div class="button-bar__item" ng-show="now_drink.price_m">
-                            <input type="radio" name="cup" ng-model="cup" value="m">
-                            <button class="button-bar__button">中杯</button>
+                        <div class="button-bar__item" ng-if="now_drink.price_m" ng-class="{'active':cup==='m'}">
+                            <button class="button-bar__button" ng-click="changeCup('m')">中杯</button>
                         </div>
-                        <div class="button-bar__item" ng-show="now_drink.price_l">
-                            <input type="radio" name="cup" ng-model="cup" value="l">
-                            <button class="button-bar__button">大杯</button>
+                        <div class="button-bar__item" ng-if="now_drink.price_l" ng-class="{'active':cup==='l'}">
+                            <button class="button-bar__button" ng-click="changeCup('l')">大杯</button>
                         </div>
                     </div>
 
                     <div>甜度</div>
                     <div class="button-bar">
-                        <div class="button-bar__item">
-                            <input type="radio" name="sugar" ng-model="sugar" value="0">
-                            <button class="button-bar__button">正常</button>
+                        <div class="button-bar__item" ng-class="{'active':sugar===0}">
+                            <button class="button-bar__button" ng-click="changeSugar(0)">正常</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
-                            <input type="radio" name="sugar" ng-model="sugar" value="1">
-                            <button class="button-bar__button">少糖</button>
+                        <div class="button-bar__item" ng-if="!now_drink.staick_sugar" ng-class="{'active':sugar===1}">
+                            <button class="button-bar__button" ng-click="changeSugar(1)">少糖</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
-                            <input type="radio" name="sugar" ng-model="sugar" value="2">
-                            <button class="button-bar__button">半糖</button>
+                        <div class="button-bar__item" ng-if="!now_drink.staick_sugar" ng-class="{'active':sugar===2}">
+                            <button class="button-bar__button" ng-click="changeSugar(2)">半糖</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
-                            <input type="radio" name="sugar" ng-model="sugar" value="3">
-                            <button class="button-bar__button">微糖</button>
+                        <div class="button-bar__item" ng-if="!now_drink.staick_sugar" ng-class="{'active':sugar===3}">
+                            <button class="button-bar__button" ng-click="changeSugar(3)">微糖</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="now_drink.staick_sugar">
-                            <input type="radio" name="sugar" ng-model="sugar" value="4">
-                            <button class="button-bar__button">無糖</button>
+                        <div class="button-bar__item" ng-if="!now_drink.staick_sugar" ng-class="{'active':sugar===4}">
+                            <button class="button-bar__button" ng-click="changeSugar(4)">無糖</button>
                         </div>
                     </div>
 
                     <div>冰塊</div>
                     <div class="button-bar">
-                        <div class="button-bar__item" ng-hide="now_drink.onlyhot">
-                            <input type="radio" name="ice" ng-model="ice" value="0">
-                            <button class="button-bar__button">正常</button>
+                        <div class="button-bar__item" ng-if="!now_drink.onlyhot" ng-class="{'active':ice===0}">
+                            <button class="button-bar__button" ng-click="changeIce(0)">正常</button>
                         </div>
-                        <div class="button-bar__item"  ng-hide="now_drink.onlyhot">
-                            <input type="radio" name="ice" ng-model="ice" value="1">
-                            <button class="button-bar__button">少冰</button>
+                        <div class="button-bar__item" ng-if="!now_drink.onlyhot"  ng-class="{'active':ice===1}">
+                            <button class="button-bar__button" ng-click="changeIce(1)">少冰</button>
                         </div>
-                        <div class="button-bar__item"  ng-hide="now_drink.onlyhot">
-                            <input type="radio" name="ice" ng-model="ice" value="2">
-                            <button class="button-bar__button">去冰</button>
+                        <div class="button-bar__item" ng-if="!now_drink.onlyhot"  ng-class="{'active':ice===2}">
+                            <button class="button-bar__button" ng-click="changeIce(2)">去冰</button>
                         </div>
-                        <div class="button-bar__item"  ng-hide="now_drink.onlyhot">
-                            <input type="radio" name="ice" ng-model="ice" value="3">
-                            <button class="button-bar__button">常溫</button>
+                        <div class="button-bar__item" ng-if="!now_drink.onlyhot"  ng-class="{'active':ice===3}">
+                            <button class="button-bar__button" ng-click="changeIce(3)">常溫</button>
                         </div>
-                        <div class="button-bar__item" ng-hide="!now_drink.hot">
-                            <input type="radio" name="ice" ng-model="ice" value="4">
-                            <button class="button-bar__button">溫</button>
+                        <div class="button-bar__item" ng-if="now_drink.hot"  ng-class="{'active':ice===4}">
+                            <button class="button-bar__button" ng-click="changeIce(4)">溫</button>
                         </div>
                     </div>
                     <button class="button" ng-click="selectOver();">選好了</button>

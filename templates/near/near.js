@@ -52,7 +52,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         }
 
         function onError(e) {
-            alert('找不到gps資訊，現在先幫你設定到一個假的gps');
+            navigator.notification.alert('目前您沒有允許app取得GPS權限，所以我們幫你設定一個預設的位置可以讓您體驗，如果您有打開GPS以後就可以正確定位到您的所在地了。',function(){},'小提醒');
 
             var data = {
                 lat: 22.6239237,
