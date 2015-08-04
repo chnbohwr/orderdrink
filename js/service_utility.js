@@ -6,21 +6,25 @@ drinkapp.service('service_utility', function ($q) {
      */
     this.getGPS = function () {
         var defer = $q.defer();
-        var options = { enableHighAccuracy: true };
-        navigator.geolocation.getCurrentPosition(onSuccess, onError,options);
+        var options = {
+            maximumAge: 3000,
+            timeout: 5000,
+            enableHighAccuracy: true
+        };
+        navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
         // onSuccess Callback
         // This method accepts a Position object, which contains the
         // current GPS coordinates
         //
         function onSuccess(position) {
-            var gps_object = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
-            defer.resolve(gps_object);
-        }
-        // onError Callback receives a PositionError object
-        //
+                var gps_object = {
+                    lat: position.coords.latitude,
+                    lng: position.coords.longitude
+                };
+                defer.resolve(gps_object);
+            }
+            // onError Callback receives a PositionError object
+            //
         function onError(error) {
             defer.reject(error);
         }
