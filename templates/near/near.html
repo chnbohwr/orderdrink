@@ -1,11 +1,13 @@
 <!--test-->
 <ons-page ng-controller="near" class="near_page">
     <ons-toolbar>
-        <!--
+
         <div class="left">
-            <ons-back-button>Back</ons-back-button>
+            <ons-toolbar-button ng-click="reInitialGps()">
+                <ons-icon icon="ion-navigate"></ons-icon>
+            </ons-toolbar-button>
         </div>
--->
+
         <div class="center">附近店家</div>
         <div class="right">
             <ons-toolbar-button ng-click="gotoSetting()">
@@ -23,7 +25,7 @@
             </div>
             <div id="googlemap" class="near_map"></div>
         </div>
-        
+
         <div class="card-footer" ng-click="toggleCard()" swiper-card open="card_open">
             <div class="card-avatar waves-effect waves-block">
                 <div class="avatar" rn-lazy-background="shopAvatar(nowShop.company_id)"></div>

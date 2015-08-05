@@ -46,13 +46,13 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
             google.maps.event.addListener(map, 'idle', function (event) {
                 map_element.find('a').remove();
-
             });
+            
             getShopList();
         }
 
         function onError(e) {
-            navigator.notification.alert('目前您沒有允許app取得GPS權限，所以我們幫你設定一個預設的位置可以讓您體驗，如果您有打開GPS以後就可以正確定位到您的所在地了。',function(){},'小提醒');
+            navigator.notification.alert('目前您沒有允許app取得GPS權限，所以我們幫你設定一個預設的位置可以讓您體驗，如果您有打開GPS以後就可以正確定位到您的所在地了。', function () {}, '小提醒');
 
             var data = {
                 lat: 22.6239237,
@@ -78,6 +78,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         return Math.floor(distance);
     };
 
+    //點選商店繪製地圖路徑
     $scope.clickShop = function (shop) {
         $scope.nowShop = shop;
         $scope.nowShop_id = shop.id;
@@ -88,14 +89,12 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         if ($scope.shop_marker) {
             $scope.shop_marker.setMap(null);
         }
-
         //remake marker
         $scope.shop_marker = new google.maps.Marker({
             position: shop_position,
             map: map,
             icon: 'img/drink-icon.png'
         });
-
         var request = {
             origin: position,
             destination: shop_position,
@@ -143,6 +142,37 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     $scope.style = {
         'height': height + 'px',
         'width': '100%'
+    };
+
+
+    //點選畫面右上角重新整理 gps 座標
+    $scope.reInitialGps = function () {
+        
+        service_utility.getGPS().then(onSuccess, onError);
+
+        function onSuccess(gpsdata) {
+           
+            lat = gpsdata.lat;
+            lng = gpsdata.lng;
+            //重新設定地圖上的 position
+            position = new google.maps.LatLng(gpsdata.lat, gpsdata.lng);
+
+            marker.setPosition(position);
+            
+            //如果現在有在觀望商店
+            if($scope.nowShop){
+                $scope.clickShop($scope.nowShop);
+            }else{
+                map.setCenter(position);
+            }
+            
+            //更新商店列表
+            getShopList();
+        }
+        
+        function onError(){
+            navigator.notification.alert('無法連結裝置的GPS訊號',function(){},'小提醒');
+        }
     };
 
 
