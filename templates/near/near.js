@@ -10,6 +10,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     };
 
     $scope.initialMap = function () {
+        window.gps_modal.show();
         //if no google map 
         if (!window.google_map_has_initial) {
             $timeout($scope.initialMap, 200);
@@ -23,6 +24,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         service_utility.getGPS().then(onSuccess, onError);
 
         function onSuccess(gpsdata) {
+            window.gps_modal.hide();
             lat = gpsdata.lat;
             lng = gpsdata.lng;
 
@@ -52,6 +54,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         }
 
         function onError(e) {
+            window.gps_modal.hide();
             navigator.notification.alert('目前您沒有允許app取得GPS權限，所以我們幫你設定一個預設的位置可以讓您體驗，如果您有打開GPS以後就可以正確定位到您的所在地了。', function () {}, '小提醒');
 
             var data = {
@@ -151,7 +154,6 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         service_utility.getGPS().then(onSuccess, onError);
 
         function onSuccess(gpsdata) {
-           
             lat = gpsdata.lat;
             lng = gpsdata.lng;
             //重新設定地圖上的 position

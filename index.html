@@ -11,7 +11,7 @@
     <title>orderdrink</title>
     <!--test for github push hook-->
     <!--  css style-->
-    
+
     <link rel="stylesheet" href="lib/onsen/css/onsenui.css">
     <link rel="stylesheet" href="styles/onsen-css-components-blue-basic-theme.css">
     <link rel="stylesheet" href="styles/app.css" />
@@ -23,7 +23,7 @@
     <script src="cordova.js"></script>
 
     <script src="lib/materialize/js/materialize.min.js"></script>
-    
+
     <!--    angular moment js -->
     <script src="lib/angular-moment/node_modules/moment/min/moment.min.js"></script>
     <script src="lib/angular-moment/node_modules/moment/locale/zh-tw.js"></script>
@@ -69,7 +69,11 @@
 
 <body ng-controller="AppController">
     <ons-navigator var="mainNavigator"></ons-navigator>
-
+    <ons-modal var="gps_modal">
+        <ons-icon icon="ion-load-c" spin="true"></ons-icon>
+        <br>
+        <br> 請稍候正在搜尋 GPS 訊號中
+    </ons-modal>
 </body>
 
 </html>
