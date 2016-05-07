@@ -1,6 +1,6 @@
 drinkapp.service('service_url', function () {
     //    this.server_url = "http://127.0.0.1:14789"
-    this.server_url = "http://orderdrink.ddns.net:14789"
+    this.server_url = "http://orderdrink-chnbohwr.rhcloud.com"
     this.login = this.server_url + '/login/';
     this.facebooklogin = this.server_url + '/login/facebook/';
     this.signup = this.server_url + '/signup/';
@@ -29,7 +29,7 @@ drinkapp.service('service_url', function () {
     this.uploadFavorite = this.server_url + '/api/uploadFavorite/';
     
     this.errorHandler = function (status) {
-    
+        // TODO  這邊要改成引導到登入頁面
         if (parseInt(status) === 401) {
             localStorage.clear();
             alert('測試的伺服器重新開機了，所以請您重新註冊');

@@ -133,6 +133,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
     }
 
     $scope.gotoSetting = function () {
+        //TODO here only member can get in
         mainNavigator.pushPage('templates/setting/setting.html');
     };
 
