@@ -5,7 +5,6 @@ drinkapp.directive("swiperCard", function ($timeout) {
             open: '='
         },
         link: function (scope, elem, attrs) {
-            console.log('123')
             var reveal = $(elem).siblings('.card-reveal');
             var revealHeight = reveal.height();
             var windowHeight = window

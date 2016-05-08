@@ -6,20 +6,9 @@
         <h1>茶在哪</h1>
         <p>快速找你周遭的飲料店，超方便的統計功能讓你馬上統計身旁朋友想喝的飲料，趕快登入打電話去叫外送吧!</p>
 
-        <form>
-            <input type="email" name="user" placeholder="Email" ng-model="login_input.email">
-            <input type="password" name="pass" placeholder="密碼" ng-model="login_input.password">
-            <button class="button button--large" ng-click="login()">登入</button>
-        </form>
-
-        <div class="login-help">
-            <div class="info-message" ng-bind="message"></div>
-            <button ng-click="signup()">註冊</button>
-        </div>
-
         <div class="facebook" ng-click="facebooklogin()">
             <button></button>
-            <p>試試看facebook快速登入吧，免註冊，一鍵登入!</p>
+            <p>Facebook登入!</p>
         </div>
 
     </div>

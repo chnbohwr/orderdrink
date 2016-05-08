@@ -23,7 +23,6 @@ drinkapp.service('service_drink', function ($q, $http, service_url) {
             service_drink.shopList = datas;
             defer.resolve();
         }).error(function (data, status) {
-            service_url.errorHandler(status);
             defer.reject();
         });
 

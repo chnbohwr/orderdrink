@@ -36,45 +36,5 @@ drinkapp.controller('login', function ($scope, $http, service_url, $timeout) {
         }
     }
 
-    $scope.facebooklogin = function () {
-        facebookConnectPlugin.login(['public_profile', 'email', 'user_friends'], function (response) {
-            if (response.status === 'connected') {
-
-                $timeout(regByFacebook, 0);
-            }
-        }, function () {
-
-        });
-    };
-
-    //    {"id":"106191296386841","email":"imffqsz_zuckerson_1434104811@tfbnw.net","first_name":"Margaret","gender":"female","last_name":"Zuckerson","link":"https://www.facebook.com/app_scoped_user_id/106191296386841/","locale":"zh_TW","middle_name":"Amihgiabdejd","name":"Margaret Amihgiabdejd Zuckerson","timezone":0,"updated_time":"2015-06-12T10:27:01+0000","verified":false}
-
-
-    function regByFacebook() {
-
-        facebookConnectPlugin.api('/me', [], function (response) {
-
-            $scope.store_response = response;
-            $http.post(service_url.facebooklogin, response).success(loginSuccess).error(errorReg);
-        }, errorReg);
-
-        function errorReg() {
-            console.log('facebook get user profile error');
-        }
-    }
-
-    function loginSuccess(data) {
-
-        localStorage.nickname = data.nickname;
-        localStorage.email = data.email;
-        localStorage.id = data.id;
-        localStorage.avatar_thumb = data.avatar_thumb;
-        localStorage.avatar = data.avatar;
-        localStorage.background = data.background
-        localStorage.favoriteCompany = data.favoriteCompany;
-        $scope.injectToken(data.token);
-        mainNavigator.pushPage('templates/near/near.html');
-    }
-
-    window.scope_login = $scope;
+   
 });

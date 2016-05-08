@@ -49,7 +49,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
             google.maps.event.addListener(map, 'idle', function (event) {
                 map_element.find('a').remove();
             });
-            
+
             getShopList();
         }
 
@@ -134,7 +134,14 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     $scope.gotoSetting = function () {
         //TODO here only member can get in
-        mainNavigator.pushPage('templates/setting/setting.html');
+        if (!localStorage.token) {
+            // if not login , ask user.
+            $scope.loginDialog.show();
+            
+        } else {
+            mainNavigator.pushPage('templates/setting/setting.html');
+        }
+
     };
 
     //only fire once when login 
@@ -151,7 +158,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     //點選畫面右上角重新整理 gps 座標
     $scope.reInitialGps = function () {
-        
+
         service_utility.getGPS().then(onSuccess, onError);
 
         function onSuccess(gpsdata) {
@@ -161,28 +168,27 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
             position = new google.maps.LatLng(gpsdata.lat, gpsdata.lng);
 
             marker.setPosition(position);
-            
+
             //如果現在有在觀望商店
-            if($scope.nowShop){
+            if ($scope.nowShop) {
                 $scope.clickShop($scope.nowShop);
-            }else{
+            } else {
                 map.setCenter(position);
             }
-            
+
             //更新商店列表
             getShopList();
         }
-        
-        function onError(){
-            navigator.notification.alert('無法連結裝置的GPS訊號',function(){},'小提醒');
+
+        function onError() {
+            navigator.notification.alert('無法連結裝置的GPS訊號', function () {}, '小提醒');
         }
     };
 
 
     //收到重新整理店家的 BROADCAST
     $scope.$on('refreshShop', getShopList);
-
-
+    
     window.scope_near = $scope;
 
 });

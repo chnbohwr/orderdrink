@@ -137,9 +137,16 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
     };
 
     $scope.gotoReport = function () {
-        $timeout(function () {
+        if (!localStorage.token) {
+            // if not login , ask user.
+            $scope.loginDialog.show();
+            
+        } else {
+            $timeout(function () {
             mainNavigator.pushPage('templates/report/report.html');
-        }, 300);
+            }, 300);
+        }
+        
     };
 
     window.scope_drinkmenu = $scope;

@@ -29,7 +29,7 @@ drinkapp.directive('odUser', function (service_user, service_url) {
                     });
                 } else {
                     element.css({
-                        'background-image': 'url(' + service_url.server_url + '/' + data.avatar_thumb + ')'
+                        'background-image': 'url(' + service_url.server_url + '/' + data.avatar + ')'
                     });
                 }
             } else {

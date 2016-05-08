@@ -14,8 +14,16 @@ drinkapp.controller('store', function ($scope, service_drink, service_comment) {
 
     };
     $scope.addComment = function () {
-        mainNavigator.pushPage('templates/store/store_addcomment.html');
+        if (!localStorage.token) {
+            // if not login , ask user.
+            $scope.loginDialog.show();
+            
+        } else {
+            $timeout(function () {
+                mainNavigator.pushPage('templates/store/store_addcomment.html');
+            }, 300);
+        }
+        
     };
 
-    window.scope_store = $scope;
 });
