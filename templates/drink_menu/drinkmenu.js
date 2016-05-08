@@ -143,7 +143,7 @@ drinkapp.controller('drinkmenu', function ($scope, service_drink, $timeout) {
             
         } else {
             $timeout(function () {
-            mainNavigator.pushPage('templates/report/report.html');
+             mainNavigator.pushPage('templates/report/report.html');
             }, 300);
         }
         

@@ -1,4 +1,4 @@
-drinkapp.controller('store', function ($scope, service_drink, service_comment) {
+drinkapp.controller('store', function ($scope, service_drink, service_comment, $timeout) {
     $scope.storeData = service_drink.now_shop;
    
     service_comment.initial($scope.storeData.id).then(function () {
