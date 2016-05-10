@@ -7,10 +7,7 @@ $gray60:#757575;
 $gray70:#616161;
 $gray80:#424242;
 $gray90:#212121;
-$cubic:cubic-bezier(0.4,
-0,
-0.2,
-1);
+$cubic:cubic-bezier(0.4, 0, 0.2, 1);
 @mixin transition($transition...) {
     -webkit-transition: $transition;
     -moz-transition: $transition;
@@ -61,6 +58,8 @@ textarea,
     -webkit-user-select: text;
     user-select: text;
 }
+
+
 /*hack for onsen checkbox input*/
 
 .checkbox > input[type="checkbox"] {
@@ -77,6 +76,8 @@ textarea,
     margin: 10px;
     color: #e2613c;
 }
+
+
 /*登入頁面*/
 
 .login-card {
@@ -111,7 +112,6 @@ textarea,
             border: 1px solid #d9d9d9;
             border-top: 1px solid #c0c0c0;
             /* border-radius: 2px; */
-            
             padding: 0 8px;
             box-sizing: border-box;
             -moz-box-sizing: border-box;
@@ -186,7 +186,11 @@ textarea,
         }
     }
 }
+
+
 /*登入頁面*/
+
+
 /*註冊頁面*/
 
 .form-row {
@@ -218,7 +222,11 @@ textarea,
 .signup_note {
     color: #e2613c;
 }
+
+
 /*註冊頁面*/
+
+
 /*附近搜巡頁面*/
 
 .near_map {
@@ -229,6 +237,8 @@ textarea,
 .near_item_active {
     background-color: #ddd;
 }
+
+
 /*
 .near_button {
     position: fixed;
@@ -279,7 +289,11 @@ textarea,
 .desc {
     line-height: 16px;
 }
+
+
 /*附近搜巡頁面*/
+
+
 /*飲料店的頁面*/
 
 .store-button-bar.store-button-bar {
@@ -291,7 +305,11 @@ textarea,
     width: 100%;
     height: 500px;
 }
+
+
 /*飲料店的頁面*/
+
+
 /*飲料店的頁面下方評論*/
 
 .comment_card {
@@ -353,7 +371,11 @@ textarea,
         }
     }
 }
+
+
 /*飲料店的頁面下方評論*/
+
+
 /*飲料店評論*/
 
 .to-wrapper {
@@ -388,7 +410,11 @@ textarea,
 .textarea {
     margin-top: 4px;
 }
+
+
 /*飲料店評論*/
+
+
 /*設定頁面*/
 
 .profile-wrapper {
@@ -416,7 +442,11 @@ textarea,
     font-size: 15px;
     opacity: 0.4;
 }
+
+
 /*設定頁面*/
+
+
 /*飲料的 dialog*/
 
 .drink_menu_dialog {
@@ -467,7 +497,11 @@ textarea,
     opacity: .7;
     margin: 0 8px;
 }
+
+
 /*飲料的 dialog*/
+
+
 /*notification*/
 
 .notify-info {
@@ -496,7 +530,6 @@ textarea,
         position: absolute;
         left: 0px;
         /* top: 0px; */
-        
         bottom: -3px;
         width: 40px;
         height: 40px;
@@ -504,7 +537,6 @@ textarea,
         line-height: 44px;
         text-align: center;
         /* line-height: 50px; */
-        
         vertical-align: middle;
         background: #84b9f9;
         color: white;
@@ -512,7 +544,11 @@ textarea,
         /* text-shadow: 0px 1px 1px #fdfeff; */
     }
 }
+
+
 /*notification*/
+
+
 /*edit profile*/
 
 .eprofile-card {
@@ -537,6 +573,7 @@ textarea,
     position: relative;
     margin: 0 auto;
     transition: .2s all;
+    background-position: center;
 }
 
 .eprofile-image.loading {
@@ -610,25 +647,18 @@ textarea,
 .eprofile-shadow {
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* FF3.6+ */
-    
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.65)));
     /* Chrome,Safari4+ */
-    
     background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* Chrome10+,Safari5.1+ */
-    
     background: -o-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* Opera 11.10+ */
-    
     background: -ms-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* IE10+ */
-    
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.65) 100%);
     /* W3C */
-    
     //    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
     /* IE6-9 */
-    
     position: absolute;
     width: 100%;
     height: 100px;
@@ -678,6 +708,8 @@ textarea,
     font-size: 14px;
     opacity: 0.4;
 }
+
+
 /*edit profile*/
 
 //推薦的星星
@@ -866,4 +898,16 @@ textarea,
     color: #777;
     height: 30px;
     line-height: 30px;
+}
+
+.timeline {
+    margin-top: 10px;
+}
+
+.drink_menu_loading {
+    text-align: center;
+    span {
+        color: #555;
+        font-size: 12px;
+    }
 }

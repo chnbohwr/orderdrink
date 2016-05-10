@@ -99,7 +99,10 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
     }
 
     function getFBLoginStatus() {
-        // TODO check network
+        if(!window.facebookConnectPlugin) {
+            $scope.toHome();
+            return;
+        }
         facebookConnectPlugin.getLoginStatus(function (data) {
             if (data.status !== 'connected') {
                 localStorage.clear();

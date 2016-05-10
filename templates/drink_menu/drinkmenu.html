@@ -15,7 +15,12 @@
         <i ng-click="gotoReport()" class="ion-ios-paperplane waves-light waves-effect"></i>
     </div>
 
-    <ons-list modifier="inset" ng-repeat="type in  menu.list">
+    <div class="drink_menu_loading" ng-show="!menu">
+        <ons-icon icon="ion-load-b" spin="true">
+        </ons-icon>
+        <span>快出來了...</span>
+    </div>
+    <ons-list modifier="inset" ng-repeat="type in menu.list">
         <ons-list-header>{{type.name}}</ons-list-header>
         <ons-list-item class="drink-item" ng-repeat="drink in type.items" modifier="tappable">
             {{drink.name}}

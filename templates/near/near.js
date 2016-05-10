@@ -22,7 +22,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         });
 
         service_utility.getGPS().then(onSuccess, onError);
-
+        
         function onSuccess(gpsdata) {
             window.gps_modal.hide();
             lat = gpsdata.lat;
@@ -63,6 +63,8 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
             };
             onSuccess(data);
         }
+        
+        navigator.splashscreen.hide();
 
     };
 
@@ -188,6 +190,9 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
 
     //收到重新整理店家的 BROADCAST
     $scope.$on('refreshShop', getShopList);
+    
+    mainNavigator.pages.splice(0,1);
+    
     
     window.scope_near = $scope;
 
