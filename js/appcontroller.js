@@ -99,10 +99,13 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
     }
 
     function getFBLoginStatus() {
-        if(!window.facebookConnectPlugin) {
+        if (!window.facebookConnectPlugin) {
             $scope.toHome();
             return;
         }
+        adbuddiz.setAndroidPublisherKey("58ea5b93-8803-4647-b061-0bbfa7e86c30");
+        adbuddiz.setIOSPublisherKey("f796bc69-45f9-4334-ab79-4f2db5e43348");
+        adbuddiz.cacheAds();
         facebookConnectPlugin.getLoginStatus(function (data) {
             if (data.status !== 'connected') {
                 localStorage.clear();
@@ -117,5 +120,19 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
             }
         });
     }
+
+    $scope.showAD = function () {
+        if (!window.adbuddiz) {
+            return;
+        }
+        adbuddiz.isReadyToShowAd(
+            function () {
+                adbuddiz.showAd();
+            },
+            function () { /* Function called otherwise, optional */ }
+        );
+    };
+
+    document.addEventListener("resume", $scope.showAD, false);
 
 });
