@@ -134,5 +134,6 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
     };
 
     document.addEventListener("resume", $scope.showAD, false);
+    document.addEventListener('AB-didCacheAd', $scope.showAD, false);
 
 });

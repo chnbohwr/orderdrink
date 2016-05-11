@@ -187,9 +187,7 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
         }
     };
 
-    document.addEventListener('AB-didCacheAd', function () {
-        $scope.showAd();
-    }, false);
+    
 
     //收到重新整理店家的 BROADCAST
     $scope.$on('refreshShop', getShopList);
