@@ -125,6 +125,9 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
         if (!window.adbuddiz) {
             return;
         }
+        if(!window.ad_ok){
+            return;
+        }
         adbuddiz.isReadyToShowAd(
             function () {
                 adbuddiz.showAd();
@@ -133,7 +136,11 @@ drinkapp.controller('AppController', function ($scope, service_drink, $http, $ti
         );
     };
 
-    //document.addEventListener("resume", $scope.showAD, false);
-    document.addEventListener('AB-didCacheAd', $scope.showAD, false);
+    $scope.adOk = function () {
+        window.ad_ok = true;
+    }
+
+    document.addEventListener("resume", $scope.showAD, false);
+    document.addEventListener('AB-didCacheAd', $scope.adOk, false);
 
 });

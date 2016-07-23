@@ -64,8 +64,6 @@ drinkapp.controller('near', function ($scope, service_utility, service_drink, $t
             onSuccess(data);
         }
 
-        navigator.splashscreen.hide();
-
     };
 
     function getShopList() {

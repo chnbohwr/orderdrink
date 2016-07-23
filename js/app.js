@@ -2,5 +2,8 @@ var drinkapp = ons.bootstrap('drinkapp', ['onsen', 'angularMoment', 'checklist-m
 
 drinkapp.run(function (amMoment) {
     amMoment.changeLocale('zh-tw');
-
 });
+
+ons.ready(function(){
+    navigator.splashscreen.hide();
+})
